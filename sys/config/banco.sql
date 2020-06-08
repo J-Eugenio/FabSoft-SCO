@@ -21,29 +21,58 @@ SET time_zone = "+00:00";
 --
 -- Database: `sys`
 --
+CREATE DATABASE sys;
 USE sys;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuario`
+-- Estrutura da tabela `paciente`
 --
 
-DROP TABLE IF EXISTS `usuario`;
-CREATE TABLE IF NOT EXISTS `usuario` (
+DROP TABLE IF EXISTS `paciente`;
+CREATE TABLE IF NOT EXISTS `paciente` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(200) NOT NULL,
-  `login` varchar(100) NOT NULL,
-  `senha` varchar(200) NOT NULL,
-  `email` varchar(200) NOT NULL,
   `cpf` varchar(50) NOT NULL,
-  `nivel` varchar(20) NOT NULL,
+  `senha` varchar(50) NOT NULL,
+  `nome` varchar(50) NOT NULL,
+  `dataNasc` varchar(50) NOT NULL,
+  `idade` varchar(50) NOT NULL,
+  `sexo` varchar(50) NOT NULL,
+  `escolaridade` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `telefone` varchar(50) NOT NULL,
+  `numeroCardSUS` varchar(50) NOT NULL,
+  `unidadeDeSaude` varchar(50) NOT NULL,
+  `dataDiagnostico` varchar(50) NOT NULL,
+  `bairro` varchar(50) NOT NULL,
+  `logradouro` varchar(50) NOT NULL,
+  `pontoDeReferencia` varchar(50) NOT NULL,
+  `zona` varchar(50) NOT NULL,
+  `hospitalDeTratamento` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+-- --------------------------------------------------------
 
+--
+-- Estrutura da tabela `funcionario`
+--
+
+DROP TABLE IF EXISTS `funcionario`;
+CREATE TABLE IF NOT EXISTS `funcionario` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `cpf` varchar(50) NOT NULL,
+  `senha` varchar(50) NOT NULL,
+  `nome` varchar(50) NOT NULL,
+  `idade` varchar(50) NOT NULL,
+  `genero` varchar(50) NOT NULL,
+  `funcao` varchar(50) NOT NULL,
+  `tipoDeFunc` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 --
 -- Extraindo dados da tabela `usuario`
 --
 
-INSERT INTO `usuario` (`id`, `nome`, `login`, `senha`, `email`, `cpf`, `nivel`) VALUES
-(1, 'admin', 'admin', 'admin', 'admin@admin.com', '88998888877', '1');
+INSERT INTO `funcionario` (`id`, `cpf`, `senha`, `nome`, `idade`, `genero`, `funcao`, `tipoDeFunc`) VALUES
+(1, '12345678912', 'admin', 'admin', '24', 'M', 'Aux', 'adm');

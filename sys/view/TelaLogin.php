@@ -23,7 +23,7 @@
          <h1 class="h3 mb-3 font-weight-normal"></h1>
          <div class="input-group input-group-sm mb-4">
             <span class="input-group-addon"><i class="glyphicon glyphicon-user" style="height: 10px; align-self: auto; "></i></span>
-            <input type="email" id="email" name="email" class="form-control" placeholder="Digite seu E-mail..." required autofocus>
+            <input type="text" id="cpf" name="cpf" class="form-control" placeholder="Digite seu cpf..." required autofocus>
          </div>
          <div class="input-group input-group-sm mb-3">
             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
