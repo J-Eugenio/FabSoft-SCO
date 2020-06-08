@@ -1,60 +1,57 @@
 <?php
 
-    require_once 'usuario_DAO.php';
-    require_once '../../model/usuario/usuario_class.php';
-    $userClass = new usuario_DAO();
+    require_once 'funcionario_DAO.php';
+    require_once '../../model/funcionario/funcionario_class.php';
+    $funcClass = new funcionario_DAO();
     switch($_SERVER['REQUEST_METHOD'])
     {
         case 'GET':  $acao = $_GET['acao']; break;
         case 'POST': $acao = $_POST['acao']; break;
     }
     if($acao == "delete"){
-        $userClass->setId($_GET['id']);
+        $funcClass->setId($_GET['id']);
     }
-    if($acao == "autenticar"){
-            $userClass->setEmail($_POST['email']);
-            $userClass->setSenha($_POST['senha']);
-    }else if($acao != "delete"){
-        if(!empty($userClass->getLogin()) || !empty($userClass->getSenha()) ||
-           !empty($userClass->getCPF())   || !empty($userClass->getEmail()) ||
-           !empty($userClass->getAcesso())|| !empty($userClass->getNivel())){
+    if($acao != "delete"){
+        if(!empty($funcClass->getCpf()) || !empty($funcClass->getIdade()) ||
+           !empty($funcClass->getSenha())   || !empty($funcClass->getGenero()) ||
+           !empty($funcClass->getNome())|| !empty($funcClass->getFuncao())
+           || !empty($funcClass->getTipoDeFunc())){
             echo "Algum dado vazio";
         }else{
             if($acao == "update"){
-                $userClass->setId($_POST['id']);
+                $funcClass->setId($_POST['id']);
             }
-            $userClass->setLogin($_POST['login']);
-            $userClass->setSenha($_POST['senha']);
-            $userClass->setNome($_POST['nome']);
-            $userClass->setCPF($_POST['cpf']);
-            $userClass->setEmail($_POST['email']);
-            $userClass->setNivel($_POST['nivel']);
+            $funcClass->setCpf($_POST['cpf']);
+            $funcClass->setSenha($_POST['senha']);
+            $funcClass->setNome($_POST['nome']);
+            $funcClass->setIdade($_POST['idade']);
+            $funcClass->setGenero($_POST['genero']);
+            $funcClass->setFuncao($_POST['funcao']);
+            $funcClass->setTipoDeFunc($_POST['tipoDeFunc']);
+
         }
     }
 
 switch($acao){
     case 'inserir':
         try{
-            $userClass->insert($userClass->getLogin(),$userClass->getSenha(),$userClass->getNome(),$userClass->getCPF(),$userClass->getEmail(),$userClass->getNivel(),$userClass->getNivel());
+            $funcClass->insert($funcClass->getCpf(), $funcClass->getSenha(), $funcClass->getNome(), $funcClass->getIdade(), $funcClass->getGenero(), $funcClass->getFuncao(), $funcClass->getTipoDeFunc());
         }catch(Exception $e){
             echo $e->getMessage();
         }
     break;
     case 'delete':
         try{
-            $userClass->delete($userClass->getId());
+            $funcClass->delete($funcClass->getId());
         }catch(Exception $e){
             echo $e->getMessage();
         }
     break;
     case 'update':
         try{
-            $userClass->update($userClass->getId());
+            $funcClass->update($funcClass->getId());
         }catch(Exception $e){
             echo $e->getMessage();
         }
-    break;
-    case 'autenticar':
-        $userClass->autenticar($userClass->getEmail(), $userClass->getSenha());
     break;
 }

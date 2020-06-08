@@ -1,9 +1,9 @@
 <?php
 
-    require_once '../../model/usuario/usuario_class.php';
+    require_once '../../model/funcionario/funcionario_class.php';
 
-    class usuario_DAO extends usuario_class{
-        protected $tabela = 'usuario';
+    class funcionario_DAO extends funcionario_class{
+        protected $tabela = 'funcionario';
         
         public function findUnic($id){
             try{
@@ -26,36 +26,38 @@
                 echo $erro->getMessage();
             }
         }
-        public function insert($login,$senha,$nome,$cpf,$email,$nivel,$acesso){
+        public function insert($cpf, $senha, $nome, $idade, $genero, $funcao, $tipoDeFunc){
             try{
-                $sql = "INSERT INTO $this->tabela(login, senha, nome, cpf, email, nivel)
-             VALUES (:login, :senha, :nome, :cpf, :email, :nivel)";
+                $sql = "INSERT INTO $this->tabela(cpf, senha, nome, idade, genero, funcao, tipoDeFunc)
+             VALUES (:cpf, :senha, :nome, :idade, :genero, :funcao, :tipoDeFunc)";
                 $exec = DB::prepare($sql);
-                $exec->bindParam(':login',$login);
+                $exec->bindParam(':cpf',$cpf);
                 $exec->bindParam(':senha',$senha);
                 $exec->bindParam(':nome',$nome);
-                $exec->bindParam(':cpf',$cpf);
-                $exec->bindParam(':email',$email);
-                $exec->bindParam(':nivel',$nivel);
-                echo "<script>alert('Usuario cadastrado com sucesso!!');window.location ='../../view/usuario/Cadastrar.php';</script>";
+                $exec->bindParam(':idade',$idade);
+                $exec->bindParam(':genero',$genero);
+                $exec->bindParam(':funcao',$funcao);
+                $exec->bindParam(':tipoDeFunc',$tipoDeFunc);
                 return $exec->execute();
+                echo "<script>alert('Funcionario cadastrado com sucesso!!');window.location ='../../view/funcionario/Cadastrar.php';</script>";
             }catch(PDOException $erro){
                 echo $erro->getMessage();
             }
         }
         public function update($id){
             try{
-                $sql = "UPDATE $this->tabela SET login = :login, senha = :senha, nome = :nome,
-                cpf = :cpf, email = :email, nivel = :nivel WHERE id = :id";
+                $sql = "UPDATE $this->tabela SET cpf = :cpf, senha = :senha, nome = :nome,
+                idade = :idade, genero = :genero, funcao = :funcao, tipoDeFunc = :tipoDeFunc WHERE id = :id";
                 $exec = DB::prepare($sql);
                 $exec->bindValue(':id', $id, PDO::PARAM_INT);
-                $exec->bindValue(':login', $this->getLogin());
+                $exec->bindValue(':cpf', $this->getCpf());
                 $exec->bindValue(':senha', $this->getSenha());
                 $exec->bindValue(':nome',$this->getNome());
-                $exec->bindValue(':cpf', $this->getCPF());
-                $exec->bindValue(':email', $this->getEmail());
-                $exec->bindValue(':nivel', $this->getNivel());
-                echo "<script>alert('Usuario atualizado com sucesso!!');window.location ='../../view/usuario/Cadastrar.php';</script>";
+                $exec->bindValue(':idade', $this->getIdade());
+                $exec->bindValue(':genero', $this->getGenero());
+                $exec->bindValue(':funcao', $this->getFuncao());
+                $exec->bindValue(':tipoDeFunc', $this->getTipoDeFunc());
+                //echo "<script>alert('Funcionario atualizado com sucesso!!');window.location ='../../view/funcionario/Cadastrar.php';</script>";
                 return $exec->execute();
             }catch(PDOException $erro){
                 echo "Erro".$erro->getMessage();
@@ -67,7 +69,7 @@
                 $sql = "DELETE FROM $this->tabela WHERE id = :id";
                 $exec = DB::prepare($sql);
                 $exec->bindValue(':id', $id, PDO::PARAM_INT);
-                echo "<script>alert('Usuario deletado com sucesso!!');window.location ='../../view/usuario/Listar.php';</script>";
+                echo "<script>alert('Funcionario deletado com sucesso!!');window.location ='../../view/funcionario/Listar.php';</script>";
 
                 return $exec->execute();
                 
@@ -75,41 +77,16 @@
                 echo $erro->getMessage();
             }
         }
-        public function autenticar($cpf,$senha){
-           try{
-                $sql = "SELECT id,nome,cpf,senha FROM $this->tabela 
-                WHERE cpf = :cpf AND senha = :senha";
-                $exec = DB::prepare($sql);
-                $exec->bindParam(':cpf', $cpf);
-                $exec->bindParam(':senha', $senha);
-                $exec->execute();
-                $users = $exec->fetchAll(PDO::FETCH_ASSOC);
-                if(count($users) <= 0){
-                echo "<script>alert('Erro ao logar');</script>";
-                }else{
-                    $user = $users[0];
-                    session_start();
-                    $_SESSION['logado'] = true;
-                    $_SESSION['user_id'] = $user['id'];
-                    $_SESSION['user_name'] = $user['nome'];  
-                    echo "<script>alert('Logado com sucesso!');window.location ='../../view/usuario/Cadastrar.php';</script>";
-                    
-                }
-           }catch(PDOException $erro){
-               echo $erro->getMessage();
-               echo "ERRO NO LOGIN ";
-           }
-        }
-        function listarUsuarios(){
-            $resultado = "SELECT * FROM usuario ORDER BY id ASC";
+        function listarFuncionarios(){
+            $resultado = "SELECT * FROM funcionario ORDER BY id ASC";
             $resultado = DB::prepare($resultado);
             $resultado->execute();
             while($dados = $resultado->fetch(PDO::FETCH_ASSOC)){
                 $result[] = array(
                     'id' => $dados['id'],
                     'nome' => $dados['nome'],
-                    'email' => $dados['email'],
-                    'login' => $dados['login']
+                    'cpf' => $dados['cpf'],
+                    'idade' => $dados['idade']
                 );
             }
 
