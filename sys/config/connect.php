@@ -5,7 +5,7 @@
     define('BASE','sys');
 
     try{
-        $conecta = new PDO('mysql:host=' . HOST . ';dbname=' . BASE . ';' , USER, PASS);
+        $conecta = new PDO('mysql:host=' . HOST .';dbname=' . BASE . ';' , USER, PASS);
     }catch(PDOException $e){
         echo 'Connection failed: ' . $e->getMessage();
     }
@@ -27,10 +27,8 @@
             
             return self::$instancia;
         }
-
         public static function prepare($sql){
             return self::getInstancia()->prepare($sql);
         }
-
     }
 ?>
