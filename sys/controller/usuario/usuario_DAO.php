@@ -27,7 +27,7 @@
                     if(count($users) <= 0){
                         echo "<script>alert('Erro ao logar');</script>";
                     }else{
-                        echo "<script>alert('Logado com sucesso!');window.location ='../../view/funcionario/Cadastrar.php';</script>";
+                        echo "<script>alert('Logado com sucesso!');window.location ='../../view/menu.php';</script>";
                     }
                 }else{
                     $user = $users[0];
@@ -35,7 +35,7 @@
                     $_SESSION['logado'] = true;
                     $_SESSION['user_id'] = $user['id'];
                     $_SESSION['user_name'] = $user['nome'];  
-                    echo "<script>alert('Logado com sucesso!');window.location ='../../view/funcionario/Cadastrar.php';</script>";
+                    echo "<script>alert('Logado com sucesso!');window.location ='../../view/menu.php';</script>";
                     
                 }
            }catch(PDOException $erro){

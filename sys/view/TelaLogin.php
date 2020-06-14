@@ -11,18 +11,18 @@
 
       <title>Login</title>
    </head>
-   <body id="logo-login">
+   <body class="page-login">
          <span class="logo"></span>
          <div id="login-form">
-            <form class="form-login" method="POST" action="../controller/usuario/usuario_controller.php">
+            <form method="POST" action="../controller/usuario/usuario_controller.php">
                <h1>LOGIN</h1>
-               <div >
-                  <span><i></i></span>
-                  <input class="field" type="text" id="cpf" name="cpf"placeholder="Digite seu cpf..." required autofocus>
+               <div class="field">
+                  <label for="cpf">CPF</label>
+                  <input type="text" id="cpf" name="cpf"placeholder="Digite seu cpf..." required autofocus>
                </div>
-               <div >
-                  <span ><i></i></span>
-                  <input  class="field" type="password" id="Password" name="senha" placeholder="Digite sua senha..." required>
+               <div class="field">
+               <label for="senha">SENHA</label>
+                  <input type="password" id="Password" name="senha" placeholder="Digite sua senha..." required>
                </div>
                <div>
                   <input type="hidden" id="acao" name="acao" value="autenticar">
