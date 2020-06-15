@@ -1,15 +1,28 @@
-<link rel="stylesheet" href="../../sys/view/estilos/header.css">
-<input type="checkbox" id="bt_menu">
-<label for="bt_menu">&#9776;</label>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
     <nav>
-    <ul class="menu">
-            <li><a href="#">Home</a></li>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <img class="logo" src="../assets/img/logo.png" alt="">
+        <ul class="menu">
+            <li><a class="active" href="#">Home</a></li>
             <li><a href="#">Cadastros</a>
-                <ul class="submenu">
-                    <li><a href="#">paciente</a></li>
-                    <li><a href="#">funcionário</a></li>
+                <ul class="sub-menu">
+                    <li><a href="">Paciente</a></li>
+                    <li><a href="">Funcionário</a></li>
                 </ul>
             </li>
-    </ul>
+        </ul>
     </nav>
+</body>
+</html>
 
