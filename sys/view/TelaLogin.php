@@ -12,6 +12,7 @@
       <title>Login</title>
    </head>
    <body class="page-login">
+         <?php include_once("menu.php"); ?>
          <span class="logo"></span>
          <div id="login-form">
             <form method="POST" action="../controller/usuario/usuario_controller.php">
