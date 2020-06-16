@@ -25,7 +25,7 @@
                     $users = $exec->fetchAll(PDO::FETCH_ASSOC);
 
                     if(count($users) <= 0){
-                        echo "<script>alert('Erro ao logar');</script>";
+                        echo "<script>alert('Erro ao logar');window.location ='../../view/TelaLogin.php';</script>";
                     }else{
                         echo "<script>alert('Logado com sucesso!');window.location ='../../view/menu.php';</script>";
                     }

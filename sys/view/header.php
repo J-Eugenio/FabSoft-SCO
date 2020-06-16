@@ -17,8 +17,8 @@
             <li><a class="active" href="#">Home</a></li>
             <li><a href="#">Cadastros</a>
                 <ul class="sub-menu">
-                    <li><a href="">Paciente</a></li>
-                    <li><a href="">Funcionário</a></li>
+                    <li><a href="/FabSoft-SCO/sys/view/paciente/Cadastrar.php">Paciente</a></li>
+                    <li><a href="/FabSoft-SCO/sys/view/funcionario/Cadastrar.php">Funcionário</a></li>
                 </ul>
             </li>
         </ul>

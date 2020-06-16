@@ -27,10 +27,10 @@
                 echo $erro->getMessage();
             }
         }
-        public function insert($cpf, $senha, $nome, $idade, $sexo, $escolaridade, $email,$telefone,$numeroCadSus,$unidadeDeSaude,$dataDiagnostico,$bairro,$logradouro,$pontoDeReferencia,$zona,$hospitalDeTratamento){
+        public function insert($cpf, $senha, $nome, $DataNasc, $idade, $sexo, $escolaridade, $email,$telefone,$numeroCardSUS,$unidadeDeSaude,$dataDiagnostico,$bairro,$logradouro,$pontoDeReferencia,$zona,$hospitalDeTratamento){
             try{
-                $sql = "INSERT INTO $this->tabela(cpf, senha, nome, dataNasc,idade, sexo, escolaridade, email, telefone, numeroCadSus, UnidadeDeSaude, dataDiagnostico, bairro, logradouro, pontoDeReferencia, zona, hospitalDeTratamento)
-                VALUES (:cpf, :senha, :nome, :dataNasc,:idade, :sexo, :escolaridade, :email, :telefone, :numeroCardSus, :unidadeDeSaude, :dataDiagnosto, :bairro, :logradouro, :pontoDeReferencia, :zona, :hospitalDeTratamento)";
+                $sql = "INSERT INTO $this->tabela(cpf, senha, nome, dataNasc,idade, sexo, escolaridade, email, telefone, numeroCardSUS, UnidadeDeSaude, dataDiagnostico, bairro, logradouro, pontoDeReferencia, zona, hospitalDeTratamento)
+                VALUES (:cpf, :senha, :nome, :dataNasc,:idade, :sexo, :escolaridade, :email, :telefone, :numeroCardSUS, :unidadeDeSaude, :dataDiagnostico, :bairro, :logradouro, :pontoDeReferencia, :zona, :hospitalDeTratamento)";
                 $exec = DB::prepare($sql);
                 $exec->bindParam(':cpf',$cpf);
                 $exec->bindParam(':senha',$senha);
@@ -41,7 +41,7 @@
                 $exec->bindParam(':escolaridade',$escolaridade);
                 $exec->bindParam(':email',$email);
                 $exec->bindParam(':telefone',$telefone);
-                $exec->bindParam(':numeroCadSus',$numeroCadSus);
+                $exec->bindParam(':numeroCardSUS',$numeroCardSUS);
                 $exec->bindParam(':unidadeDeSaude',$unidadeDeSaude);
                 $exec->bindParam(':dataDiagnostico',$dataDiagnostico);
                 $exec->bindParam(':bairro',$bairro);
@@ -52,7 +52,7 @@
                 return $exec->execute();
                 echo "<script>alert('Paciente cadastrado com sucesso!!');window.location ='../../view/paciente/Cadastrar.php';</script>";
             }catch(PDOException $erro){
-                echo $erro->getMessage();
+               echo "Erro: ".$erro->getMessage();
             }
         }
         public function update($id){

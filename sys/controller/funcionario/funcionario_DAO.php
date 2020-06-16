@@ -38,8 +38,9 @@
                 $exec->bindParam(':genero',$genero);
                 $exec->bindParam(':funcao',$funcao);
                 $exec->bindParam(':tipoDeFunc',$tipoDeFunc);
+				echo "<script>alert('Funcionario cadastrado com sucesso!!');window.location ='../../view/funcionario/Cadastrar.php';</script>";
                 return $exec->execute();
-                echo "<script>alert('Funcionario cadastrado com sucesso!!');window.location ='../../view/funcionario/Cadastrar.php';</script>";
+                
             }catch(PDOException $erro){
                 echo $erro->getMessage();
             }
@@ -57,7 +58,7 @@
                 $exec->bindValue(':genero', $this->getGenero());
                 $exec->bindValue(':funcao', $this->getFuncao());
                 $exec->bindValue(':tipoDeFunc', $this->getTipoDeFunc());
-                //echo "<script>alert('Funcionario atualizado com sucesso!!');window.location ='../../view/funcionario/Cadastrar.php';</script>";
+                echo "<script>alert('Funcionario atualizado com sucesso!!');window.location ='../../view/funcionario/Cadastrar.php';</script>";
                 return $exec->execute();
             }catch(PDOException $erro){
                 echo "Erro".$erro->getMessage();

@@ -66,10 +66,10 @@ switch($acao){
                 $funcClass->getLogradouro(),
                 $funcClass->getPontoDeReferencia(),
                 $funcClass->getZona(),
-                $funcClass->getHospitalDeTratamento(),
+                $funcClass->getHospitalDeTratamento()
             );
         }catch(Exception $e){
-            echo "alo", $e->getMessage();
+            echo $e->getMessage;
         }
     break;
     case 'delete':
