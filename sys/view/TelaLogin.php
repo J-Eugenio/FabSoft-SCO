@@ -14,7 +14,7 @@
    <body class="page-login">
          <span class="logo"></span>
          <div id="login-form">
-            <form method="POST" action="../controller/usuario/usuario_controller.php">
+            <form method="POST" action="../controller/auth/auth_controller.php">
                <h1>LOGIN</h1>
                <div class="field">
                   <label for="cpf">CPF</label>
