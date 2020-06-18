@@ -7,20 +7,21 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../assets/css/login.css">
-  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="/fabsoft-sco/sys/assets/css/cadastrar-usuario.css">
+  <link rel="stylesheet" href="/fabsoft-sco/sys/assets/css/main.css">
 
   <title>Cadastro de Usuário</title>
 
 </head>
 
-<body>
+<body class="user-register">
 
   <?php //nav  
   ?>
 
   <div class="container">
     <form method="POST" action="../../controller/usuario/usuario_controller.php">
+      <h1>Registo de Paciente</h1>
       <div class="form-group">
         <input type="hidden" name="id" value="" />
       </div>
@@ -65,26 +66,33 @@
       <fieldset class="dados-endereco">
         <legend>Endereço</legend>
         <div class="form-group">
-        <label>Logradouro:</label>
-        <input type="text" name="logradouro" class="form-control" placeholder="Informe sua rua, avenida, lote..."/>
+          <label>Logradouro:</label>
+          <input type="text" name="logradouro" class="form-control" placeholder="Informe sua rua, avenida, lote..." />
         </div>
         <div class="form-group">
-        <label>Bairro:</label>
-        <input type="text" name="bairro" class="form-control" placeholder="Informe o bairro em que é localizado..."/>
+          <label>Bairro:</label>
+          <input type="text" name="bairro" class="form-control" placeholder="Informe o bairro em que é localizado..." />
         </div>
         <div class="form-group">
-        <label>Nº:</label>
-        <input type="number" name="numero" class="form-control"/>
+          <label>Nº:</label>
+          <input type="number" name="numero" class="form-control" />
         </div>
         <div class="form-group">
-        <label>Ponto de referência</label>
-        <input type="text" name="referencia" class="form-control" placeholder="Descreva um ponto de referência para localização..."/>
+          <label>Ponto de referência</label>
+          <input type="text" name="referencia" class="form-control" placeholder="Descreva um ponto de referência para localização..." />
         </div>
       </fieldset>
-      <div class="form-group">
-        <label>Email:</label>
-        <input type="email" name="email" class="form-control" placeholder="Informe um email.." />
-      </div>
+      <fieldset class="dados-contato">
+        <legend>Contato</legend>
+        <div class="form-group">
+          <label>Email:</label>
+          <input type="email" name="email" class="form-control" placeholder="Informe um email..." />
+        </div>
+        <div class="form-group">
+          <label>Telefone:</label>
+          <input type="text" name="telefone" class="form-control" placeholder="Informe um telefone válido..." />
+        </div>
+      </fieldset>
 
       <div class="form-group">
         <label>Nível:</label>
