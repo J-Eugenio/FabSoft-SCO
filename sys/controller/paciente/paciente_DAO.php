@@ -49,8 +49,8 @@
                 $exec->bindParam(':pontoDeReferencia',$pontoDeReferencia);
                 $exec->bindParam(':zona',$zona);
                 $exec->bindParam(':hospitalDeTratamento',$hospitalDeTratamento);
-                return $exec->execute();
                 echo "<script>alert('Paciente cadastrado com sucesso!!');window.location ='../../view/paciente/Cadastrar.php';</script>";
+                return $exec->execute();
             }catch(PDOException $erro){
                echo "Erro: ".$erro->getMessage();
             }
@@ -82,7 +82,7 @@
                 $exec->bindValue(':pontoDeReferecia', $this->getPontoDeReferencia());
                 $exec->bindValue(':zona', $this->getZona());
                 $exec->bindValue(':hospitalDeTratamento', $this->getHospitalDeTratamento());
-                //echo "<script>alert('Funcionario atualizado com sucesso!!');window.location ='../../view/funcionario/Cadastrar.php';</script>";
+                echo "<script>alert('Funcionario atualizado com sucesso!!');window.location ='../../view/paciente/Cadastrar.php';</script>";
                 return $exec->execute();
             }catch(PDOException $erro){
                 echo "Erro".$erro->getMessage();
