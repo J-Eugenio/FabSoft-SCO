@@ -1,5 +1,5 @@
 <?php 
-include_once '../../controller/funcionario/funcionario_DAO.php';
+include_once '../../controller/paciente/paciente_DAO.php';
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +15,7 @@ include_once '../../controller/funcionario/funcionario_DAO.php';
    <body>
       <?php //NAV ?>
       <?php 
-         $reser = new funcionario_DAO;
+         $reser = new paciente_DAO;
          $resultado = $reser->listarFuncionarios();
          ?>
       <h1>LISTAGEM DE USUÁRIO</h1>

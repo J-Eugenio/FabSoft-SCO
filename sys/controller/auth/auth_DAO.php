@@ -1,8 +1,8 @@
 <?php
 
-    require_once '../../model/usuario/usuario_class.php';
+    require_once '../../model/auth/auth_class.php';
 
-    class usuario_DAO extends usuario_class{
+    class auth_DAO extends auth_class{
         protected $funcionario = 'funcionario';
         protected $paciente = 'paciente';
         

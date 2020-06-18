@@ -1,8 +1,8 @@
 <?php
 
-    require_once 'usuario_DAO.php';
-    require_once '../../model/usuario/usuario_class.php';
-    $userClass = new usuario_DAO();
+    require_once 'auth_DAO.php';
+    require_once '../../model/auth/auth_class.php';
+    $userClass = new auth_DAO();
     switch($_SERVER['REQUEST_METHOD'])
     {
         case 'GET':  $acao = $_GET['acao']; break;
@@ -15,6 +15,9 @@
 
 switch($acao){
     case 'autenticar':
-        $userClass->autenticar($userClass->getCPF(), $userClass->getSenha());
+        $userClass->autenticar(
+            $userClass->getCPF(), 
+            $userClass->getSenha()
+        );
     break;
 }

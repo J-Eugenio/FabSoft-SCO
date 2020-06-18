@@ -1,7 +1,7 @@
 <?php
 
     require_once '../../config/connect.php';
-    class usuario_class{
+    class auth_class{
         //protected $tabela;
         private $id;
         private $senha;
