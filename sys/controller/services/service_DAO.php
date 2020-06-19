@@ -56,7 +56,7 @@
                 $exec->bindValue(':dataRegistro', $this->getDataRegistro());
                 $exec->bindValue(':horaRegistro', $this->getHoraRegistro());
                 $exec->bindValue(':id_paciente', $this->getId_paciente());
-                echo "<script>alert('Serviço atualizado com sucesso!!');window.location ='../../view/funcionario/Cadastrar.php';</script>";
+                echo "<script>alert('Serviço atualizado com sucesso!!');window.location ='../../view/services/Cadastrar.php';</script>";
                 return $exec->execute();
             }catch(PDOException $erro){
                 echo "Erro".$erro->getMessage();
