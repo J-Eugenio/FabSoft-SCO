@@ -57,8 +57,6 @@ include_once '../../controller/services/service_DAO.php';
                                  <td class="text-center">
                                     <a href="../../controller/services/service_controller.php?acao=delete&id=<?php echo $res['id'] ?>" name="acao" class="btn btn-sm btn-danger excluir-usuario" onClick="remover()">
                                     <span class="fa fa-trash"></span> Excluir</a>
-                                    <a href="Editar.php?id=<?php echo $res['id'] ?>" class="btn btn-sm btn-primary" >
-                                    <span class="fa fa-cogs"></span> Atualizar</a>
                                     </th>
                                     <?php } ?>
                            </tbody>
