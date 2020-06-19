@@ -12,30 +12,35 @@
         $serviceClass->setId($_GET['id']);
     }
     if($acao != "delete"){
-        if(!empty($serviceClass->getService()) || !empty($serviceClass->getIdade()) ||
-           !empty($serviceClass->getSenha())   || !empty($serviceClass->getGenero()) ||
-           !empty($serviceClass->getNome())|| !empty($serviceClass->getFuncao())
-           || !empty($serviceClass->getTipoDeFunc())){
+        if(!empty($serviceClass->getService()) || !empty($serviceClass->getTipoDeSonda()) ||
+           !empty($serviceClass->getSituacao())   || !empty($serviceClass->getDataRegistro()) ||
+           !empty($serviceClass->getHoraRegistro())|| !empty($serviceClass->getId_paciente())
+           ){
             echo "Algum dado vazio";
         }else{
             if($acao == "update"){
                 $serviceClass->setId($_POST['id']);
             }
-            $serviceClass->setCpf($_POST['cpf']);
-            $serviceClass->setSenha($_POST['senha']);
-            $serviceClass->setNome($_POST['nome']);
-            $serviceClass->setIdade($_POST['idade']);
-            $serviceClass->setGenero($_POST['genero']);
-            $serviceClass->setFuncao($_POST['funcao']);
-            $serviceClass->setTipoDeFunc($_POST['tipoDeFunc']);
-
+            $serviceClass->setService($_POST['tipoDeService']);
+            $serviceClass->setTipoDeSonda($_POST['tipoDeSonda']);
+            $serviceClass->setSituacao('Enviado');
+            $serviceClass->setDataRegistro(date('Y-m-d'));
+            $serviceClass->setHoraRegistro(date('H:i:s'));
+            $serviceClass->setId_paciente($_POST['id_paciente']);
         }
     }
 
 switch($acao){
     case 'inserir':
         try{
-            $serviceClass->insert($serviceClass->getCpf(), $serviceClass->getSenha(), $serviceClass->getNome(), $serviceClass->getIdade(), $serviceClass->getGenero(), $serviceClass->getFuncao(), $serviceClass->getTipoDeFunc());
+            $serviceClass->insert(
+                $serviceClass->getService(), 
+                $serviceClass->getTipoDeSonda(), 
+                $serviceClass->getSituacao(), 
+                $serviceClass->getDataRegistro(), 
+                $serviceClass->getHoraRegistro(), 
+                $serviceClass->getId_paciente()
+            );
         }catch(Exception $e){
             echo $e->getMessage();
         }

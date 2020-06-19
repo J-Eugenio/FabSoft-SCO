@@ -8,9 +8,9 @@
         
         public function autenticar($cpf,$senha){
            try{
-                $sqlFunc = "SELECT id,nome,cpf,senha FROM $this->funcionario 
+                $sqlFunc = "SELECT id,nome,cpf,senha,user_type FROM $this->funcionario 
                 WHERE cpf = :cpf AND senha = :senha";
-                $sqlPac = "SELECT id,nome,cpf,senha FROM $this->paciente 
+                $sqlPac = "SELECT id,nome,cpf,senha,user_type FROM $this->paciente 
                 WHERE cpf = :cpf AND senha = :senha";
                 $exec = DB::prepare($sqlFunc);
                 $exec->bindParam(':cpf', $cpf);
@@ -27,6 +27,12 @@
                     if(count($users) <= 0){
                         echo "<script>alert('Erro ao logar');window.location ='../../view/TelaLogin.php';</script>";
                     }else{
+                        $user = $users[0];
+                        session_start();
+                        $_SESSION['logado'] = true;
+                        $_SESSION['user_id'] = $user['id'];
+                        $_SESSION['user_name'] = $user['nome'];  
+                        $_SESSION['user_type'] = $user['user_type'];  
                         echo "<script>alert('Logado com sucesso!');window.location ='../../view/menu.php';</script>";
                     }
                 }else{
@@ -35,6 +41,8 @@
                     $_SESSION['logado'] = true;
                     $_SESSION['user_id'] = $user['id'];
                     $_SESSION['user_name'] = $user['nome'];  
+                    $_SESSION['user_type'] = $user['user_type'];  
+
                     echo "<script>alert('Logado com sucesso!');window.location ='../../view/menu.php';</script>";
                     
                 }

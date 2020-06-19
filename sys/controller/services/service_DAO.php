@@ -1,9 +1,9 @@
 <?php
 
-    require_once '../../model/funcionario/funcionario_class.php';
+    require_once '../../model/services/service_class.php';
 
-    class funcionario_DAO extends funcionario_class{
-        protected $tabela = 'funcionario';
+    class service_DAO extends service_class{
+        protected $tabela = 'services';
         
         public function findUnic($id){
             try{
@@ -26,20 +26,18 @@
                 echo $erro->getMessage();
             }
         }
-        public function insert($cpf, $senha, $nome, $idade, $genero, $funcao, $tipoDeFunc){
+        public function insert($service, $tipoDeSonda, $situacao, $dataRegistro, $horaRegistro, $id_paciente){
             try{
-                $sql = "INSERT INTO $this->tabela(cpf, senha, nome, idade, genero, funcao, tipoDeFunc, user_type)
-             VALUES (:cpf, :senha, :nome, :idade, :genero, :funcao, :tipoDeFunc, :user_type)";
+                $sql = "INSERT INTO $this->tabela(service, tipoDeSonda, situacao, dataRegistro, horaRegistro, id_paciente)
+             VALUES (:service, :tipoDeSonda, :situacao, :dataRegistro, :horaRegistro, :id_paciente)";
                 $exec = DB::prepare($sql);
-                $exec->bindParam(':cpf',$cpf);
-                $exec->bindParam(':senha',$senha);
-                $exec->bindParam(':nome',$nome);
-                $exec->bindParam(':idade',$idade);
-                $exec->bindParam(':genero',$genero);
-                $exec->bindParam(':funcao',$funcao);
-                $exec->bindParam(':tipoDeFunc',$tipoDeFunc);
-                $exec->bindValue(':user_type',1);
-				echo "<script>alert('Funcionario cadastrado com sucesso!!');window.location ='../../view/funcionario/Cadastrar.php';</script>";
+                $exec->bindParam(':service',$service);
+                $exec->bindParam(':tipoDeSonda',$tipoDeSonda);
+                $exec->bindParam(':situacao',$situacao);
+                $exec->bindParam(':dataRegistro',$dataRegistro);
+                $exec->bindParam(':horaRegistro',$horaRegistro);
+                $exec->bindParam(':id_paciente',$id_paciente);
+				echo "<script>alert('Serviço cadastrado com sucesso!!');window.location ='../../view/services/Cadastrar.php';</script>";
                 return $exec->execute();
                 
             }catch(PDOException $erro){
@@ -48,18 +46,17 @@
         }
         public function update($id){
             try{
-                $sql = "UPDATE $this->tabela SET cpf = :cpf, senha = :senha, nome = :nome,
-                idade = :idade, genero = :genero, funcao = :funcao, tipoDeFunc = :tipoDeFunc WHERE id = :id";
+                $sql = "UPDATE $this->tabela SET service = :service, tipoDeSonda = :tipoDeSonda, situacao = :situacao,
+                dataRegistro = :dataRegistro, horaRegistro = :horaRegistro, id_paciente = :id_paciente WHERE id = :id";
                 $exec = DB::prepare($sql);
                 $exec->bindValue(':id', $id, PDO::PARAM_INT);
-                $exec->bindValue(':cpf', $this->getCpf());
-                $exec->bindValue(':senha', $this->getSenha());
-                $exec->bindValue(':nome',$this->getNome());
-                $exec->bindValue(':idade', $this->getIdade());
-                $exec->bindValue(':genero', $this->getGenero());
-                $exec->bindValue(':funcao', $this->getFuncao());
-                $exec->bindValue(':tipoDeFunc', $this->getTipoDeFunc());
-                echo "<script>alert('Funcionario atualizado com sucesso!!');window.location ='../../view/funcionario/Cadastrar.php';</script>";
+                $exec->bindValue(':service', $this->getService());
+                $exec->bindValue(':tipoDeSonda', $this->getTipoDeSonda());
+                $exec->bindValue(':situacao',$this->getSituacao());
+                $exec->bindValue(':dataRegistro', $this->getDataRegistro());
+                $exec->bindValue(':horaRegistro', $this->getHoraRegistro());
+                $exec->bindValue(':id_paciente', $this->getId_paciente());
+                echo "<script>alert('Serviço atualizado com sucesso!!');window.location ='../../view/funcionario/Cadastrar.php';</script>";
                 return $exec->execute();
             }catch(PDOException $erro){
                 echo "Erro".$erro->getMessage();
@@ -71,7 +68,7 @@
                 $sql = "DELETE FROM $this->tabela WHERE id = :id";
                 $exec = DB::prepare($sql);
                 $exec->bindValue(':id', $id, PDO::PARAM_INT);
-                echo "<script>alert('Funcionario deletado com sucesso!!');window.location ='../../view/funcionario/Listar.php';</script>";
+                echo "<script>alert('Serviço deletado com sucesso!!');window.location ='../../view/services/Listar.php';</script>";
 
                 return $exec->execute();
                 
@@ -79,16 +76,18 @@
                 echo $erro->getMessage();
             }
         }
-        function listarFuncionarios(){
-            $resultado = "SELECT * FROM funcionario ORDER BY id ASC";
+        function listarServices(){
+            $resultado = "SELECT * FROM $this->tabela ORDER BY id ASC";
             $resultado = DB::prepare($resultado);
             $resultado->execute();
             while($dados = $resultado->fetch(PDO::FETCH_ASSOC)){
                 $result[] = array(
                     'id' => $dados['id'],
-                    'nome' => $dados['nome'],
-                    'cpf' => $dados['cpf'],
-                    'idade' => $dados['idade']
+                    'service' => $dados['service'],
+                    'tipoDeSonda' => $dados['tipoDeSonda'],
+                    'situacao' => $dados['situacao'],
+                    'dataRegistro' => $dados['dataRegistro'],
+                    'horaRegistro' => $dados['horaRegistro']
                 );
             }
 

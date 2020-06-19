@@ -80,7 +80,7 @@
             }
         }
         function listarFuncionarios(){
-            $resultado = "SELECT * FROM funcionario ORDER BY id ASC";
+            $resultado = "SELECT * FROM $this->tabela ORDER BY id ASC";
             $resultado = DB::prepare($resultado);
             $resultado->execute();
             while($dados = $resultado->fetch(PDO::FETCH_ASSOC)){

@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <?php
+        session_start();
+    ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/header.css">
@@ -14,6 +17,7 @@
         </label>
         <img class="logo" src="../assets/img/logo.png" alt="">
         <ul class="menu">
+            <p><?php //echo $_SESSION['user_type'];?></p>
             <li><a class="active" href="#">Home</a></li>
             <li><a href="#">Cadastros</a>
                 <ul class="sub-menu">
