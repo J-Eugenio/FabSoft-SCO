@@ -66,6 +66,8 @@ CREATE TABLE IF NOT EXISTS `funcionario` (
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 -- --------------------------------------------------------
 
+INSERT INTO `funcionario` (`id`, `cpf`, `senha`, `nome`, `idade`, `genero`, `funcao`, `tipoDeFunc`) VALUES
+(1, '12345678912', 'admin', 'admin', '24', 'M', 'Aux', 'adm');
 --
 -- Estrutura da tabela `editar`
 --
@@ -74,6 +76,7 @@ CREATE TABLE IF NOT EXISTS `services` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `service` varchar(50) NOT NULL,
   `tipoDeSonda` varchar(50),
+  `situacao` varchar(50),
   `dataRegistro` DATE NOT NULL,
   `horaRegistro` TIME NOT NULL,
   `id_paciente` int(11) NOT NULL,
@@ -83,5 +86,4 @@ CREATE TABLE IF NOT EXISTS `services` (
 ALTER TABLE `services`
   ADD CONSTRAINT `FKservices` FOREIGN KEY (`id_paciente`) REFERENCES `paciente` (`id`);
 
-INSERT INTO `funcionario` (`id`, `cpf`, `senha`, `nome`, `idade`, `genero`, `funcao`, `tipoDeFunc`) VALUES
-(1, '12345678912', 'admin', 'admin', '24', 'M', 'Aux', 'adm');
+
