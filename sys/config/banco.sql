@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `paciente` (
   `zona` varchar(50) NOT NULL,
   `hospitalDeTratamento` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 -- --------------------------------------------------------
 
 --
@@ -63,10 +63,25 @@ CREATE TABLE IF NOT EXISTS `funcionario` (
   `funcao` varchar(50) NOT NULL,
   `tipoDeFunc` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+-- --------------------------------------------------------
+
 --
--- Extraindo dados da tabela `usuario`
+-- Estrutura da tabela `editar`
 --
+DROP TABLE IF EXISTS `services`;
+CREATE TABLE IF NOT EXISTS `services` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `service` varchar(50) NOT NULL,
+  `tipoDeSonda` varchar(50),
+  `dataRegistro` DATE NOT NULL,
+  `horaRegistro` TIME NOT NULL,
+  `id_paciente` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+ALTER TABLE `services`
+  ADD CONSTRAINT `FKservices` FOREIGN KEY (`id_paciente`) REFERENCES `paciente` (`id`);
 
 INSERT INTO `funcionario` (`id`, `cpf`, `senha`, `nome`, `idade`, `genero`, `funcao`, `tipoDeFunc`) VALUES
 (1, '12345678912', 'admin', 'admin', '24', 'M', 'Aux', 'adm');
