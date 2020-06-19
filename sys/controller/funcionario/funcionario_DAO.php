@@ -28,8 +28,8 @@
         }
         public function insert($cpf, $senha, $nome, $idade, $genero, $funcao, $tipoDeFunc){
             try{
-                $sql = "INSERT INTO $this->tabela(cpf, senha, nome, idade, genero, funcao, tipoDeFunc)
-             VALUES (:cpf, :senha, :nome, :idade, :genero, :funcao, :tipoDeFunc)";
+                $sql = "INSERT INTO $this->tabela(cpf, senha, nome, idade, genero, funcao, tipoDeFunc, user_type)
+             VALUES (:cpf, :senha, :nome, :idade, :genero, :funcao, :tipoDeFunc, :user_type)";
                 $exec = DB::prepare($sql);
                 $exec->bindParam(':cpf',$cpf);
                 $exec->bindParam(':senha',$senha);
@@ -38,6 +38,7 @@
                 $exec->bindParam(':genero',$genero);
                 $exec->bindParam(':funcao',$funcao);
                 $exec->bindParam(':tipoDeFunc',$tipoDeFunc);
+                $exec->bindValue(':user_type',1);
 				echo "<script>alert('Funcionario cadastrado com sucesso!!');window.location ='../../view/funcionario/Cadastrar.php';</script>";
                 return $exec->execute();
                 

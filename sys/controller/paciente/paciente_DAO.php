@@ -29,8 +29,8 @@
         }
         public function insert($cpf, $senha, $nome, $DataNasc, $idade, $sexo, $escolaridade, $email,$telefone,$numeroCardSUS,$unidadeDeSaude,$dataDiagnostico,$bairro,$logradouro,$pontoDeReferencia,$zona,$hospitalDeTratamento){
             try{
-                $sql = "INSERT INTO $this->tabela(cpf, senha, nome, dataNasc,idade, sexo, escolaridade, email, telefone, numeroCardSUS, UnidadeDeSaude, dataDiagnostico, bairro, logradouro, pontoDeReferencia, zona, hospitalDeTratamento)
-                VALUES (:cpf, :senha, :nome, :dataNasc,:idade, :sexo, :escolaridade, :email, :telefone, :numeroCardSUS, :unidadeDeSaude, :dataDiagnostico, :bairro, :logradouro, :pontoDeReferencia, :zona, :hospitalDeTratamento)";
+                $sql = "INSERT INTO $this->tabela(cpf, senha, nome, dataNasc,idade, sexo, escolaridade, email, telefone, numeroCardSUS, UnidadeDeSaude, dataDiagnostico, bairro, logradouro, pontoDeReferencia, zona, hospitalDeTratamento, user_type)
+                VALUES (:cpf, :senha, :nome, :dataNasc,:idade, :sexo, :escolaridade, :email, :telefone, :numeroCardSUS, :unidadeDeSaude, :dataDiagnostico, :bairro, :logradouro, :pontoDeReferencia, :zona, :hospitalDeTratamento, :user_type)";
                 $exec = DB::prepare($sql);
                 $exec->bindParam(':cpf',$cpf);
                 $exec->bindParam(':senha',$senha);
@@ -49,6 +49,7 @@
                 $exec->bindParam(':pontoDeReferencia',$pontoDeReferencia);
                 $exec->bindParam(':zona',$zona);
                 $exec->bindParam(':hospitalDeTratamento',$hospitalDeTratamento);
+                $exec->bindValue(':user_type',2);
                 echo "<script>alert('Paciente cadastrado com sucesso!!');window.location ='../../view/paciente/Cadastrar.php';</script>";
                 return $exec->execute();
             }catch(PDOException $erro){

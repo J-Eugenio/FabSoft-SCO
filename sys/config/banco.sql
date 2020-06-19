@@ -44,6 +44,7 @@ CREATE TABLE IF NOT EXISTS `paciente` (
   `pontoDeReferencia` varchar(50) NOT NULL,
   `zona` varchar(50) NOT NULL,
   `hospitalDeTratamento` varchar(50) NOT NULL,
+  `user_type` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 -- --------------------------------------------------------
@@ -62,12 +63,13 @@ CREATE TABLE IF NOT EXISTS `funcionario` (
   `genero` varchar(50) NOT NULL,
   `funcao` varchar(50) NOT NULL,
   `tipoDeFunc` varchar(50) NOT NULL,
+  `user_type` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 -- --------------------------------------------------------
 
-INSERT INTO `funcionario` (`id`, `cpf`, `senha`, `nome`, `idade`, `genero`, `funcao`, `tipoDeFunc`) VALUES
-(1, '12345678912', 'admin', 'admin', '24', 'M', 'Aux', 'adm');
+INSERT INTO `funcionario` (`id`, `cpf`, `senha`, `nome`, `idade`, `genero`, `funcao`, `tipoDeFunc`, `user_type`) VALUES
+(1, '12345678912', 'admin', 'admin', '24', 'M', 'Aux', 'adm', 1);
 --
 -- Estrutura da tabela `editar`
 --
