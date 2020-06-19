@@ -2,7 +2,10 @@
 <html lang="pt-br">
 <head>
     <?php
-        session_start();
+        include_once("session.php");
+        if(isAuth()){
+         header('location: TelaLogin.php');
+        }
     ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
