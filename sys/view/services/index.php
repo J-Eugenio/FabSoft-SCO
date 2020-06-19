@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Script do select do serviços -->
-  <script src="services.js"></script>
+  <script src="select_service.js"></script>
   <!-- ---------------------------- -->
 
   <title>sys</title>
@@ -30,7 +30,7 @@
         </select>
       </div>
       <div id="typeSonda">
-        <div class="form-group">
+        <div class="form-group" id="tipoSonda">
             <label>Tipo de Sonda: </label>
             <select class="form-control" name="tipoDeSonda" id="tipoDeSonda">
             <option>Selecione o tipo de sonda...</option>
