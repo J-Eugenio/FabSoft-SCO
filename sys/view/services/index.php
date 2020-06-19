@@ -2,6 +2,7 @@
 <html lang="pt-br">
 
 <head>
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="../../css/styleMenu.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <meta charset="utf-8">
@@ -28,13 +29,15 @@
           <option value="Sonda">Sonda</option>
         </select>
       </div>
-      <div class="form-group">
-        <label>Tipo de Sonda: </label>
-        <select class="form-control" name="tipoDeSonda" id="tipoDeSonda">
-          <option>Selecione o tipo de sonda...</option>
-          <option value="Vesical">Vesical</option>
-          <option value="Nasogastica">Nasogástrica</option>
-        </select>
+      <div id="typeSonda">
+        <div class="form-group">
+            <label>Tipo de Sonda: </label>
+            <select class="form-control" name="tipoDeSonda" id="tipoDeSonda">
+            <option>Selecione o tipo de sonda...</option>
+            <option value="Vesical">Vesical</option>
+            <option value="Nasogastica">Nasogástrica</option>
+            </select>
+        </div>
       </div>
       <div class="form-group">
         <input type="hidden" name="acao" class="form-control" value="inserir"/>

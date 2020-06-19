@@ -1,6 +1,9 @@
 $(document).ready(function(){
+    $('#typeSonda').children('div').hide();
     $('#tipoDeService').on('change', function(){
         var selectValor = $(this).val();
-        alert(selectValor);
+        if(selectValor == "Sonda"){
+            $('#typeSonda').children('div').show();
+        }   
     });
 });
