@@ -2,97 +2,120 @@
 <html lang="pt-br">
 
 <head>
-  <link rel="stylesheet" href="../../css/styleMenu.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>Cadastro Paciente</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/fabsoft-sco/sys/assets/css/cadastrar-usuario.css">
+  <link rel="stylesheet" href="/fabsoft-sco/sys/assets/css/main.css">
+
+  <title>Cadastro de Pacientes</title>
+
 </head>
 
-<body>
+<body class="user-register">
 
-  <?php //nav  ?>
+  <?php
+  include_once("../menu.php");
+  ?>
 
-  <div class="container">
-    <form method="POST" action="../../controller/paciente/paciente_controller.php">
+  <div id="main-container">
+    <h1>Cadastre um paciente</h1>
+    <form id="paciente-register" method="POST" action="../../controller/usuario/usuario_controller.php">
+
       <div class="form-group">
         <input type="hidden" name="id" value="" />
-        <label>Cpf: </label>
-        <input type="text" name="cpf" class="form-control" placeholder="Informe seu cpf...">
       </div>
-      <div class="form-group">
-        <label>Senha: </label>
-        <input type="text" name="senha" class="form-control" placeholder="Informe a senha.."/>
+
+      <div class="half-box spacing">
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" class="form-control" placeholder="Informe o nome do paciente..." />
       </div>
-      <div class="form-group">
-        <label>Nome: </label>
-        <input type="text" name="nome" class="form-control" placeholder="Informe um nome.." />
+
+      <div class="half-box">
+        <label for="sobrenome">Sobrenome:</label>
+        <input type="text" name="sobrenome" class="form-control" placeholder="Informe o nome do paciente..." />
       </div>
-      <div class="form-group">
-        <label>Data de Nascimento: </label>
-        <input type="text" name="dataNasc" class="form-control" placeholder="Informe sua Data de Nascimento..."/>
+
+      <div class="half-box spacing">
+        <label for="cpf">CPF:</label>
+        <input type="text" name="cpf" class="form-control" placeholder="Digite o CPF no formato nnn.nnn.nnn-nn" />
       </div>
-      <div class="form-group">
-        <label>Idade: </label>
-        <input type="text" name="idade" class="form-control" placeholder="Informe sua idade..."/>
+      <div class="half-box">
+        <label for="senha">Senha:</label>
+        <input type="password" name="senha" class="form-control" placeholder="Informe uma senha de acesso..." />
       </div>
-      <div class="form-group">
-        <label>Sexo: </label>
-        <input type="text" name="sexo" class="form-control" placeholder="Informe seu sexo"  />
+      <div class="half-box spacing">
+        <label for="sus">Número de Cartão do SUS:</label>
+        <input type="text" name="sus" class="form-control" placeholder="Insira um número válido..." />
       </div>
-      <div class="form-group">
-        <label>Escolaridade: </label>
-        <input type="text" name="escolaridade" class="form-control" placeholder="Informe seu nível de escolaridade"  />
+      <div class="half-box">
+        <label for="data-de-nascimento">Data de Nascimento:</label>
+        <input type="date" name="data-de-nascimento" class="form-control" />
       </div>
-      <div class="form-group">
-        <label>Email: </label>
-        <input type="text" name="email" class="form-control" placeholder="Informe seu email"  />
+      <div class="half-box spacing">
+        <label for="sexo">Sexo:</label>
+        <select name="sexo" id="sexo">
+          <option value="masculino">Masculino</option>
+          <option value="feminino">Feminino</option>
+        </select>
       </div>
-      <div class="form-group">
-        <label>telefone: </label>
-        <input type="text" name="telefone" class="form-control" placeholder="Informe seu telefone"  />
+      <div class="half-box">
+        <label for="escolaridade">Escolaridade</label>
+        <select name="escolaridade" id="escolaridade">
+          <option value="sem-escolaridade">Sem Escolaridade</option>
+          <option value="ensino-fundamental">Ensino Fundamental Completo</option>
+          <option value="ensino-medio">Ensino Médio Completo</option>
+          <option value="ensino-superior">Ensino Superior Completo</option>
+        </select>
       </div>
-      <div class="form-group">
-        <label>Número do CadSus: </label>
-        <input type="text" name="numeroCadSus" class="form-control" placeholder="Informe seu CadSus"  />
+
+      <div class="full-box">
+        <label for="logradouro">Logradouro:</label>
+        <input type="text" name="logradouro" class="form-control" placeholder="Informe sua rua, avenida, lote..." />
       </div>
-      <div class="form-group">
-        <label>Unidade de saude: </label>
-        <input type="text" name="unidadeDeSaude" class="form-control" placeholder="Informe sua unidade de saude"  />
+      <div class="half-box spacing">
+        <label for="bairro">Bairro:</label>
+        <input type="text" name="bairro" class="form-control" placeholder="Informe o bairro em que é localizado..." />
       </div>
-      <div class="form-group">
-        <label>Data do diagnostico: </label>
-        <input type="text" name="dataDiagnostico" class="form-control" placeholder="Informe a data do seu diagnostico"  />
+      <div class="half-box">
+        <label for="numero">Nº:</label>
+        <input type="number" name="numero" class="form-control" />
       </div>
-      <div class="form-group">
-        <label>Bairro: </label>
-        <input type="text" name="bairro" class="form-control" placeholder="Informe seu Bairro"  />
+      <div class="half-box spacing">
+        <label for="referencia">Ponto de referência</label>
+        <input type="text" name="referencia" class="form-control" placeholder="Descreva um ponto de referência para localização..." />
       </div>
-      <div class="form-group">
-        <label>Logradouro: </label>
-        <input type="text" name="logradouro" class="form-control" placeholder="Informe seu logradouro"  />
+
+      <div class="half-box">
+        <label for="email">Email:</label>
+        <input type="email" name="email" class="form-control" placeholder="Informe um email..." />
       </div>
-      <div class="form-group">
-        <label>ponto de referencia: </label>
-        <input type="text" name="pontoDeReferencia" class="form-control" placeholder="Informe um ponto de referencia"  />
+      <div class="half-box spacing">
+        <label for="telefone">Telefone:</label>
+        <input type="text" name="telefone" class="form-control" placeholder="Informe um telefone válido..." />
       </div>
-      <div class="form-group">
-        <label>Zona: </label>
-        <input type="text" name="zona" class="form-control" placeholder="Informe sua zona"  />
+
+
+      <div class="half-box">
+        <label for="nivel">Nível:</label>
+        <select class="form-control" name="nivel" id="nivel">
+          <option>Selecione o nivel de acesso...</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>
       </div>
-      <div class="form-group">
-        <label>Hospital de tratamento: </label>
-        <input type="text" name="hospitalDeTratamento" class="form-control" placeholder="Informe o seu hospital de tratamento"  />
-      </div>
-      <div class="form-group">
-        <input type="hidden" name="acao" class="form-control" value="inserir"/>
+      <div class="full-box">
+        <input type="hidden" name="acao" class="form-control" value="inserir" />
       </div>
       <button type="submit" class="btn btn-success"><span class="fa fa-check"></span> Salvar</button>
       <button type="reset" class="btn btn-warning"><span class="fa fa-close"></span> Limpar</button>
-      <a href="Listar.php" class="btn btn-info" >Pesquisar</a>
+      <a href="Listar.php" class="btn brn-info">Pesquisar</a>
     </form>
   </div>
+  <p class="error-validation template"></p>
+  <script src="/fabsoft-sco/sys/assets/javascript/scripts.js"></script>
 </body>
 
 </html>
