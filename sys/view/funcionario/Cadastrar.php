@@ -2,55 +2,71 @@
 <html lang="pt-br">
 
 <head>
-  <link rel="stylesheet" href="../../css/styleMenu.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>sys</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/fabsoft-sco/sys/assets/css/cadastrar-usuario.css">
+  <link rel="stylesheet" href="/fabsoft-sco/sys/assets/css/main.css">
+
+  <title>Cadastro de Funcionários</title>
+
 </head>
 
-<body>
+<body class="func-register">
 
-  <?php //nav  ?>
+  <?php include_once("../header.php");?>
 
-  <div class="container">
-    <form method="POST" action="../../controller/funcionario/funcionario_controller.php">
-      <div class="form-group">
+  <div id="main-container">
+    <h1>Cadastro de Funcionários</h1>
+    <form id="form-register" method="POST" action="../../controller/funcionario/funcionario_controller.php">
+
+      <div class="full-box">
         <input type="hidden" name="id" value="" />
-        <label>Cpf: </label>
-        <input type="text" name="cpf" class="form-control" placeholder="Informe seu cpf...">
       </div>
-      <div class="form-group">
-        <label>Senha: </label>
-        <input type="password" name="senha" class="form-control" placeholder="Informe a senha.."/>
+      
+      <div class="half-box spacing">
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" class="form-control" placeholder="Informe o nome do paciente..." />
       </div>
-      <div class="form-group">
-        <label>Nome: </label>
-        <input type="text" name="nome" class="form-control" placeholder="Informe um nome.." />
+
+      <div class="half-box">
+        <label for="sobrenome">Sobrenome:</label>
+        <input type="text" name="sobrenome" class="form-control" placeholder="Informe o nome do paciente..." />
       </div>
-      <div class="form-group">
-        <label>Idade: </label>
-        <input type="text" name="idade" class="form-control" placeholder="Informe sua idade..."/>
+      <div class="half-box spacing">
+        <label for="cpf">CPF:</label>
+        <input type="text" name="cpf" class="form-control" placeholder="Digite o CPF no formato nnn.nnn.nnn-nn" />
       </div>
-      <div class="form-group">
-        <label>Genero: </label>
-        <input type="text" name="genero" class="form-control" placeholder="Informe seu genero"  />
+      <div class="half-box">
+        <label for="senha">Senha:</label>
+        <input type="password" name="senha" class="form-control" placeholder="Informe uma senha de acesso..." />
       </div>
-      <div class="form-group">
+      <div class="half-box spacing">
+        <label for="data-de-nascimento">Data de Nascimento:</label>
+        <input type="date" name="data-de-nascimento" class="form-control" />
+      </div>
+      <div class="half-box">
+        <label for="sexo">Sexo:</label>
+        <select name="sexo" id="sexo">
+          <option value="masculino">Masculino</option>
+          <option value="feminino">Feminino</option>
+        </select>
+      </div>
+      <div class="half-box spacing">
         <label>Função: </label>
         <input type="text" name="funcao" class="form-control" placeholder="Informe sua função"  />
       </div>
-      <div class="form-group">
-        <label>Tipo de Função: </label>
-        <select class="form-control" name="tipoDeFunc" id="tipoDeFunc">
-          <option>Selecione o tipo da função...</option>
-          <option value="secretariaDeSaude">Secretaria de saude</option>
-          <option value="Coordenador">Coordenador</option>
-          <option value="enfermeiro">Enfermeiro</option>
+      <div class="half-box">
+        <label for="tipoDeFunc">Tipo de Função</label>
+        <select name="tipoDeFunc" id="tipoDeFunc">
+          <option value="sem-escolaridade">Secretaria de Saúde</option>
+          <option value="ensino-fundamental">Coodenadoria de Atenção Básica</option>
+          <option value="ensino-medio">Enfermagem</option>
         </select>
       </div>
-      <div class="form-group">
+      <div class="full-box">
         <input type="hidden" name="acao" class="form-control" value="inserir"/>
       </div>
       <button type="submit" class="btn btn-success"><span class="fa fa-check"></span> Salvar</button>

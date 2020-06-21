@@ -17,11 +17,11 @@ input:focus, label:focus{
     outline: none;
 }
 
-.user-register.a{
+body a{
 color: #377ED7;
 }
 
-.user-register{
+body{
     padding-top: 5vh;
     background-color: #377ED7!important;
 }
