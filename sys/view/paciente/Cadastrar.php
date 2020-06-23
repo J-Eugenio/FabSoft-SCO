@@ -7,7 +7,7 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/fabsoft-sco/sys/assets/css/cadastrar-usuario.css">
+  <link rel="stylesheet" href="/fabsoft-sco/sys/assets/css/formularios.css">
   <link rel="stylesheet" href="/fabsoft-sco/sys/assets/css/main.css">
 
   <title>Cadastro de Pacientes</title>
