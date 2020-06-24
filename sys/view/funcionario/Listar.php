@@ -43,6 +43,7 @@ include_once '../../controller/funcionario/funcionario_DAO.php';
                            <tbody>
                               <?php
                                  foreach($resultado as $res){
+                                    if($res != null){
                                  ?>  
                               <tr class="row100 body">
                                  <td class="cell100 column1"> <?php echo $res['nome'] ?> </th>
@@ -54,7 +55,7 @@ include_once '../../controller/funcionario/funcionario_DAO.php';
                                     <a href="Editar.php?id=<?php echo $res['id'] ?>" class="btn btn-sm btn-primary" >
                                     <span class="fa fa-cogs"></span> Atualizar</a>
                                     </th>
-                                    <?php } ?>
+                                    <?php }} ?>
                            </tbody>
                         </table>
                      </div>
