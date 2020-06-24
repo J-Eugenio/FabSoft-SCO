@@ -12,7 +12,7 @@
         $funcClass->setId($_GET['id']);
     }
     if($acao != "delete"){
-        if(!empty($funcClass->getCpf()) || !empty($funcClass->getIdade()) ||
+        if(!empty($funcClass->getCpf())  ||
            !empty($funcClass->getSenha())   || !empty($funcClass->getGenero()) ||
            !empty($funcClass->getNome())|| !empty($funcClass->getFuncao())
            || !empty($funcClass->getTipoDeFunc())){
@@ -24,8 +24,7 @@
             $funcClass->setCpf($_POST['cpf']);
             $funcClass->setSenha($_POST['senha']);
             $funcClass->setNome($_POST['nome']);
-            $funcClass->setIdade($_POST['idade']);
-            $funcClass->setGenero($_POST['genero']);
+            $funcClass->setGenero($_POST['sexo']);
             $funcClass->setFuncao($_POST['funcao']);
             $funcClass->setTipoDeFunc($_POST['tipoDeFunc']);
 
@@ -35,7 +34,7 @@
 switch($acao){
     case 'inserir':
         try{
-            $funcClass->insert($funcClass->getCpf(), $funcClass->getSenha(), $funcClass->getNome(), $funcClass->getIdade(), $funcClass->getGenero(), $funcClass->getFuncao(), $funcClass->getTipoDeFunc());
+            $funcClass->insert($funcClass->getCpf(), $funcClass->getSenha(), $funcClass->getNome(), $funcClass->getGenero(), $funcClass->getFuncao(), $funcClass->getTipoDeFunc());
         }catch(Exception $e){
             echo $e->getMessage();
         }
