@@ -46,6 +46,7 @@ include_once '../../controller/services/service_DAO.php';
                            <tbody>
                               <?php
                                  foreach($resultado as $res){
+                                    if($res != null){
                                  ?>  
                               <tr class="row100 body">
                                  <td class="cell100 column1"> <?php echo $res['id'] ?> </th>
@@ -58,7 +59,7 @@ include_once '../../controller/services/service_DAO.php';
                                     <a href="../../controller/services/service_controller.php?acao=delete&id=<?php echo $res['id'] ?>" name="acao" class="btn btn-sm btn-danger excluir-usuario" onClick="remover()">
                                     <span class="fa fa-trash"></span> Excluir</a>
                                     </th>
-                                    <?php } ?>
+                                    <?php }} ?>
                            </tbody>
                         </table>
                      </div>
