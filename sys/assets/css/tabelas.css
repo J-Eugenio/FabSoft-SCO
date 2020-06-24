@@ -1,0 +1,98 @@
+table tbody tr td button{
+    display: inline-block;
+    padding: 10px 15px;
+    transform: translate(0);
+    width: auto;
+}
+
+table tbody tr td button{
+    background: #377ED7;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(34, 34, 34, 34);
+    color: #FFFFFF;
+    font-weight: 700;;
+    padding: 10px 0;
+    width: 50%;
+}
+
+table thead{
+    display: table-header-group;
+    font-weight: 500;
+}
+
+table tbody tr td{
+    display: table-cell;
+    font-weight: 400;
+    padding: 10px;
+    text-align: left;
+    position: relative;
+}
+
+table tbody tr{
+    border: none;
+    display: table-row;
+}
+
+table tbody tr:nth-child(odd){
+    background: #f2f2f2;
+}
+
+table tbody tr td button{
+    display: inline-block;
+    padding: 15px 15px;
+    position: initial;
+    transform: translate(0);
+    width: auto;
+}
+
+table tbody tr td button{
+    background: #377ED7;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(34, 34, 34, 0.2);
+    color: #FFFFFF;
+    font-weight: 700;;
+    padding: 10px 0;
+    width: 50%;
+}
+
+table thead{
+    display: table-header-group;
+    font-weight: 500;
+}
+
+table tbody tr td:before{
+    display: none;
+}
+
+table tbody tr td button:hover, table tbody tr td button:focus{
+    background: #208799;
+    cursor: pointer;
+}
+
+@media all and (max-width: 800px){
+    table tbody tr td{
+        display: block;
+        text-align: right;
+    }
+
+    table{
+        border: none;
+    }
+
+    table thead{
+        display: none;
+    }
+
+
+    table tbody tr{
+        margin-bottom: 10px;
+        display: block;
+        border: 1px solid #dad6eb;
+    }
+
+    table tbody tr td button{
+        width: 100%;
+    }
+}
