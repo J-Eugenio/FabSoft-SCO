@@ -26,6 +26,7 @@
                 <ul class="sub-menu">
                     <li><a href="/FabSoft-SCO/sys/view/paciente/Cadastrar.php">Paciente</a></li>
                     <li><a href="/FabSoft-SCO/sys/view/funcionario/Cadastrar.php">Funcionário</a></li>
+                    <li><a href="/FabSoft-SCO/sys/view/services/Cadastrar.php">Serviços</a></li>
                 </ul>
             </li>
         </ul>

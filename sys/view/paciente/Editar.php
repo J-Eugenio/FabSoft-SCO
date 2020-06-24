@@ -66,7 +66,7 @@ $id =  filter_input(INPUT_GET,'id', FILTER_SANITIZE_NUMBER_INT);//captura o ID p
         <input type="hidden" name="acao" class="form-control" value="update"/>
         <input type="hidden" name="id" class="form-control" value="<?php echo $id?>"/>
       </div>
-      <div class="half-box  spacing">
+      <div id="main-container">
         <button type="submit" class="btn btn-success"><span class="fa fa-check"></span> Salvar</button>
         <button type="reset" class="btn btn-warning"><span class="fa fa-close"></span> Limpar</button>
       </div>
