@@ -22,7 +22,7 @@
 
   <div id="main-container">
     <h1>Cadastre um paciente</h1>
-    <form id="form-register" method="POST" action="../../controller/usuario/usuario_controller.php">
+    <form id="form-register" method="POST" action="../../controller/paciente/paciente_controller.php">
 
       <div class="full-box">
         <input type="hidden" name="id" value="" />

@@ -77,6 +77,7 @@
             }
         }
         function listarServices(){
+            $result[] = 0;
             $resultado = "SELECT * FROM $this->tabela ORDER BY id ASC";
             $resultado = DB::prepare($resultado);
             $resultado->execute();
