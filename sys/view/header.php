@@ -7,9 +7,12 @@
          header('location: TelaLogin.php');
         }
     ?>
-    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/fabsoft-sco/sys/assets/css/formularios.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="/FabSoft-SCO/sys/assets/css/header.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
@@ -18,7 +21,7 @@
         <label for="check" class="checkbtn">
             <i class="fas fa-bars"></i>
         </label>
-        <img class="logo" src="../assets/img/logo.png" alt="">
+        <img class="logo" src="/FabSoft-SCO/sys/assets/img/logo.png" alt="">
         <ul class="menu">
             <p><?php //echo $_SESSION['user_type'];?></p>
             <li><a class="active" href="#">Home</a></li>
@@ -31,6 +34,5 @@
             </li>
         </ul>
     </nav>
-</body>
-</html>
+
 
