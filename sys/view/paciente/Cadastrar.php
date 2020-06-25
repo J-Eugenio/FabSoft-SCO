@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/fabsoft-sco/sys/assets/css/formularios.css">
-    <link rel="stylesheet" href="/fabsoft-sco/sys/assets/css/main.css">
-    <title>Cadastro de Pacientes</title>
-  </head>
-  <body class="user-register">
+
     <?php
       include_once("../header.php");
       ?>
@@ -100,5 +90,6 @@
     </div>
     <p class="error-validation template"></p>
     <script src="/fabsoft-sco/sys/assets/javascript/scripts.js"></script>
-  </body>
-</html>
+    <?php
+      include_once("../footer.php");
+      ?>
