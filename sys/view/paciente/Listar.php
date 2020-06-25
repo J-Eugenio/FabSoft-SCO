@@ -25,42 +25,37 @@ include_once '../../controller/paciente/paciente_DAO.php';
                <div class="panel-heading">
                   Tabela de reservas
                </div>
+               
                <div class="form-group" style="margin: 8px 10px;">
-                  <div class="table100 ver1 m-b-110">
-                     <div class="table100-head">
-                        <table>
-                           <thead>
-                              <tr class="row100 head">
-                                 <th class="cell100 column1">Nome</th>
-                                 <th class="cell100 column2">Cpf</th>
-                                 <th class="cell100 column3">Idade</th>
-                              </tr>
-                           </thead>
-                        </table>
-                     </div>
-                     <div class="table100-body js-pscroll">
-                        <table>
-                           <tbody>
-                              <?php
-                                 foreach($resultado as $res){
-                                    if($res != null){
-                                 ?>  
-                              <tr class="row100 body">
-                                 <td class="cell100 column1"> <?php echo $res['nome'] ?> </th>
-                                 <td class="cell100 column2"> <?php echo $res['cpf'] ?> </th>
-                                 <td class="cell100 column3"> <?php echo $res['idade'] ?> </th>
-                                 <td class="text-center">
-                                    <a href="../../controller/funcionario/funcionario_controller.php?acao=delete&id=<?php echo $res['id'] ?>" name="acao" class="btn btn-sm btn-danger excluir-usuario" onClick="remover()">
-                                    <span class="fa fa-trash"></span> Excluir</a>
-                                    <a href="Editar.php?id=<?php echo $res['id'] ?>" class="btn btn-sm btn-primary" >
-                                    <span class="fa fa-cogs"></span> Atualizar</a>
-                                    </th>
-                                    <?php }} ?>
-                           </tbody>
-                        </table>
-                     </div>
-                  </div>
+                  <table class="table">
+                     <thead class="thead-dark">
+                        <tr>
+                           <th scope="col">#</th>
+                           <th scope="col">Nome</th>
+                           <th scope="col">Cpf</th>
+                           <th scope="col">Idade</th>
+                           <th scope="col">*</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <?php
+                           foreach($resultado as $res){
+                              if($res != null){
+                           ?> 
+                        <tr>
+                           <th scope="row"><?php echo $res['id'] ?></th>
+                           <td><?php echo $res['nome'] ?> </td>
+                           <td><?php echo $res['cpf'] ?></td>
+                           <td><?php echo $res['dataNasc'] ?></td>
+                           <td><a href="../../controller/paciente/paciente_controller.php?acao=delete&id=<?php echo $res['id'] ?>" name="acao" class="btn btn-sm btn-danger excluir-usuario" onClick="remover()">
+                           <button type="button" class="btn btn-danger">Escluir</button></a>
+                           </td>
+                        </tr>
+                        <?php }} ?>         
+                     </tbody>
+                  </table>
                </div>
+               
             </div>
          </div>
       </div>

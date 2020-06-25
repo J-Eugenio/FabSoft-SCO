@@ -113,7 +113,7 @@
                     'id' => $dados['id'],
                     'nome' => $dados['nome'],
                     'cpf' => $dados['cpf'],
-                    'idade' => $dados['idade']
+                    'dataNasc' => $dados['dataNasc']
                 );
             }
 

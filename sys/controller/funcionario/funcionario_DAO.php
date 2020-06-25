@@ -87,7 +87,7 @@
                     'id' => $dados['id'],
                     'nome' => $dados['nome'],
                     'cpf' => $dados['cpf'],
-                    'idade' => $dados['idade']
+                    'tipoDeFunc' => $dados['tipoDeFunc']
                 );
             }
 
