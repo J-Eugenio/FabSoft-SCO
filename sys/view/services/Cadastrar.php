@@ -1,9 +1,14 @@
 <?php
- include_once "../header.php"
+  include_once '../../controller/services/service_DAO.php';
+  include_once "../header.php";
 ?>
   <div id="main-container">
+  <?php 
+         $reser = new service_DAO;
+         $resultado = $reser->listarServices();
+  ?>
   <!-- Script do select do serviços -->
-    <script src="select_service.js"></script>
+    
   <!-- ---------------------------- -->
     <form method="POST" action="../../controller/services/service_controller.php">
       <div class="half-box spacing">
@@ -34,7 +39,49 @@
       <a href="Listar.php" class="btn btn-info">Pesquisar</a>
       </div>
     </form>
-  </div>
+    <div class="row justify-content-center ">
+         <div class="col-auto">
+            <div class="panel panel-primary table-ajustes">
+               <div class="panel-heading">
+                  Tabela de Serviços
+               </div>
+               <div class="form-group" style="margin: 8px 10px;">
+                  <table class="table table-responsive">
+                     <thead class="thead-dark">
+                        <tr>
+                           <th scope="col">#</th>
+                           <th scope="col">Serviço</th>
+                           <th scope="col">Tipo de Sonda</th>
+                           <th scope="col">Situação</th>
+                           <th scope="col">Data</th>
+                           <th scope="col">Hora</th>
+                           <th scope="col">*</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <?php
+                           foreach($resultado as $res){
+                              if($res != null){
+                           ?> 
+                        <tr>
+                           <th scope="row"><?php echo $res['id'] ?></th>
+                           <td><?php echo $res['service'] ?> </td>
+                           <td><?php echo $res['tipoDeSonda'] ?></td>
+                           <td><?php echo $res['situacao'] ?></td>
+                           <td><?php echo $res['dataRegistro'] ?></td>
+                           <td><?php echo $res['horaRegistro'] ?></td>
+                           <td><a href="../../controller/services/service_controller.php?acao=delete&id=<?php echo $res['id'] ?>" name="acao" class="btn btn-sm btn-danger excluir-usuario" onClick="remover()">
+                              <span class="fa fa-trash"></span> Excluir</a>
+                           </td>
+                        </tr>
+                        <?php }} ?>         
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </div>
+</div> 
 <?php
  include_once "../footer.php"
 ?>

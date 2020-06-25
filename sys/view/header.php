@@ -11,11 +11,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/fabsoft-sco/sys/assets/css/formularios.css">
     <link rel="stylesheet" href="/FabSoft-SCO/sys/assets/css/header.css">
     <link rel="stylesheet" href="/fabsoft-sco/sys/assets/css/main.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="/fabsoft-sco/sys/view/services/select_service.js"></script>
 </head>
 <body>
     <nav>

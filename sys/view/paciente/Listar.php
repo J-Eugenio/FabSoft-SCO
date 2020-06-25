@@ -6,15 +6,16 @@
   $reser = new paciente_DAO;
   $resultado = $reser->listarFuncionarios();
   ?>
-<h1>LISTAGEM DE USUÁRIO</h1>
-<div class="row"> <!-- Essa Div Seria o body-->
-  <div class="col-md-6">
+
+<div class="row justify-content-center"> <!-- Essa Div Seria o body-->
+
+  <div class="col-auto">
     <div class="panel panel-primary table-ajustes">
       <div class="panel-heading">
-        Tabela de reservas
+      <h1>LISTAGEM DE USUÁRIO</h1>
       </div>
       <div class="form-group" style="margin: 8px 10px;">
-        <table class="table">
+        <table class="table ">
           <thead class="thead-dark">
             <tr>
               <th scope="col">#</th>
