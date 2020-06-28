@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/fabsoft-sco/sys/assets/css/formularios.css">
     <link rel="stylesheet" href="/FabSoft-SCO/sys/assets/css/header.css">
     <link rel="stylesheet" href="/fabsoft-sco/sys/assets/css/main.css">
+    <link rel="stylesheet" href="/fabsoft-sco/sys/assets/css/listar.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="/fabsoft-sco/sys/view/services/select_service.js"></script>
 </head>

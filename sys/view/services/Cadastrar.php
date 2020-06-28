@@ -34,16 +34,16 @@
         <input type="hidden" name="id_paciente" class="form-control" value="<?php echo $_SESSION['user_id'];?>"/>
       </div>
       <div id="main-container"></div>
-      <button type="submit" class="btn btn-success"><span class="fa fa-check"></span> Salvar</button>
-      <button type="reset" class="btn btn-warning"><span class="fa fa-close"></span> Limpar</button>
-      <a href="Listar.php" class="btn btn-info">Pesquisar</a>
+      <button type="submit" class="btn btn-success"> Salvar</button>
+      <button type="reset" class="btn btn-warning"> Limpar</button>
+      <a href="Listar.php"><button type="button" class="btn btn-info"><img src="/fabsoft-sco/sys/assets/img/search.svg" alt="Pesquisar"></button></a>
       </div>
     </form>
     <div class="row justify-content-center ">
          <div class="col-auto">
             <div class="panel panel-primary table-ajustes">
                <div class="panel-heading">
-                  Tabela de Serviços
+                  <h3>Tabela de Serviços</h3>
                </div>
                <div class="form-group" style="margin: 8px 10px;">
                   <table class="table table-responsive">

@@ -69,9 +69,9 @@
       <div class="full-box">
         <input type="hidden" name="acao" class="form-control" value="inserir"/>
       </div>
-      <button type="submit" class="btn btn-success"><span class="fa fa-check"></span> Salvar</button>
-      <button type="reset" class="btn btn-warning"><span class="fa fa-close"></span> Limpar</button>
-      <a href="Listar.php" class="btn btn-info" >Pesquisar</a>
+      <button type="submit" class="btn btn-success"> Salvar</button>
+      <button type="reset" class="btn btn-warning"> Limpar</button>
+      <a href="Listar.php"><button type="button" class="btn btn-info"><img src="/fabsoft-sco/sys/assets/img/search.svg" alt="Pesquisar"></button></a>
     </form>
   </div>
 </body>

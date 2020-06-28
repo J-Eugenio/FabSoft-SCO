@@ -35,7 +35,7 @@
               <td><?php echo $res['nome'] ?> </td>
               <td><?php echo $res['cpf'] ?></td>
               <td><?php echo $res['tipoDeFunc'] ?></td>
-              <td><a href="../../controller/paciente/paciente_controller.php?acao=delete&id=<?php echo $res['id'] ?>" name="acao" class="btn btn-sm btn-danger excluir-usuario" onClick="remover()">
+              <td><a href="../../controller/paciente/paciente_controller.php?acao=delete&id=<?php echo $res['id'] ?>" name="acao" class="btn btn-sm excluir-usuario" onClick="remover()">
                 <button type="button" class="btn btn-danger">Excluir</button></a>
               </td>
             </tr>
