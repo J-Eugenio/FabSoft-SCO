@@ -26,11 +26,11 @@
         </div>
         <div class="half-box spacing">
           <label for="sus">Número de Cartão do SUS:</label>
-          <input type="text" name="sus" class="form-control" placeholder="Insira um número válido..." />
+          <input type="text" name="numeroCadSus" class="form-control" placeholder="Insira um número válido..." />
         </div>
         <div class="half-box">
           <label for="data-de-nascimento">Data de Nascimento:</label>
-          <input type="date" name="data-de-nascimento" class="form-control" />
+          <input type="date" name="dataNasc" class="form-control" />
         </div>
         <div class="half-box spacing">
           <label for="sexo">Sexo:</label>
@@ -60,9 +60,27 @@
           <label for="numero">Nº:</label>
           <input type="number" name="numero" class="form-control" />
         </div>
+
+        <div class="half-box spacing">
+          <label for="bairro">Unidade de Saúde:</label>
+          <input type="text" name="unidadeDeSaude" class="form-control"  />
+        </div>
+        <div class="half-box">
+          <label for="numero">Data de Diagnostico:</label>
+          <input type="text" name="dataDiagnostico" class="form-control" />
+        </div>
+        <div class="half-box spacing">
+          <label for="bairro">Zona:</label>
+          <input type="text" name="zona" class="form-control"  />
+        </div>
+        <div class="half-box">
+          <label for="numero">Hospital de Tratamento:</label>
+          <input type="text" name="hospitalDeTratamento" class="form-control" />
+        </div>
+
         <div class="half-box spacing">
           <label for="referencia">Ponto de referência</label>
-          <input type="text" name="referencia" class="form-control" placeholder="Descreva um ponto de referência para localização..." />
+          <input type="text" name="pontoDeReferencia" class="form-control" placeholder="Descreva um ponto de referência para localização..." />
         </div>
         <div class="half-box">
           <label for="email">Email:</label>

@@ -1,22 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="/fabsoft-sco/sys/assets/css/formularios.css">
-  <link rel="stylesheet" href="/fabsoft-sco/sys/assets/css/main.css">
-
-  <title>Cadastro de Funcionários</title>
-
-</head>
-
-<body class="func-register">
-
-  <?php include_once("../header.php");?>
+ <?php include_once("../header.php");?>
 
   <div id="main-container">
     <h1>Cadastro de Funcionários</h1>
@@ -74,6 +56,5 @@
       <a href="Listar.php"><button type="button" class="btn btn-info"><img src="/fabsoft-sco/sys/assets/img/search.svg" alt="Pesquisar"></button></a>
     </form>
   </div>
-</body>
 
-</html>
+  <?php include_once("../footer.php");?>

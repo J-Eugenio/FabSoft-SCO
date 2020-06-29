@@ -6,7 +6,7 @@
         private $senha;
         private $nome; 
         private $dataNasc;
-        private $idade;
+        private $sobrenome;
         private $sexo;
         private $escolaridade;
         private $email;
@@ -60,12 +60,12 @@
             $this->dataNasc = $dataNasc;
         }
     
-        public function getIdade(){
-            return $this->idade;
+        public function getSobrenome(){
+            return $this->sobrenome;
         }
     
-        public function setIdade($idade){
-            $this->idade = $idade;
+        public function setSobrenome($sobrenome){
+            $this->sobrenome = $sobrenome;
         }
     
         public function getSexo(){

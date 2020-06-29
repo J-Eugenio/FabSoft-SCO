@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `paciente` (
   `senha` varchar(50) NOT NULL,
   `nome` varchar(50) NOT NULL,
   `dataNasc` varchar(50) NOT NULL,
-  `idade` varchar(50) NOT NULL,
+  `sobrenome` varchar(50) NOT NULL,
   `sexo` varchar(50) NOT NULL,
   `escolaridade` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,

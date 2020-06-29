@@ -18,7 +18,8 @@
                 try{
                     self::$instancia = new PDO('mysql:host='.HOST.';dbname='.BASE,USER,PASS);
                     self::$instancia->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                    self::$instancia->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);                  
+                    self::$instancia->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);  
+                    self::$instancia->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);              
                 }catch(PDOException $erro){
                     echo $erro->getMessage(); 
                     echo "Erro na instancia da conexao";                 

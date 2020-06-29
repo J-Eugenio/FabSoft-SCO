@@ -17,11 +17,8 @@ input:focus, label:focus{
     outline: none;
 }
 
-body a{
-color: #377ED7;
-}
 table{
-    background-color: #ffffff!important;
+    background-color: #fff!important;
     border-radius: 10px;
 }
 body{
@@ -30,13 +27,16 @@ body{
 
 /*form*/
 #main-container{
+    display: flex;
+    flex-direction: column;
     width: 1000px;
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
-    background-color: #e7e5e5;
+    background-color: #fff;
     border-radius: 10px;
     padding: 25px;
+
 }
 
 #main-container h1{
@@ -120,4 +120,10 @@ button{
 
 .template{
     display: none;
+}
+
+.div-services{
+    flex-direction: row;
+    justify-items: center;
+    align-content: center;
 }

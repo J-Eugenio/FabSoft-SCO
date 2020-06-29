@@ -11,7 +11,7 @@ html{
     font-family: 'Roboto', 'sans-serif';
 }
 body{
-    background: #f0f0f5;
+    background: #fff;
     -webkit-font-smoothing: antialiased;
 }
 a{
@@ -36,10 +36,31 @@ html{
 body{
     -webkit-font-smoothing:antialiased;
 }
-a{
-    text-decoration: none;
-}
-h1, h2, h3, h4, h5, h6{
+
+h1, h2, h3, h5, h6{
     font-family: Ubuntu, sans-serif;
     color:var(--title-color)
+}
+
+a:hover{
+    border-bottom: 2px solid white;
+    border-radius: 5px;
+}
+
+.bem-vindo{
+    font-family: Ubuntu, sans-serif;
+    color:white;
+    margin-right: 5px;
+    text-align: center;
+}
+
+.logout{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    
+}
+
+#icon{
+    color: white
 }

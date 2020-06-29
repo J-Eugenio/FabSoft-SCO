@@ -4,8 +4,8 @@
 <head>
     <?php
         include_once("session.php");
-        if(isAuth()){
-         header('location: TelaLogin.php');
+        if(!isAuth()){
+            header('location: TelaLogin.php');
         }
     ?>
     <meta charset="utf-8">
@@ -24,34 +24,50 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-
+        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/fabsoft-sco/sys/assets/css/formularios.css">
+    <link rel="stylesheet" href="/fabsoft-sco/sys/assets/css/main.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="/fabsoft-sco/sys/view/services/select_service.js"></script>
 
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <div class="jumbotron">
+    <div class="container mb-5">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+            <spam class="navbar-brand" href="/FabSoft-SCO/sys/view/menu.php">
+            <img src="/FabSoft-SCO/sys/assets/img/logo.png" width="70" height="70" alt="">    
+            </spam>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="navbar-brand mb-0" href="/FabSoft-SCO/sys/view/menu.php">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="navbar-brand mb-0" href="/FabSoft-SCO/sys/view/funcionario/Cadastrar.php">Funcionário</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="navbar-brand mb-0" href="/FabSoft-SCO/sys/view/paciente/Cadastrar.php">Paciente</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="navbar-brand mb-0" href="/FabSoft-SCO/sys/view/services/Cadastrar.php">Serviços</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="text-right center">
+                <h4 class="bem-vindo">Bem vindo</h4>
+                <div class="logout">
+                    <h5 class="bem-vindo"><?php echo $_SESSION['user_name']?></h5>
+                    <a href="/fabsoft-sco/sys/view/logout.php" type="button" name="log-out" class="btn btn-danger lg">
+                        <i  class="fa fa-reply-all" title="Edit"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div>

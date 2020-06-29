@@ -24,7 +24,8 @@ $resultado = $reser->listarFuncionarios();
                   <th scope="col">Nome</th>
                   <th scope="col">Cpf</th>
                   <th scope="col">Idade</th>
-                  <th scope="col">*</th>
+                  <th scope="col"></th>
+                  <th scope="col"></th>
                 </tr>
               </thead>
               <tbody>
@@ -32,15 +33,23 @@ $resultado = $reser->listarFuncionarios();
                 foreach ($resultado as $res) {
                   if ($res != null) {
                 ?>
-                    <tr>
-                      <th scope="row"><?php echo $res['id'] ?></th>
-                      <td><?php echo $res['nome'] ?> </td>
-                      <td><?php echo $res['cpf'] ?></td>
-                      <td><?php echo $res['dataNasc'] ?></td>
-                      <td><a href="../../controller/paciente/paciente_controller.php?acao=delete&id=<?php echo $res['id'] ?>" name="acao" class="btn btn-sm btn-danger excluir-usuario" onClick="remover()">
-                          <button type="button" class="btn btn-danger">Escluir</button></a>
-                      </td>
-                    </tr>
+                <tr>
+                  <th scope="row"><?php echo $res['id'] ?></th>
+                  <td><?php echo $res['nome'] ?> </td>
+                  <td><?php echo $res['cpf'] ?></td>
+                  <td><?php echo $res['dataNasc'] ?></td>
+                  <td>
+                    <a href="../../controller/paciente/paciente_controller.php?acao=delete&id=<?php echo $res['id'] ?>"
+                      name="acao" class="btn btn-danger btn-lg" onClick="remover()">
+                      <span class="fa fa-cogs"></span>Excluir
+                    </a>
+                  </td>
+                  <td>
+                    <a href="Editar.php?id=<?php echo $res['id'] ?>" class="btn btn-primary btn-lg">
+                      <span class="fa fa-trash"></span> Atualizar
+                    </a>
+                  </td>
+                </tr>
                 <?php }
                 } ?>
               </tbody>
