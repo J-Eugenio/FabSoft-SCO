@@ -54,4 +54,4 @@
             </ul>
         </div>
     </nav>
-    <div class="jumbotron jumbotron-fluid">
+    <div class="jumbotron">
