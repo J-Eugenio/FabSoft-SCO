@@ -68,7 +68,7 @@
                 $sql = "DELETE FROM $this->tabela WHERE id = :id";
                 $exec = DB::prepare($sql);
                 $exec->bindValue(':id', $id, PDO::PARAM_INT);
-                echo "<script>alert('Serviço deletado com sucesso!!');window.location ='../../view/services/Listar.php';</script>";
+                echo "<script>alert('Serviço deletado com sucesso!!');window.location ='../../view/services/Cadastrar.php';</script>";
 
                 return $exec->execute();
                 
@@ -88,7 +88,8 @@
                     'tipoDeSonda' => $dados['tipoDeSonda'],
                     'situacao' => $dados['situacao'],
                     'dataRegistro' => $dados['dataRegistro'],
-                    'horaRegistro' => $dados['horaRegistro']
+                    'horaRegistro' => $dados['horaRegistro'],
+                    'id_paciente' => $dados['id_paciente']
                 );
             }
 

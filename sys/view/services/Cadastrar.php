@@ -28,10 +28,8 @@
             </div>
          </div>
          <div class="half-box d-flex justify-content-center">
-         <button type="submit" class="btn btn-success"> Salvar</button>
-         <button type="reset" class="btn btn-warning"> Limpar</button>
-         <a href="Listar.php"><button type="button" class="btn btn-info"><img src="/fabsoft-sco/sys/assets/img/search.svg"
-            alt="Pesquisar"></button></a>
+         <button type="submit" class="btn btn-success btn-lg m-2"> Salvar</button>
+         <button type="reset" class="btn btn-warning btn-lg m-2"> Limpar</button>
          </div>
       </div>
 </div>
@@ -62,7 +60,8 @@
                <tbody>
                   <?php
                      foreach($resultado as $res){
-                        if($res != null){
+                        if($_SESSION['user_type'] != 1 && $res != null){
+                        if($_SESSION['user_id'] == $res['id_paciente']){
                      ?>
                   <tr>
                      <th scope="row"><?php echo $res['id'] ?></th>
@@ -72,7 +71,20 @@
                      <td><?php echo $res['dataRegistro'] ?></td>
                      <td><?php echo $res['horaRegistro'] ?></td>
                      <td><a href="../../controller/services/service_controller.php?acao=delete&id=<?php echo $res['id'] ?>"
-                        name="acao" class="btn btn-sm btn-danger excluir-usuario" onClick="remover()">
+                        name="acao" class="btn btn-sm btn-danger excluir-usuario btn-lg" onClick="remover()">
+                        <span class="fa fa-trash"></span> Excluir</a>
+                     </td>
+                  </tr>
+                  <?php }} else if($res != null){ ;?>
+                     <tr>
+                     <th scope="row"><?php echo $res['id'] ?></th>
+                     <td><?php echo $res['service'] ?> </td>
+                     <td><?php echo $res['tipoDeSonda'] ?></td>
+                     <td><?php echo $res['situacao'] ?></td>
+                     <td><?php echo $res['dataRegistro'] ?></td>
+                     <td><?php echo $res['horaRegistro'] ?></td>
+                     <td><a href="../../controller/services/service_controller.php?acao=delete&id=<?php echo $res['id'] ?>"
+                        name="acao" class="btn btn-sm btn-danger excluir-usuario btn-lg" onClick="remover()">
                         <span class="fa fa-trash"></span> Excluir</a>
                      </td>
                   </tr>
@@ -84,6 +96,4 @@
    </div>
 </div>
 </div>
-<?php
-   include_once "../footer.php"
-   ?>
+<?php include_once "../footer.php"; ?>

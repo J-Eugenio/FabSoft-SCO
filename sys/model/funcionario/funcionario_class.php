@@ -6,6 +6,7 @@
         private $cpf;
         private $senha;
         private $nome; 
+        private $sobrenome; 
         private $genero;
         private $funcao;
         private $tipoDeFunc;
@@ -41,6 +42,16 @@
         public function setNome($nome){
             $this->nome = $nome;
         }
+
+
+        public function getSobrenome(){
+            return $this->sobrenome;
+        }
+    
+        public function setSobrenome($sobrenome){
+            $this->sobrenome = $sobrenome;
+        }
+
     
         public function getGenero(){
             return $this->genero;

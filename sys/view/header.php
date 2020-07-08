@@ -25,7 +25,7 @@
 
 </head>
 
-<body>
+<body class="header">
     <div class="container mb-5">
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
             <spam class="navbar-brand" href="/FabSoft-SCO/sys/view/menu.php">
@@ -61,4 +61,4 @@
             </div>
         </nav>
     </div>
-    <div>
+<div id="main-container">

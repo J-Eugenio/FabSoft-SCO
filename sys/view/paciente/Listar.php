@@ -60,4 +60,6 @@ $resultado = $reser->listarFuncionarios();
     </div>
   </div>
 </div>
+</div>
+
 <?php include_once "../footer.php"; ?>

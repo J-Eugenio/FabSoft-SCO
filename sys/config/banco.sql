@@ -59,7 +59,8 @@ CREATE TABLE IF NOT EXISTS `funcionario` (
   `cpf` varchar(50) NOT NULL,
   `senha` varchar(50) NOT NULL,
   `nome` varchar(50) NOT NULL,
-  `idade` varchar(50) NOT NULL,
+  `sobrenome` varchar(50) NOT NULL,
+  `dataNasc` varchar(50) NOT NULL,
   `genero` varchar(50) NOT NULL,
   `funcao` varchar(50) NOT NULL,
   `tipoDeFunc` varchar(50) NOT NULL,
@@ -68,8 +69,6 @@ CREATE TABLE IF NOT EXISTS `funcionario` (
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 -- --------------------------------------------------------
 
-INSERT INTO `funcionario` (`id`, `cpf`, `senha`, `nome`, `idade`, `genero`, `funcao`, `tipoDeFunc`, `user_type`) VALUES
-(1, '12345678912', 'admin', 'admin', '24', 'M', 'Aux', 'adm', 1);
 --
 -- Estrutura da tabela `editar`
 --

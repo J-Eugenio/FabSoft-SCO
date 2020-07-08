@@ -32,7 +32,7 @@
             $paciClass->setEscolaridade($_POST['escolaridade']);
             $paciClass->setEmail($_POST['email']);
             $paciClass->setTelefone($_POST['telefone']);
-            $paciClass->setNumeroCardSUS($_POST['numeroCardSus']);
+            $paciClass->setNumeroCardSUS($_POST['numeroCadSus']);
             $paciClass->setUnidadeDeSaude($_POST['unidadeDeSaude']);
             $paciClass->setDataDiagnostico($_POST['dataDiagnostico']);
             $paciClass->setBairro($_POST['bairro']);

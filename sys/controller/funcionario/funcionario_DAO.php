@@ -26,14 +26,15 @@
                 echo $erro->getMessage();
             }
         }
-        public function insert($cpf, $senha, $nome, $genero, $funcao, $tipoDeFunc){
+        public function insert($cpf, $senha, $nome, $sobrenome, $genero, $funcao, $tipoDeFunc){
             try{
-                $sql = "INSERT INTO $this->tabela(cpf, senha, nome, genero, funcao, tipoDeFunc, user_type)
-             VALUES (:cpf, :senha, :nome, :genero, :funcao, :tipoDeFunc, :user_type)";
+                $sql = "INSERT INTO $this->tabela(cpf, senha, nome, sobrenome, genero, funcao, tipoDeFunc, user_type)
+             VALUES (:cpf, :senha, :nome, :sobrenome, :genero, :funcao, :tipoDeFunc, :user_type)";
                 $exec = DB::prepare($sql);
                 $exec->bindParam(':cpf',$cpf);
                 $exec->bindParam(':senha',$senha);
                 $exec->bindParam(':nome',$nome);
+                $exec->bindParam(':sobrenome',$sobrenome);
                 $exec->bindParam(':genero',$genero);
                 $exec->bindParam(':funcao',$funcao);
                 $exec->bindParam(':tipoDeFunc',$tipoDeFunc);
@@ -47,13 +48,14 @@
         }
         public function update($id){
             try{
-                $sql = "UPDATE $this->tabela SET cpf = :cpf, senha = :senha, nome = :nome
+                $sql = "UPDATE $this->tabela SET cpf = :cpf, senha = :senha, nome = :nome, sobrenome = :sobrenome
                 , genero = :genero, funcao = :funcao, tipoDeFunc = :tipoDeFunc WHERE id = :id";
                 $exec = DB::prepare($sql);
                 $exec->bindValue(':id', $id, PDO::PARAM_INT);
                 $exec->bindValue(':cpf', $this->getCpf());
                 $exec->bindValue(':senha', $this->getSenha());
                 $exec->bindValue(':nome',$this->getNome());
+                $exec->bindValue(':sobrenome',$this->getSobrenome());
                 $exec->bindValue(':genero', $this->getGenero());
                 $exec->bindValue(':funcao', $this->getFuncao());
                 $exec->bindValue(':tipoDeFunc', $this->getTipoDeFunc());

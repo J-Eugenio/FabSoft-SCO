@@ -1,3 +1,5 @@
+
+</div>
 <footer class="page-footer">
     <div class="container">
         <div class="row">
@@ -20,7 +22,6 @@
         <div class="footer-copyright">
             <p>&copy; 2020 Todos os direitos reservados</p>
         </div>
-
 </footer>
 </body>
 
