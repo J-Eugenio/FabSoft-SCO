@@ -1,0 +1,17 @@
+
+  .page-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #377ED7;
+    height: 300px;
+  }
+
+  .footer-copyright{
+      display: inline;
+  }
+
+
+  h5, p, a, li{
+      color: white;
+  }
