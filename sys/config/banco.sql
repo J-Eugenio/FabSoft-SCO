@@ -81,6 +81,7 @@ CREATE TABLE IF NOT EXISTS `services` (
   `dataRegistro` DATE NOT NULL,
   `horaRegistro` TIME NOT NULL,
   `id_paciente` int(11) NOT NULL,
+  `user_type` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 

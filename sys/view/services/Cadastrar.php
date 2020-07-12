@@ -12,7 +12,6 @@
          <div class="half-box">
             <label>Serviço: </label>
             <select class="form-control" name="tipoDeService" id="tipoDeService">
-               <option>Selecione o tipo um serviço...</option>
                <option value="Curativo">Curativo</option>
                <option value="Sonda">Sonda</option>
             </select>
@@ -36,6 +35,8 @@
 <div class="half-box">
 <input type="hidden" name="acao" class="form-control" value="inserir" />
 <input type="hidden" name="id_paciente" class="form-control" value="<?php echo $_SESSION['user_id'];?>" />
+<input type="hidden" name="user_type" class="form-control" value="<?php echo $_SESSION['user_type'];?>" />
+
 </div>
 </form>
 <div class="row justify-content-center ">
@@ -61,7 +62,7 @@
                   <?php
                      foreach($resultado as $res){
                         if($_SESSION['user_type'] != 1 && $res != null){
-                        if($_SESSION['user_id'] == $res['id_paciente']){
+                        if($_SESSION['user_id'] == $res['id_paciente'] && $res['user_type'] != 1){
                      ?>
                   <tr>
                      <th scope="row"><?php echo $res['id'] ?></th>

@@ -15,9 +15,6 @@
 
 switch($acao){
     case 'autenticar':
-        $userClass->autenticar(
-            $userClass->getCPF(), 
-            $userClass->getSenha()
-        );
+        $userClass->autenticar();
     break;
 }

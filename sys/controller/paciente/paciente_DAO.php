@@ -27,36 +27,36 @@
                 echo $erro->getMessage();
             }
         }
-        public function insert($cpf, $senha, $nome, $DataNasc, $sobrenome, $sexo, $escolaridade, $email,$telefone,$numeroCardSUS,$unidadeDeSaude,$dataDiagnostico,$bairro,$logradouro,$pontoDeReferencia,$zona,$hospitalDeTratamento){
+        public function insert(){
             try{
                 $sql = "INSERT INTO $this->tabela(cpf, senha, nome, dataNasc, sobrenome, sexo, escolaridade, email, telefone, numeroCardSUS, UnidadeDeSaude, dataDiagnostico, bairro, logradouro, pontoDeReferencia, zona, hospitalDeTratamento, user_type)
                 VALUES (:cpf, :senha, :nome, :dataNasc, :sobrenome,:sexo, :escolaridade, :email, :telefone, :numeroCardSUS, :unidadeDeSaude, :dataDiagnostico, :bairro, :logradouro, :pontoDeReferencia, :zona, :hospitalDeTratamento, :user_type)";
                 $exec = DB::prepare($sql);
-                $exec->bindParam(':cpf',$cpf);
-                $exec->bindParam(':senha',$senha);
-                $exec->bindParam(':nome',$nome);
-                $exec->bindParam(':dataNasc',$DataNasc);
-                $exec->bindParam(':sobrenome',$sobrenome);
-                $exec->bindParam(':sexo',$sexo);
-                $exec->bindParam(':escolaridade',$escolaridade);
-                $exec->bindParam(':email',$email);
-                $exec->bindParam(':telefone',$telefone);
-                $exec->bindParam(':numeroCardSUS',$numeroCardSUS);
-                $exec->bindParam(':unidadeDeSaude',$unidadeDeSaude);
-                $exec->bindParam(':dataDiagnostico',$dataDiagnostico);
-                $exec->bindParam(':bairro',$bairro);
-                $exec->bindParam(':logradouro',$logradouro);
-                $exec->bindParam(':pontoDeReferencia',$pontoDeReferencia);
-                $exec->bindParam(':zona',$zona);
-                $exec->bindParam(':hospitalDeTratamento',$hospitalDeTratamento);
+                $exec->bindValue(':cpf',getCpf());
+                $exec->bindValue(':senha',getSenha());
+                $exec->bindValue(':nome',getNome());
+                $exec->bindValue(':dataNasc',getDataNasc());
+                $exec->bindValue(':sobrenome',getSobrenome());
+                $exec->bindValue(':sexo',getSexo());
+                $exec->bindValue(':escolaridade',getEscolaridade());
+                $exec->bindValue(':email',getEmail());
+                $exec->bindValue(':telefone',getTelefone());
+                $exec->bindValue(':numeroCardSUS',getNumeroCardSus());
+                $exec->bindValue(':unidadeDeSaude',getUnidadeDeSaude());
+                $exec->bindValue(':dataDiagnostico',getDataDiagnostico());
+                $exec->bindValue(':bairro',getBairro());
+                $exec->bindValue(':logradouro',getLogradouro());
+                $exec->bindValue(':pontoDeReferencia',getPontoDeReferencia());
+                $exec->bindValue(':zona',getZona());
+                $exec->bindValue(':hospitalDeTratamento',getHospitalDeTratamento());
                 $exec->bindValue(':user_type',2);
-                echo "<script>alert('Paciente cadastrado com sucesso!!');window.location ='../../view/paciente/Cadastrar.php';</script>";
+                echo "<script>window.location ='../../view/paciente/Cadastrar.php';</script>";
                 return $exec->execute();
             }catch(PDOException $erro){
                echo "Erro: ".$erro->getMessage();
             }
         }
-        public function update($id){
+        public function update(){
             try{
                 $sql = "UPDATE $this->tabela SET 
                 cpf = :cpf, 
@@ -78,7 +78,7 @@
                 hospitalDeTratamento= :hospitalDeTratamento
                 WHERE id = :id";
                 $exec = DB::prepare($sql);
-                $exec->bindParam(':id', $id, PDO::PARAM_INT);
+                $exec->bindValue(':id', $this->getId(), PDO::PARAM_INT);
                 $exec->bindValue(':cpf', $this->getCpf());
                 $exec->bindValue(':senha', $this->getSenha());
                 $exec->bindValue(':nome',$this->getNome());
@@ -96,20 +96,19 @@
                 $exec->bindValue(':pontoDeReferencia', $this->getPontoDeReferencia());
                 $exec->bindValue(':zona', $this->getZona());
                 $exec->bindValue(':hospitalDeTratamento', $this->getHospitalDeTratamento());
-                echo "<script>alert('Funcionario atualizado com sucesso!!');window.location ='../../view/paciente/Cadastrar.php';</script>";
+                echo "<script>window.location ='../../view/paciente/Cadastrar.php';</script>";
                 return $exec->execute();
             }catch(PDOException $erro){
                 echo "Erro ".$erro->getMessage();
-                //var_dump($exec = DB::prepare($sql));
             }
 
         }
-        public function delete($id){
+        public function delete(){
             try{
                 $sql = "DELETE FROM $this->tabela WHERE id = :id";
                 $exec = DB::prepare($sql);
-                $exec->bindValue(':id', $id, PDO::PARAM_INT);
-                echo "<script>alert('Paciente deletado com sucesso!!');window.location ='../../view/paciente/Listar.php';</script>";
+                $exec->bindValue(':id', $this->getId(), PDO::PARAM_INT);
+                echo "<script>window.location ='../../view/paciente/Listar.php';</script>";
 
                 return $exec->execute();
                 

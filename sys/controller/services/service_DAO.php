@@ -26,49 +26,50 @@
                 echo $erro->getMessage();
             }
         }
-        public function insert($service, $tipoDeSonda, $situacao, $dataRegistro, $horaRegistro, $id_paciente){
+        public function insert(){
             try{
-                $sql = "INSERT INTO $this->tabela(service, tipoDeSonda, situacao, dataRegistro, horaRegistro, id_paciente)
-             VALUES (:service, :tipoDeSonda, :situacao, :dataRegistro, :horaRegistro, :id_paciente)";
+                $sql = "INSERT INTO $this->tabela(service, tipoDeSonda, situacao, dataRegistro, horaRegistro, user_type, id_paciente)
+             VALUES (:service, :tipoDeSonda, :situacao, :dataRegistro, :horaRegistro, :user_type, :id_paciente)";
                 $exec = DB::prepare($sql);
-                $exec->bindParam(':service',$service);
-                $exec->bindParam(':tipoDeSonda',$tipoDeSonda);
-                $exec->bindParam(':situacao',$situacao);
-                $exec->bindParam(':dataRegistro',$dataRegistro);
-                $exec->bindParam(':horaRegistro',$horaRegistro);
-                $exec->bindParam(':id_paciente',$id_paciente);
-				echo "<script>alert('Serviço cadastrado com sucesso!!');window.location ='../../view/services/Cadastrar.php';</script>";
+                $exec->bindValue(':service',$this->getService());
+                $exec->bindValue(':tipoDeSonda',$this->getTipoDeSonda());
+                $exec->bindValue(':situacao',$this->getSituacao());
+                $exec->bindValue(':dataRegistro',$this->getDataRegistro());
+                $exec->bindValue(':horaRegistro',$this->getHoraRegistro());
+                $exec->bindValue(':user_type',$this->getUser_type());
+                $exec->bindValue(':id_paciente',$this->getId_paciente());
+				echo "<script>window.location ='../../view/services/Cadastrar.php';</script>";
                 return $exec->execute();
                 
             }catch(PDOException $erro){
                 echo $erro->getMessage();
             }
         }
-        public function update($id){
+        public function update(){
             try{
                 $sql = "UPDATE $this->tabela SET service = :service, tipoDeSonda = :tipoDeSonda, situacao = :situacao,
                 dataRegistro = :dataRegistro, horaRegistro = :horaRegistro, id_paciente = :id_paciente WHERE id = :id";
                 $exec = DB::prepare($sql);
-                $exec->bindValue(':id', $id, PDO::PARAM_INT);
+                $exec->bindValue(':id', $this->getId(), PDO::PARAM_INT);
                 $exec->bindValue(':service', $this->getService());
                 $exec->bindValue(':tipoDeSonda', $this->getTipoDeSonda());
                 $exec->bindValue(':situacao',$this->getSituacao());
                 $exec->bindValue(':dataRegistro', $this->getDataRegistro());
                 $exec->bindValue(':horaRegistro', $this->getHoraRegistro());
                 $exec->bindValue(':id_paciente', $this->getId_paciente());
-                echo "<script>alert('Serviço atualizado com sucesso!!');window.location ='../../view/services/Cadastrar.php';</script>";
+                echo "<script>window.location ='../../view/services/Cadastrar.php';</script>";
                 return $exec->execute();
             }catch(PDOException $erro){
                 echo "Erro".$erro->getMessage();
             }
 
         }
-        public function delete($id){
+        public function delete(){
             try{
                 $sql = "DELETE FROM $this->tabela WHERE id = :id";
                 $exec = DB::prepare($sql);
-                $exec->bindValue(':id', $id, PDO::PARAM_INT);
-                echo "<script>alert('Serviço deletado com sucesso!!');window.location ='../../view/services/Cadastrar.php';</script>";
+                $exec->bindValue(':id', $this->getId(), PDO::PARAM_INT);
+                echo "<script>window.location ='../../view/services/Cadastrar.php';</script>";
 
                 return $exec->execute();
                 
@@ -89,7 +90,8 @@
                     'situacao' => $dados['situacao'],
                     'dataRegistro' => $dados['dataRegistro'],
                     'horaRegistro' => $dados['horaRegistro'],
-                    'id_paciente' => $dados['id_paciente']
+                    'id_paciente' => $dados['id_paciente'],
+                    'user_type' => $dados['user_type']
                 );
             }
 
