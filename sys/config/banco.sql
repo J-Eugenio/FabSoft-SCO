@@ -88,4 +88,24 @@ CREATE TABLE IF NOT EXISTS `services` (
 ALTER TABLE `services`
   ADD CONSTRAINT `FKservices` FOREIGN KEY (`id_paciente`) REFERENCES `paciente` (`id`);
 
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `transporte`
+--
+DROP TABLE IF EXISTS `transporte`;
+CREATE TABLE IF NOT EXISTS `transporte` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `lugarSolicitado` varchar(50) NOT NULL,
+  `motivoSolicitacao` varchar(50),
+  `dataConsulta` DATE NOT NULL,
+  `horarioConsulta` TIME NOT NULL,
+  `id_paciente` int(11) NOT NULL,
+  `user_type` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+ALTER TABLE `transporte`
+  ADD CONSTRAINT `FKtransporte` FOREIGN KEY (`id_paciente`) REFERENCES `paciente` (`id`);
+
 

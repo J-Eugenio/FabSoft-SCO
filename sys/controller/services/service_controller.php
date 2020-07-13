@@ -15,7 +15,7 @@
     if(!empty($serviceClass->getService()) || !empty($serviceClass->getTipoDeSonda()) ||
         !empty($serviceClass->getSituacao())   || !empty($serviceClass->getDataRegistro()) ||
         !empty($serviceClass->getHoraRegistro())|| !empty($serviceClass->getId_paciente())){
-        echo "Dados Preenchidos";
+        echo "Preencha os dados";
     }else{
         if($action == "update"){
             $serviceClass->setId($_POST['id']);
@@ -23,7 +23,7 @@
         $serviceClass->setService($_POST['tipoDeService']);
         $serviceClass->setTipoDeSonda($_POST['tipoDeSonda']);
         $serviceClass->setSituacao('Enviado');
-        $serviceClass->setDataRegistro(date('Y-m-d'));
+        $serviceClass->setDataRegistro(date('d-m-Y'));
         $serviceClass->setHoraRegistro(date('H:i:s'));
         $serviceClass->setUser_type($_POST['user_type']);
         $serviceClass->setId_paciente($_POST['id_paciente']);

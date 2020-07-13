@@ -15,7 +15,7 @@
         || !empty($funcClass->getSenha()) || !empty($funcClass->getGenero()) 
         || !empty($funcClass->getNome())  || !empty($funcClass->getFuncao())
         || !empty($funcClass->getTipoDeFunc())){
-        echo "Dados Preenchidos";
+        echo "Preencha os dados";
     }else{
         if($acao == "update"){
             $funcClass->setId($_POST['id']);

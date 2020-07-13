@@ -48,6 +48,9 @@
                     <li class="nav-item">
                         <a class="navbar-brand mb-0" href="/FabSoft-SCO/sys/view/services/Cadastrar.php">Serviços</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="navbar-brand mb-0" href="/FabSoft-SCO/sys/view/transporte/Cadastrar.php">Transporte</a>
+                    </li>
                 </ul>
             </div>
             <div class="text-right center">

@@ -18,7 +18,7 @@
         ||!empty($paciClass->getEmail())           ||!empty($paciClass->getTelefone())  ||!empty($paciClass->getNumeroCardSUS()) ||!empty($paciClass->getUnidadeDeSaude())
         ||!empty($paciClass->getDataDiagnostico()) ||!empty($paciClass->getBairro())    ||!empty($paciClass->getLogradouro())    ||!empty($paciClass->getPontoDeReferencia())
         ||!empty($paciClass->getZona())            ||!empty($paciClass->getHospitalDeTratamento())                               ||!empty($paciClass->getDataNasc())){
-        echo "Dados Preenchidos";
+        echo "Preencha os dados";
     }else{
         if($acao == "update"){
             $paciClass->setId($_POST['id']);
