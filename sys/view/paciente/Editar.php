@@ -20,11 +20,11 @@
         </div>
         <div class="half-box spacing">
           <label for="cpf">CPF:</label>
-          <input type="text" name="cpf" class="form-control" value="<?php echo $resultaEditar['cpf']?>" placeholder="Digite o CPF no formato nnn.nnn.nnn-nn" />
+          <input type="text" name="cpf" class="form-control" value="<?php echo $resultaEditar['senha']?>" placeholder="Digite o CPF no formato nnn.nnn.nnn-nn" />
         </div>
         <div class="half-box">
           <label for="senha">Senha:</label>
-          <input type="password" name="senha" class="form-control" placeholder="Informe uma senha de acesso..." />
+          <input type="password" name="senha" class="form-control" <?php echo $resultaEditar['cpf']?> placeholder="Informe uma senha de acesso..." />
         </div>
         <div class="half-box spacing">
           <label for="sus">Número de Cartão do SUS:</label>

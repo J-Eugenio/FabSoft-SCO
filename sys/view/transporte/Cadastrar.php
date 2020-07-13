@@ -72,11 +72,10 @@
                   <?php }} else if($res != null){ ;?>
                   <tr>
                      <th scope="row"><?php echo $res['id'] ?></th>
-                     <td><?php echo $res['service'] ?> </td>
-                     <td><?php echo $res['tipoDeSonda'] ?></td>
-                     <td><?php echo $res['situacao'] ?></td>
-                     <td><?php echo $res['dataRegistro'] ?></td>
-                     <td><?php echo $res['horaRegistro'] ?></td>
+                     <td><?php echo $res['lugarSolicitado'] ?> </td>
+                     <td><?php echo $res['motivoSolicitacao'] ?></td>
+                     <td><?php echo $res['dataConsulta'] ?></td>
+                     <td><?php echo $res['horarioConsulta'] ?></td>
                      <td><a href="../../controller/services/service_controller.php?acao=delete&id=<?php echo $res['id'] ?>"
                         name="acao" class="btn btn-sm btn-danger excluir-usuario btn-lg" onClick="remover()">
                         <span class="fa fa-trash"></span> Excluir</a>

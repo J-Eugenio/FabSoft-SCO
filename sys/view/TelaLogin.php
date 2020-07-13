@@ -22,7 +22,7 @@
                </div>
                <div class="field">
                <label for="senha">SENHA</label>
-                  <input type="password" id="Password" name="senha" placeholder="Digite sua senha..." required>
+                  <input type="password" id="Password" name="senha" placeholder="Digite sua senha..." >
                </div>
                <div>
                   <input type="hidden" id="acao" name="acao" value="autenticar">

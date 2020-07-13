@@ -39,12 +39,14 @@
                     <li class="nav-item active">
                         <a class="navbar-brand mb-0" href="/FabSoft-SCO/sys/view/menu.php">Home <span class="sr-only">(current)</span></a>
                     </li>
+                <?php if($_SESSION['user_type'] == 1){?>
                     <li class="nav-item">
                         <a class="navbar-brand mb-0" href="/FabSoft-SCO/sys/view/funcionario/Cadastrar.php">Funcionário</a>
                     </li>
                     <li class="nav-item">
                         <a class="navbar-brand mb-0" href="/FabSoft-SCO/sys/view/paciente/Cadastrar.php">Paciente</a>
                     </li>
+                    <?php }; ?>
                     <li class="nav-item">
                         <a class="navbar-brand mb-0" href="/FabSoft-SCO/sys/view/services/Cadastrar.php">Serviços</a>
                     </li>

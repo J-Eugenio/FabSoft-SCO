@@ -86,17 +86,9 @@
           <label for="email">Email:</label>
           <input type="email" name="email" class="form-control" placeholder="Informe um email..." />
         </div>
-        <div class="half-box spacing">
+        <div class="col-xs-4">
           <label for="telefone">Telefone:</label>
-          <input type="text" name="telefone" class="form-control" placeholder="Informe um telefone válido..." />
-        </div>
-        <div class="half-box">
-          <label for="nivel">Nível:</label>
-          <select class="form-control" name="nivel" id="nivel">
-            <option>Selecione o nivel de acesso...</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-          </select>
+          <input type="text" name="telefone" class="form-control" placeholder="Informe um telefone" />
         </div>
         <div class="full-box">
           <input type="hidden" name="acao" class="form-control" value="inserir" />
