@@ -22,6 +22,10 @@
             <label>Motivo da Solicitação</Label>
             <input type="text" name="motivo" class="form-control" placeholder="Motivo..."/>
          </div>
+         <div class="half-box">
+         <label>Data e hora da consulta</label>
+         <input type="text" id="data" class="datepicker" placeholder="Insira a data desejada para sua consulta.">
+         </div>
          <div class="half-box d-flex justify-content-center">
             <button type="submit" class="btn btn-success btn-lg m-2"> Salvar</button>
             <button type="reset" class="btn btn-warning btn-lg m-2"> Limpar</button>
