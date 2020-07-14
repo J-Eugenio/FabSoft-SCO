@@ -24,7 +24,8 @@
          </div>
          <div class="half-box">
          <label>Data e hora da consulta</label>
-         <input type="text" id="data" class="datepicker" placeholder="Insira a data desejada para sua consulta.">
+         <input type="date" id="data" class="form-control">
+         <input type="time" id="time" class="form-control">
          </div>
          <div class="half-box d-flex justify-content-center">
             <button type="submit" class="btn btn-success btn-lg m-2"> Salvar</button>
