@@ -23,9 +23,10 @@
             <input type="text" name="motivo" class="form-control" placeholder="Motivo..."/>
          </div>
          <div class="half-box">
-         <label>Data e hora da consulta</label>
-         <input type="date" id="data" class="form-control">
-         <input type="time" id="time" class="form-control">
+         <label>Data da consulta</label>
+         <input type="date" id="data" name="dataConsulta" class="form-control">
+         <label>Hora da consulta</label>
+         <input type="time" id="time" name="horaConsulta" class="form-control">
          </div>
          <div class="half-box d-flex justify-content-center">
             <button type="submit" class="btn btn-success btn-lg m-2"> Salvar</button>
@@ -43,7 +44,7 @@
    <div class="col-auto">
       <div class="panel panel-primary table-ajustes">
          <div class="panel-heading">
-            <h3>Tabela de Serviços</h3>
+            <h3>Tabela de Transporte</h3>
          </div>
          <div class="form-group" style="margin: 8px 10px;">
             <table class="table table-responsive">
@@ -81,7 +82,7 @@
                      <td><?php echo $res['motivoSolicitacao'] ?></td>
                      <td><?php echo $res['dataConsulta'] ?></td>
                      <td><?php echo $res['horarioConsulta'] ?></td>
-                     <td><a href="../../controller/services/service_controller.php?acao=delete&id=<?php echo $res['id'] ?>"
+                     <td><a href="../../controller/transporte/transporte_controller.php?acao=delete&id=<?php echo $res['id'] ?>"
                         name="acao" class="btn btn-sm btn-danger excluir-usuario btn-lg" onClick="remover()">
                         <span class="fa fa-trash"></span> Excluir</a>
                      </td>

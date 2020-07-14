@@ -18,15 +18,15 @@
         || !empty($transporteClass->getMotivoSolicitacao()) || !empty($transporteClass->getDataConsulta())
         || !empty($transporteClass->getHorarioConsulta()) || !empty($transporteClass->getId_paciente())
     ){
-        echo 'Dados Preenchidos';
+        echo 'Preencha os dados';
     }else{
         if($action == "update"){
             $transporteClass->setId($_GET['id']);
         }
         $transporteClass->setLugarSolicitado($_POST['lugarSolicitado']);
         $transporteClass->setMotivoSolicitacao($_POST['motivo']);
-        $transporteClass->setDataConsulta(date('Y-m-d'));
-        $transporteClass->setHorarioConsulta(date('H:i:s'));
+        $transporteClass->setDataConsulta($_POST['dataConsulta']);
+        $transporteClass->setHorarioConsulta($_POST['horaConsulta']);
         $transporteClass->setUser_type($_POST['user_type']);
         $transporteClass->setId_paciente($_POST['id_paciente']);
     }

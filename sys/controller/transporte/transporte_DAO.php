@@ -68,7 +68,7 @@
                 $sql = "DELETE FROM $this->tabela WHERE id = :id";
                 $exec = DB::prepare($sql);
                 $exec->bindValue(':id', $this->getId(), PDO::PARAM_INT);
-                echo "<script>window.location ='../../view/transporte/Cadastrar.php';</script>";
+               echo "<script>window.location ='../../view/transporte/Cadastrar.php';</script>";
 
                 return $exec->execute();
                 
