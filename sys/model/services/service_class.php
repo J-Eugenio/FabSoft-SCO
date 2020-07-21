@@ -31,6 +31,5 @@
         public function getUser_type(){return $this->user_type;}
         public function getId_paciente(){return $this->id_paciente;}
 
-
     }
 ?>
