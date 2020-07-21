@@ -9,6 +9,7 @@
         private $motivoSolicitacao;
         private $dataConsulta;
         private $horarioConsulta;
+        private $situacao;
         private $id_paciente;
         private $user_type;
         
@@ -18,6 +19,7 @@
         public function getMotivoSolicitacao(){return $this->motivoSolicitacao;}
         public function getDataConsulta(){return $this->dataConsulta;}
         public function getHorarioConsulta(){return $this->horarioConsulta;}
+        public function getSituacao(){return $this->situacao;}
         public function getId_paciente(){return $this->id_paciente;}
         public function getUser_type(){return $this->user_type;}
 
@@ -27,6 +29,7 @@
         public function setMotivoSolicitacao($motivoSolicitacao){$this->motivoSolicitacao = $motivoSolicitacao;}
         public function setDataConsulta($dataConsulta){$this->dataConsulta = $dataConsulta;}
         public function setHorarioConsulta($horarioConsulta){$this->horarioConsulta = $horarioConsulta;}
+        public function setSituacao($situacao){$this->situacao = $situacao;}
         public function setId_paciente($id_paciente){$this->id_paciente = $id_paciente;}
         public function setUser_type($user_type){$this->user_type = $user_type;}
 

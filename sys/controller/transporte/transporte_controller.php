@@ -21,12 +21,13 @@
         echo 'Preencha os dados';
     }else{
         if($action == "update"){
-            $transporteClass->setId($_GET['id']);
+            $transporteClass->setId($_POST['id']);
         }
         $transporteClass->setLugarSolicitado($_POST['lugarSolicitado']);
         $transporteClass->setMotivoSolicitacao($_POST['motivo']);
         $transporteClass->setDataConsulta($_POST['dataConsulta']);
         $transporteClass->setHorarioConsulta($_POST['horaConsulta']);
+        $transporteClass->setSituacao($_POST['situacao'] ? $_POST['situacao'] : 'Enviado');
         $transporteClass->setUser_type($_POST['user_type']);
         $transporteClass->setId_paciente($_POST['id_paciente']);
     }
@@ -48,7 +49,7 @@
         break;
         case 'update':
             try{
-
+                $transporteClass->update();
             } catch(Exception $e){
                 echo $e->getMessage();
             }

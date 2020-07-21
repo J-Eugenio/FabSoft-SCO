@@ -55,6 +55,7 @@
                      <th scope="col">Motivo da Solicitação</th>
                      <th scope="col">Data da Consulta</th>
                      <th scope="col">Hora da Consulta</th>
+                     <th scope="col">Situação</th>
                      <th scope="col">*</th>
                      <?php if($_SESSION['user_type'] == '1'){?>
                         <th scope="col">*</th>
@@ -73,6 +74,7 @@
                      <td><?php echo $res['motivoSolicitacao'] ?></td>
                      <td><?php echo $res['dataConsulta'] ?></td>
                      <td><?php echo $res['horarioConsulta'] ?></td>
+                     <td><?php echo $res['situacao'] ?></td>
                      <td><a href="../../controller/transporte/transporte_controller.php?acao=delete&id=<?php echo $res['id'] ?>"
                         name="acao" class="btn btn-sm btn-danger excluir-usuario btn-lg" onClick="remover()">
                         <span class="fa fa-trash"></span> Excluir</a>
@@ -86,6 +88,7 @@
                      <td><?php echo $res['motivoSolicitacao'] ?></td>
                      <td><?php echo $res['dataConsulta'] ?></td>
                      <td><?php echo $res['horarioConsulta'] ?></td>
+                     <td><?php echo $res['situacao'] ?></td>
                      <td><a href="../../controller/transporte/transporte_controller.php?acao=delete&id=<?php echo $res['id'] ?>"
                         name="acao" class="btn btn-sm btn-danger excluir-usuario btn-lg" onClick="remover()">
                         <span class="fa fa-trash"></span> Excluir</a>
@@ -97,7 +100,7 @@
                         </button>
 
                         <!-- Modal -->
-                        <form method="POST" action="../../controller/services/service_controller.php">
+                        <form method="POST" action="../../controller/transporte/transporte_controller.php">
                            <div class="modal fade" id="updateService<?php echo $res['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                            <div class="modal-dialog" role="document">
                               <div class="modal-content">
@@ -125,9 +128,9 @@
 
                                  <input type="hidden" name="id" class="form-control" value="<?php echo $res['id'];?>" />
                                  <input type="hidden" name="lugarSolicitado" class="form-control" value="<?php echo $res['lugarSolicitado'];?>" />
-                                 <input type="hidden" name="motivoSolicitacao" class="form-control" value="<?php echo $res['motivoSolicitacao'];?>" />
+                                 <input type="hidden" name="motivo" class="form-control" value="<?php echo $res['motivoSolicitacao'];?>" />
                                  <input type="hidden" name="dataConsulta" class="form-control" value="<?php echo $res['dataConsulta'];?>" />
-                                 <input type="hidden" name="horarioConsulta" class="form-control" value="<?php echo $res['horarioConsulta'];?>" />
+                                 <input type="hidden" name="horaConsulta" class="form-control" value="<?php echo $res['horarioConsulta'];?>" />
                                  </div>
                               </div>
                            </div>

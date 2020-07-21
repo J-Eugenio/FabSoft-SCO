@@ -29,13 +29,14 @@
 
         public function insert(){
             try {
-                $sql = "INSERT INTO $this->tabela(lugarSolicitado, motivoSolicitacao, dataConsulta, horarioConsulta, id_paciente, user_type) 
-                        VALUES(:lugarSolicitado, :motivoSolicitacao, :dataConsulta, :horarioConsulta, :id_paciente, :user_type)";
+                $sql = "INSERT INTO $this->tabela(lugarSolicitado, motivoSolicitacao, dataConsulta, horarioConsulta, situacao, id_paciente, user_type) 
+                        VALUES(:lugarSolicitado, :motivoSolicitacao, :dataConsulta, :horarioConsulta, :situacao, :id_paciente, :user_type)";
                 $exec = DB::prepare($sql);
                 $exec->bindValue(':lugarSolicitado', $this->getLugarSolicitado());
                 $exec->bindValue(':motivoSolicitacao', $this->getMotivoSolicitacao());
                 $exec->bindValue(':dataConsulta', $this->getDataConsulta());
                 $exec->bindValue(':horarioConsulta', $this->getHorarioConsulta());
+                $exec->bindValue(':situacao', $this->getSituacao());
                 $exec->bindValue(':id_paciente', $this->getId_paciente());
                 $exec->bindValue(':user_type', $this->getUser_type());
                 echo "<script>window.location ='../../view/transporte/Cadastrar.php';</script>";
@@ -47,15 +48,11 @@
         }
         public function update(){
             try{
-                $sql = "UPDATE $this->tabela SET lugarSolicitado = : lugarSolicitado, motivoSolicitacao = :motivoSolicitacao, 
-                        dataConsulta = :dataConsulta, horarioConsulta =:horarioConsulta, id_paciente =:id_paciente, user_type =:user_type WHERE id = :id";
+                $sql = "UPDATE $this->tabela SET situacao = :situacao WHERE id = :id";
                 $exec = DB::prepare($sql);
-                $exec->bindValue(':lugarSolicitado', $this->getLugarSolicitado());
-                $exec->bindValue(':motivoSolicitacao', $this->getMotivoSolicitacao());
-                $exec->bindValue(':dataConsulta', $this->getDataConsulta());
-                $exec->bindValue(':horarioConsulta', $this->getHorarioConsulta());
-                $exec->bindValue(':id_paciente', $this->getId_paciente());
-                $exec->bindValue(':user_type', $this->getUser_type());
+                $exec->bindValue(':id', $this->getId(), PDO::PARAM_INT);
+                $exec->bindValue(':situacao', $this->getSituacao());
+
                 echo "<script>window.location ='../../view/transporte/Cadastrar.php';</script>";
                 return $exec->execute();
             }catch(PDOException $erro){
@@ -88,6 +85,7 @@
                     'motivoSolicitacao' => $dados['motivoSolicitacao'],
                     'dataConsulta' => $dados['dataConsulta'],
                     'horarioConsulta' => $dados['horarioConsulta'],
+                    'situacao' => $dados['situacao'],
                     'user_type' => $dados['user_type'],
                     'id_paciente' => $dados['id_paciente']
 
