@@ -30,8 +30,7 @@
         public function insert(){
             try{
                 $sql = "INSERT INTO $this->tabela(
-                    assunto, 
-                    textoDoChamado, 
+                    assunto,
                     data, 
                     hora, 
                     situacao, 
@@ -39,7 +38,6 @@
                     user_type
                     ) VALUES (
                         :assunto, 
-                        :textoDoChamado, 
                         :data, 
                         :hora, 
                         :situacao, 
@@ -48,16 +46,28 @@
                     )";
                 $exec = DB::prepare($sql);
                 $exec->bindValue(':assunto', $this->getAssunto());
-                $exec->bindValue(':textoDoChamado', $this->getTextoDoChamado());
+
                 $exec->bindValue(':data', $this->getData());
                 $exec->bindValue(':hora', $this->getHora());
                 $exec->bindValue(':situacao', $this->getSituacao());
                 $exec->bindValue(':id_paciente', $this->getId_paciente());
                 $exec->bindValue(':user_type', $this->getUser_type());
+                $exec->execute();
+                $sql = "INSERT INTO msg_chamado(msg, id_chamada) VALUES(:textoDoChamado, LAST_INSERT_ID())";
+                $exec= DB::prepare($sql);
+                $exec->bindValue(':textoDoChamado', $this->getTextoDoChamado());
                 echo "<script>window.location ='../../view/chamados/Cadastrar.php';</script>";
                 return $exec->execute();
             }catch(PDOException $erro){
 
+            }
+        }
+
+        public function insertMsg(){
+            try {
+                
+            } catch (PDOException $erro) {
+                
             }
         }
 
@@ -77,6 +87,10 @@
 
         public function delete(){
             try{
+                $sql = "DELETE FROM msg_chamado WHERE id_chamada = :id";
+                $exec = DB::prepare($sql);
+                $exec->bindValue(':id', $this->getId(), PDO::PARAM_INT);
+                $exec->execute();
                 $sql = "DELETE FROM $this->tabela WHERE id = :id";
                 $exec = DB::prepare($sql);
                 $exec->bindValue(':id', $this->getId(), PDO::PARAM_INT);
@@ -88,16 +102,16 @@
             }
         }
 
-        function listarServices(){
+        function listarChamados(){
             $result[] = null;
-            $resultado = "SELECT * FROM $this->tabela ORDER BY id ASC";
+            $resultado = "SELECT *, chamado.id as chaID FROM $this->tabela INNER JOIN msg_chamado ON chamado.id = msg_chamado.id_chamada";
             $resultado = DB::prepare($resultado);
             $resultado->execute();
             while($dados = $resultado->fetch(PDO::FETCH_ASSOC)){
                 $result[] = array(
-                    'id' => $dados['id'],
+                    'id' => $dados['chaID'],
                     'assunto' => $dados['assunto'],
-                    'textoDoChamado' => $dados['textoDoChamado'],
+                    'textoDoChamado' => $dados['msg'],
                     'data' => $dados['data'],
                     'hora' => $dados['hora'],
                     'situacao' => $dados['situacao'],
@@ -105,7 +119,6 @@
                     'user_type' => $dados['user_type']
                 );
             }
-
             return $result;
         }
     }

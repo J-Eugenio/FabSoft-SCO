@@ -118,7 +118,6 @@ DROP TABLE IF EXISTS `chamado`;
 CREATE TABLE IF NOT EXISTS `chamado` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `assunto` varchar(50) NOT NULL,
-  `textoDoChamado` varchar(50),
   `data` DATE NOT NULL,
   `hora` TIME NOT NULL,
   `situacao` varchar(50),
@@ -129,5 +128,20 @@ CREATE TABLE IF NOT EXISTS `chamado` (
 
 ALTER TABLE `chamado`
   ADD CONSTRAINT `FKchamado` FOREIGN KEY (`id_paciente`) REFERENCES `paciente` (`id`);
+-- --------------------------------------------------------
 
+--
+-- Estrutura da tabela `msg_chamado`
+--
+DROP TABLE IF EXISTS `msg_chamado`;
+CREATE TABLE IF NOT EXISTS `msg_chamado` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `msg` varchar(200) NOT NULL,
+  `id_chamada` int(11) NOT NULL,
+
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+ALTER TABLE `msg_chamado`
+  ADD CONSTRAINT `FKmsg_chamado` FOREIGN KEY (`id_chamada`) REFERENCES `chamado` (`id`);
 
