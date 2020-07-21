@@ -22,7 +22,7 @@
             <label for="descricao">Precisamos que nos dê alguns detalhes sobre o seu problema, você pode nos informar aqui.</label>
             <textarea class="form-control" id="descricao" rows="3"></textarea>
         </div>
-        <div class="full-box">
+        <div class="full-box mb-5">
             <input type="hidden" name="acao" class="form-control" value="inserir" />
         </div>
         <button type="submit" class="btn btn-success btn-lg">Enviar</button>
