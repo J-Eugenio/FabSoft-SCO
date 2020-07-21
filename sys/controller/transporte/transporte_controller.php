@@ -27,7 +27,7 @@
         $transporteClass->setMotivoSolicitacao($_POST['motivo']);
         $transporteClass->setDataConsulta($_POST['dataConsulta']);
         $transporteClass->setHorarioConsulta($_POST['horaConsulta']);
-        $transporteClass->setSituacao($_POST['situacao'] ? $_POST['situacao'] : 'Enviado');
+        $transporteClass->setSituacao(isset($_POST['situacao']) ? $_POST['situacao'] : 'Enviado');
         $transporteClass->setUser_type($_POST['user_type']);
         $transporteClass->setId_paciente($_POST['id_paciente']);
     }

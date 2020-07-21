@@ -17,7 +17,7 @@
                 echo 'Erro ao buscar informação';
             }
         }
-        public function findAll($id){
+        public function findAll(){
             try{
                 $sql = "SELECT * FROM $this->tabela ";
                 $exec = DB::prepare($sql);

@@ -24,7 +24,7 @@
 
         //get's
         public function getId(){return $this->id;}
-        public function getAssunto(){return $this->$assunto;}
+        public function getAssunto(){return $this->assunto;}
         public function getTextoDoChamado(){return $this->textoDoChamado;}
         public function getData(){return $this->data;}
         public function getHora(){return $this->hora;}

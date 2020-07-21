@@ -16,7 +16,7 @@
                 echo 'Erro ao buscar informação';
             }
         }
-        public function findAll($id){
+        public function findAll(){
             try{
                 $sql = "SELECT * FROM $this->tabela ";
                 $exec = DB::prepare($sql);
@@ -63,7 +63,7 @@
                 $sql = "DELETE FROM $this->tabela WHERE id = :id";
                 $exec = DB::prepare($sql);
                 $exec->bindValue(':id', $this->getId(), PDO::PARAM_INT);
-                //echo "<script>window.location ='../../view/services/Cadastrar.php';</script>";
+                echo "<script>window.location ='../../view/services/Cadastrar.php';</script>";
                 return $exec->execute();
                 
             }catch(PDOException $erro){

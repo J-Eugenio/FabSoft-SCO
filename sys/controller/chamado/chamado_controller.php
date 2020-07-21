@@ -20,20 +20,20 @@
             if($action == "update"){
                 $chamadoDAO->setId($_POST['id']);
             }
-            $chamadoDAO->setAssunto();
-            $chamadoDAO->setTextoDoChamado();
-            $chamadoDAO->setData();
-            $chamadoDAO->setHora();
-            $chamadoDAO->setSituacao();
-            $chamadoDAO->setId_paciente();
-            $chamadoDAO->setUser_type();
+            $chamadoDAO->setAssunto($_POST['assunto']);
+            $chamadoDAO->setTextoDoChamado($_POST['textoDoChamado']);
+            $chamadoDAO->setData(date('d-m-Y'));
+            $chamadoDAO->setHora(date('H:i:s'));
+            $chamadoDAO->setSituacao(isset($_POST['situacao']) ? $_POST['situacao'] : 'Enviado');
+            $chamadoDAO->setId_paciente($_POST['id_paciente']);
+            $chamadoDAO->setUser_type($_POST['user_type']);
         }
     }
 
     switch($action){
         case 'inserir':
             try{
-                $chamadoDAO->inserir();
+                $chamadoDAO->insert();
             }catch(Exception $e){
                 echo $e->getMessage();
             }
