@@ -36,12 +36,12 @@
                      <td><?php echo $res['tipoDeFunc'] ?></td>
                      <td>
                         <a href="../../controller/funcionario/funcionario_controller.php?acao=delete&id=<?php echo $res['id'] ?>" name="acao" class="btn btn-danger btn-lg" onClick="remover()">
-                        <span class="fa fa-cogs"></span>Excluir
+                        <span class="fa fa-trash"></span>Excluir
                         </a>
                      </td>
                      <td>
                         <a href="Editar.php?id=<?php echo $res['id'] ?>" class="btn btn-primary btn-lg" >
-                        <span class="fa fa-trash"></span> Atualizar
+                        <span class="fa fa-cogs"></span> Atualizar
                         </a>
                      </td>
                   </tr>

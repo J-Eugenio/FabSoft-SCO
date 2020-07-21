@@ -10,24 +10,25 @@
     }
     if($action == "delete"){
         $serviceClass->setId($_GET['id']);
-    }
-
-    if(!empty($serviceClass->getService()) || !empty($serviceClass->getTipoDeSonda()) ||
+    }else{
+        if(!empty($serviceClass->getService()) || !empty($serviceClass->getTipoDeSonda()) ||
         !empty($serviceClass->getSituacao())   || !empty($serviceClass->getDataRegistro()) ||
         !empty($serviceClass->getHoraRegistro())|| !empty($serviceClass->getId_paciente())){
         echo "Preencha os dados";
-    }else{
-        if($action == "update"){
-            $serviceClass->setId($_POST['id']);
+        }else{
+            if($action == "update"){
+                $serviceClass->setId($_POST['id']);
+            }
+            $serviceClass->setService($_POST['tipoDeService']);
+            $serviceClass->setTipoDeSonda($_POST['tipoDeSonda']);
+            $serviceClass->setSituacao($_POST['situacao'] ? $_POST['situacao'] : 'Enviado');
+            $serviceClass->setDataRegistro(date('d-m-Y'));
+            $serviceClass->setHoraRegistro(date('H:i:s'));
+            $serviceClass->setUser_type($_POST['user_type']);
+            $serviceClass->setId_paciente($_POST['id_paciente']);
         }
-        $serviceClass->setService($_POST['tipoDeService']);
-        $serviceClass->setTipoDeSonda($_POST['tipoDeSonda']);
-        $serviceClass->setSituacao('Enviado');
-        $serviceClass->setDataRegistro(date('d-m-Y'));
-        $serviceClass->setHoraRegistro(date('H:i:s'));
-        $serviceClass->setUser_type($_POST['user_type']);
-        $serviceClass->setId_paciente($_POST['id_paciente']);
     }
+
 
 
 switch($action){

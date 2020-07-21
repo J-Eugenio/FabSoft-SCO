@@ -56,6 +56,9 @@
                      <th scope="col">Data da Consulta</th>
                      <th scope="col">Hora da Consulta</th>
                      <th scope="col">*</th>
+                     <?php if($_SESSION['user_type'] == '1'){?>
+                        <th scope="col">*</th>
+                     <?php }?>
                   </tr>
                </thead>
                <tbody>
@@ -74,6 +77,7 @@
                         name="acao" class="btn btn-sm btn-danger excluir-usuario btn-lg" onClick="remover()">
                         <span class="fa fa-trash"></span> Excluir</a>
                      </td>
+                     
                   </tr>
                   <?php }} else if($res != null){ ;?>
                   <tr>
@@ -85,6 +89,50 @@
                      <td><a href="../../controller/transporte/transporte_controller.php?acao=delete&id=<?php echo $res['id'] ?>"
                         name="acao" class="btn btn-sm btn-danger excluir-usuario btn-lg" onClick="remover()">
                         <span class="fa fa-trash"></span> Excluir</a>
+                     </td>
+                     <td>
+                        <!-- Button chama o  modal -->
+                        <button type="button" class="btn btn-primary fa fa-cogs " data-toggle="modal" data-target="#updateService<?php echo $res['id'] ?>">
+                            Atualizar
+                        </button>
+
+                        <!-- Modal -->
+                        <form method="POST" action="../../controller/services/service_controller.php">
+                           <div class="modal fade" id="updateService<?php echo $res['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                           <div class="modal-dialog" role="document">
+                              <div class="modal-content">
+                                 <div class="modal-header">
+                                 <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                 </button>
+                                 </div>
+                                 <div class="modal-body">
+                                    <select class="form-control" name="situacao">
+                                       <option value="A">A</option>
+                                       <option value="B">B</option>
+                                       <option value="C">C</option>
+                                    </select>
+                                 </div>
+                                 <div class="modal-footer">
+                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                 <button type="submit" class="btn btn-primary">Atualizar</button>
+                                 </div>
+                                 <div class="half-box">
+                                 <input type="hidden" name="acao" class="form-control" value="update" />
+                                 <input type="hidden" name="id_paciente" class="form-control" value="<?php echo $_SESSION['user_id'];?>" />
+                                 <input type="hidden" name="user_type" class="form-control" value="<?php echo $_SESSION['user_type'];?>" />
+
+                                 <input type="hidden" name="id" class="form-control" value="<?php echo $res['id'];?>" />
+                                 <input type="hidden" name="lugarSolicitado" class="form-control" value="<?php echo $res['lugarSolicitado'];?>" />
+                                 <input type="hidden" name="motivoSolicitacao" class="form-control" value="<?php echo $res['motivoSolicitacao'];?>" />
+                                 <input type="hidden" name="dataConsulta" class="form-control" value="<?php echo $res['dataConsulta'];?>" />
+                                 <input type="hidden" name="horarioConsulta" class="form-control" value="<?php echo $res['horarioConsulta'];?>" />
+                                 </div>
+                              </div>
+                           </div>
+                           </div>
+                        </form>
                      </td>
                   </tr>
                   <?php }} ?>

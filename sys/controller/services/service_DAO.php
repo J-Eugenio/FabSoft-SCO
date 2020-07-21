@@ -47,16 +47,10 @@
         }
         public function update(){
             try{
-                $sql = "UPDATE $this->tabela SET service = :service, tipoDeSonda = :tipoDeSonda, situacao = :situacao,
-                dataRegistro = :dataRegistro, horaRegistro = :horaRegistro, id_paciente = :id_paciente WHERE id = :id";
+                $sql = "UPDATE $this->tabela SET situacao = :situacao WHERE id = :id";
                 $exec = DB::prepare($sql);
                 $exec->bindValue(':id', $this->getId(), PDO::PARAM_INT);
-                $exec->bindValue(':service', $this->getService());
-                $exec->bindValue(':tipoDeSonda', $this->getTipoDeSonda());
                 $exec->bindValue(':situacao',$this->getSituacao());
-                $exec->bindValue(':dataRegistro', $this->getDataRegistro());
-                $exec->bindValue(':horaRegistro', $this->getHoraRegistro());
-                $exec->bindValue(':id_paciente', $this->getId_paciente());
                 echo "<script>window.location ='../../view/services/Cadastrar.php';</script>";
                 return $exec->execute();
             }catch(PDOException $erro){
@@ -69,8 +63,7 @@
                 $sql = "DELETE FROM $this->tabela WHERE id = :id";
                 $exec = DB::prepare($sql);
                 $exec->bindValue(':id', $this->getId(), PDO::PARAM_INT);
-                echo "<script>window.location ='../../view/services/Cadastrar.php';</script>";
-
+                //echo "<script>window.location ='../../view/services/Cadastrar.php';</script>";
                 return $exec->execute();
                 
             }catch(PDOException $erro){

@@ -100,6 +100,7 @@ CREATE TABLE IF NOT EXISTS `transporte` (
   `motivoSolicitacao` varchar(50),
   `dataConsulta` DATE NOT NULL,
   `horarioConsulta` TIME NOT NULL,
+  `situacao` varchar(50),
   `id_paciente` int(11) NOT NULL,
   `user_type` int(11) NOT NULL,
   PRIMARY KEY (`id`)
@@ -107,5 +108,26 @@ CREATE TABLE IF NOT EXISTS `transporte` (
 
 ALTER TABLE `transporte`
   ADD CONSTRAINT `FKtransporte` FOREIGN KEY (`id_paciente`) REFERENCES `paciente` (`id`);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `chamado`
+--
+DROP TABLE IF EXISTS `chamado`;
+CREATE TABLE IF NOT EXISTS `chamado` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `assunto` varchar(50) NOT NULL,
+  `textoDoChamado` varchar(50),
+  `data` DATE NOT NULL,
+  `hora` TIME NOT NULL,
+  `situacao` varchar(50),
+  `id_paciente` int(11) NOT NULL,
+  `user_type` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+ALTER TABLE `chamado`
+  ADD CONSTRAINT `FKchamado` FOREIGN KEY (`id_paciente`) REFERENCES `paciente` (`id`);
 
 
