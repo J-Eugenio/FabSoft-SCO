@@ -23,7 +23,6 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="/fabsoft-sco/sys/view/services/select_service.js"></script>
     <script src="/fabsoft-sco/sys/assets/javascript/calendario.js"></script>
-
 </head>
 
 <body class="header">

@@ -142,3 +142,25 @@ button{
     justify-items: center;
     align-content: center;
 }
+
+.msg-chamada-user{
+    background-color: teal;
+    color: white;
+    margin-bottom: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 40px;
+    min-width: 200px;
+    width: min-content;   
+}
+
+.msg-chamada-admin{
+    background-color:tomato;
+    color: white;
+    margin-bottom: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 40px;
+    min-width: 200px;
+    width: min-content;   
+}

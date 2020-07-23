@@ -11,5 +11,4 @@ $(document).ready(function () {
             $('#typeSonda').children('div').hide();
         }
     });
-
 });

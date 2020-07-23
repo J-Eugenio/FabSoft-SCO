@@ -138,6 +138,7 @@ CREATE TABLE IF NOT EXISTS `msg_chamado` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `msg` varchar(200) NOT NULL,
   `id_chamada` int(11) NOT NULL,
+  `user_type` int(11) NOT NULL,
 
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
