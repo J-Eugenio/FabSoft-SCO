@@ -11,6 +11,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -20,6 +21,7 @@
     <link rel="stylesheet" href="/fabsoft-sco/sys/assets/css/formularios.css">
     <link rel="stylesheet" href="/fabsoft-sco/sys/assets/css/main.css">
     <link rel="stylesheet" href="/fabsoft-sco/sys/assets/css/footer.css">
+    <link rel="stylesheet" href="/fabsoft-sco/sys/assets/css/header.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="/fabsoft-sco/sys/view/services/select_service.js"></script>
     <script src="/fabsoft-sco/sys/assets/javascript/calendario.js"></script>
@@ -29,7 +31,7 @@
     <div class="container mb-5">
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
             <spam class="navbar-brand" href="/FabSoft-SCO/sys/view/menu.php">
-                <img src="/FabSoft-SCO/sys/assets/img/logo.png" width="70" height="70" alt="">
+                <h1 class="logo-text">SCO</h1>
             </spam>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -62,8 +64,9 @@
                 <h4 class="bem-vindo">Bem vindo</h4>
                 <div class="logout">
                     <h5 class="bem-vindo"><?php echo $_SESSION['user_name'] ?></h5>
-                    <a href="/fabsoft-sco/sys/view/logout.php" type="button" name="log-out" class="btn btn-danger lg">
-                        <i class="fa fa-reply-all" title="Edit"></i>
+                    <a href="/fabsoft-sco/sys/view/logout.php"name="log-out">
+                    <button type="button" class="btn">
+                        <img src="/fabsoft-sco/sys/assets/img/logout.svg" alt="Pesquisar">Sair</button>
                     </a>
                 </div>
             </div>
