@@ -9,17 +9,9 @@
         case 'POST': $action = $_POST['acao']; break;
     }
     
-    if($action == "delete"){
-        $serviceDAO->setId($_GET['id']);
-    }else{
-        if(!empty($serviceDAO->getService()) || !empty($serviceDAO->getTipoDeSonda()) ||
-        !empty($serviceDAO->getSituacao())   || !empty($serviceDAO->getDataRegistro()) ||
-        !empty($serviceDAO->getHoraRegistro())|| !empty($serviceDAO->getId_paciente())){
-        echo "Preencha os dados";
-        }else{
-            if($action == "update"){
-                $serviceDAO->setId($_POST['id']);
-            }
+switch($action){
+    case 'inserir':
+        try{
             $serviceDAO->setService($_POST['tipoDeService']);
             $serviceDAO->setTipoDeSonda($_POST['tipoDeSonda']);
             $serviceDAO->setSituacao($_POST['situacao'] ? $_POST['situacao'] : 'Enviado');
@@ -27,14 +19,6 @@
             $serviceDAO->setHoraRegistro(date('H:i:s'));
             $serviceDAO->setUser_type($_POST['user_type']);
             $serviceDAO->setId_paciente($_POST['id_paciente']);
-        }
-    }
-
-
-
-switch($action){
-    case 'inserir':
-        try{
             $serviceDAO->insert();
         }catch(Exception $e){
             echo $e->getMessage();
@@ -42,6 +26,7 @@ switch($action){
     break;
     case 'delete':
         try{
+            $serviceDAO->setId($_GET['id']);
             $serviceDAO->delete();
         }catch(Exception $e){
             echo $e->getMessage();
@@ -49,6 +34,7 @@ switch($action){
     break;
     case 'update':
         try{
+            $serviceDAO->setId($_POST['id']);
             $serviceDAO->update();
         }catch(Exception $e){
             echo $e->getMessage();

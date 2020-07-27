@@ -9,20 +9,11 @@
         case 'GET':  $acao = $_GET['acao']; break;
         case 'POST': $acao = $_POST['acao']; break;
     }
-    if($acao == "delete"){
-        $paciDAO->setId($_GET['id']);
-    }
 
-    if(!empty($paciDAO->getCpf())                ||!empty($paciDAO->getSenha())         ||!empty($paciDAO->getNome()) 
-        ||!empty($paciDAO->getDataNasc())        ||!empty($paciDAO->getSobrenome())     ||!empty($paciDAO->getSexo())          ||!empty($paciDAO->getEscolaridade())
-        ||!empty($paciDAO->getEmail())           ||!empty($paciDAO->getTelefone())  ||!empty($paciDAO->getNumeroCardSUS()) ||!empty($paciDAO->getUnidadeDeSaude())
-        ||!empty($paciDAO->getDataDiagnostico()) ||!empty($paciDAO->getBairro())    ||!empty($paciDAO->getLogradouro())    ||!empty($paciDAO->getPontoDeReferencia())
-        ||!empty($paciDAO->getZona())            ||!empty($paciDAO->getHospitalDeTratamento())                               ||!empty($paciDAO->getDataNasc())){
-        echo "Preencha os dados";
-    }else{
-        if($acao == "update"){
-            $paciDAO->setId($_POST['id']);
-        }
+
+switch($acao){
+    case 'inserir':
+        try{
             $paciDAO->setCpf($_POST['cpf']);
 	        $paciDAO->setSenha($_POST['senha']);
             $paciDAO->setNome($_POST['nome']);
@@ -40,14 +31,6 @@
             $paciDAO->setPontoDeReferencia($_POST['pontoDeReferencia']);
             $paciDAO->setZona($_POST['zona']);
             $paciDAO->setHospitalDeTratamento($_POST['hospitalDeTratamento']);
-            
-
-        }
-
-
-switch($acao){
-    case 'inserir':
-        try{
             $paciDAO->insert();
         }catch(Exception $e){
             echo $e->getMessage;
@@ -55,6 +38,7 @@ switch($acao){
     break;
     case 'delete':
         try{
+            $paciDAO->setId($_GET['id']);
             $paciDAO->delete();
         }catch(Exception $e){
             echo $e->getMessage();
@@ -62,6 +46,7 @@ switch($acao){
     break;
     case 'update':
         try{
+            $paciDAO->setId($_POST['id']);
             $paciDAO->update();
         }catch(Exception $e){
             echo $e->getMessage();

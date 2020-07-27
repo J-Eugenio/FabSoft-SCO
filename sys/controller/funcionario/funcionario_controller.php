@@ -8,31 +8,19 @@
         case 'GET':  $acao = $_GET['acao']; break;
         case 'POST': $acao = $_POST['acao']; break;
     }
-    if($acao == "delete"){
-        $funcDAO->setId($_GET['id']);
-    }
-    if(!empty($funcDAO->getCpf())       || !empty($funcDAO->getSobrenome()) 
-        || !empty($funcDAO->getSenha()) || !empty($funcDAO->getGenero()) 
-        || !empty($funcDAO->getNome())  || !empty($funcDAO->getFuncao())
-        || !empty($funcDAO->getTipoDeFunc())){
-        echo "Preencha os dados";
-    }else{
-        if($acao == "update"){
-            $funcDAO->setId($_POST['id']);
-        }
-        $funcDAO->setCpf($_POST['cpf']);
-        $funcDAO->setSenha($_POST['senha']);
-        $funcDAO->setNome($_POST['nome']);
-        $funcDAO->setSobrenome($_POST['sobrenome']);
-        $funcDAO->setGenero($_POST['sexo']);
-        $funcDAO->setFuncao($_POST['funcao']);
-        $funcDAO->setTipoDeFunc($_POST['tipoDeFunc']);
 
-    }
 
 switch($acao){
     case 'inserir':
         try{
+            $funcDAO->setCpf($_POST['cpf']);
+            $funcDAO->setSenha($_POST['senha']);
+            $funcDAO->setNome($_POST['nome']);
+            $funcDAO->setSobrenome($_POST['sobrenome']);
+            $funcDAO->setGenero($_POST['sexo']);
+            $funcDAO->setFuncao($_POST['funcao']);
+            $funcDAO->setTipoDeFunc($_POST['tipoDeFunc']);
+
             $funcDAO->insert();
         }catch(Exception $e){
             echo $e->getMessage();
@@ -40,6 +28,8 @@ switch($acao){
     break;
     case 'delete':
         try{
+            $funcDAO->setId($_GET['id']);
+            
             $funcDAO->delete();
         }catch(Exception $e){
             echo $e->getMessage();
@@ -47,6 +37,8 @@ switch($acao){
     break;
     case 'update':
         try{
+            $funcDAO->setId($_POST['id']);
+
             $funcDAO->update();
         }catch(Exception $e){
             echo $e->getMessage();
