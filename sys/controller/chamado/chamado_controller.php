@@ -3,6 +3,7 @@
     require_once 'chamado_DAO.php';
     require_once '../../model/chamado/chamado_class.php';
     $chamadoDAO = new chamado_DAO();
+
     switch($_SERVER['REQUEST_METHOD']){
         case 'GET': $action = $_GET['acao']; break;
         case 'POST': $action = $_POST['acao']; break;
@@ -46,12 +47,14 @@
         break;
         case 'update':
             try{
-                $chamadoDAO->setId($_POST['id']);
+                $chamadoDAO->setId(isset($_POST['id']) ? $_POST['id'] : $_GET['id']);
+                $chamadoDAO->setSituacao($_GET['situacao']);
                 $chamadoDAO->update();
             }catch(Exception $e){
                 echo $e->getMessage();
             }
         break;
+
     }
 
 ?>

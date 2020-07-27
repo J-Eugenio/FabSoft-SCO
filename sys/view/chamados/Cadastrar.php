@@ -60,13 +60,21 @@
                      <td><?php echo $res['situacao'] ?></td>
                      <td><?php echo $res['data'] ?></td>
                      <td><?php echo $res['hora'] ?></td>
-                     <td><a href="../../controller/chamado/chamado_controller.php?acao=delete&id=<?php echo $res['id'] ?>"
-                        name="acao" class="btn btn-sm btn-danger excluir-usuario btn-lg" onClick="remover()">
-                        <span class="fa fa-trash"></span> Excluir</a>
+                     <?php if($res['situacao'] != "Enviado"){?>
+                     <td>
+                        <button type="button" class="btn btn-secondary" disabled >
+                            Excluir
+                        </button>
                      </td>
+                     <?php }else { ?>
+                     <td><a href="../../controller/chamado/chamado_controller.php?acao=delete&id=<?php echo $res['id'] ?>"
+                        name="acao" class="btn btn-danger btn-lg" onClick="remover()">
+                        <span class=""></span>Excluir</a>
+                     </td>
+                     <?php }?>
                      <td>
                         <!-- Button chama o  modal -->
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#updateService<?php echo $res['id'] ?>">
+                        <button type="button" <?php if($res['situacao'] == "Fechado"){?>class="btn btn-secondary" disable<?php }else{ ?> class="btn btn-primary" data-toggle="modal" data-target="#updateService<?php echo $res['id'] ?>"<?php }?> >
                             Respostas
                         </button>
 
@@ -135,19 +143,26 @@
                      <td><?php echo $res['situacao'] ?></td>
                      <td><?php echo $res['data'] ?></td>
                      <td><?php echo $res['hora'] ?></td>
-                     <td><a href="../../controller/chamado/chamado_controller.php?acao=delete&id=<?php echo $res['id'] ?>"
-                        name="acao" class="btn btn-sm btn-danger excluir-usuario btn-lg" onClick="remover()">
-                        <span class="fa fa-trash"></span> Excluir</a>
+                     <?php if($res['situacao'] != "Fechado"){?>
+                     <td><a href="../../controller/chamado/chamado_controller.php?acao=update&situacao=Fechado&id=<?php echo $res['id'] ?>"
+                        name="acao" class="btn btn-danger btn-lg" onClick="remover()">
+                        <span class=""></span>Fechar</a>
                      </td>
+                     <?php }else { ?>
+                     <td><a href="../../controller/chamado/chamado_controller.php?acao=update&situacao=Aberto&id=<?php echo $res['id'] ?>"
+                        name="acao" class="btn btn-primary btn-lg" onClick="remover()">
+                        <span class=""></span>Abrir</a>
+                     </td>
+                     <?php }?>
                      <td>
                         <!-- Button chama o  modal -->
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#updateService<?php echo $res['id'] ?>">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#updateService<?php echo $res['id']; ?>">
                             Respostas
                         </button>
 
                         <!-- Modal -->
                         <form method="POST" action="../../controller/chamado/chamado_controller.php">
-                           <div class="modal fade" id="updateService<?php echo $res['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                           <div class="modal fade" id="updateService<?php echo $res['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                            <div class="modal-dialog" role="document">
                               <div class="modal-content">
                                  <div class="modal-header">
