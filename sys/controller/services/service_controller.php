@@ -35,6 +35,7 @@ switch($action){
     case 'update':
         try{
             $serviceDAO->setId($_POST['id']);
+            $serviceDAO->setSituacao($_POST['situacao'] ? $_POST['situacao'] : 'Enviado');
             $serviceDAO->update();
         }catch(Exception $e){
             echo $e->getMessage();

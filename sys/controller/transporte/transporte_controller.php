@@ -35,6 +35,7 @@
         case 'update':
             try{
                 $transporteDAO->setId($_POST['id']);
+                $transporteDAO->setSituacao(isset($_POST['situacao']) ? $_POST['situacao'] : 'Enviado');
                 $transporteDAO->update();
             } catch(Exception $e){
                 echo $e->getMessage();
