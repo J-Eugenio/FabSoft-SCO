@@ -82,7 +82,7 @@
                                  </button>
                                  </div>
                                  <div class="modal-body">
-                                    <div class="form-group">
+                                    <div class="modal-texto">
                                         <?php
                                           $all_msg = $chamadoDAO->findAllMsg($res['id']);
                                           foreach ($all_msg as $value) {
@@ -91,11 +91,15 @@
                                             <?php 
                                                 if($value['user_type'] == '1'){
                                              ?>
-                                                <div class="msg-chamada-admin"><?php echo $value['msg']?></div>
+                                             <div>
+                                                <div class="msg-chamada-admin" >Funcionário: <?php echo $value['msg']?></div>
+                                             </div>
                                              <?php 
 
                                              }else{ ?>
-                                             <div class="msg-chamada-user"><?php echo $value['msg']?></div>
+                                             <div>
+                                                <div class="msg-chamada-user">Eu: <?php echo $value['msg']?></div>
+                                             </div>
                                              <?php }
                                              
                                              } ?>
@@ -103,7 +107,7 @@
                                        </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="message-text" class="col-form-label">Message:</label>
+                                        <label for="message-text" class="col-form-label">Mensagem:</label>
                                         <textarea class="form-control" name="msg" id="message-text"></textarea>
                                     </div>
                                  </div>
@@ -153,7 +157,7 @@
                                  </button>
                                  </div>
                                  <div class="modal-body">
-                                    <div class="form-group">
+                                    <div class="modal-texto">
                                         <?php
                                           $all_msg = $chamadoDAO->findAllMsg($res['id']);
                                           foreach ($all_msg as $value) {
@@ -162,11 +166,15 @@
                                             <?php 
                                                 if($value['user_type'] == '1'){
                                              ?>
-                                                <div class="msg-chamada-admin"><?php echo $value['msg']?></div>
+                                             <div>
+                                                <div class="msg-chamada-admin" >Funcionário: <?php echo $value['msg']?></div>
+                                             </div>
                                              <?php 
 
                                              }else{ ?>
-                                             <div class="msg-chamada-user"><?php echo $value['msg']?></div>
+                                             <div>
+                                                <div class="msg-chamada-user">Eu: <?php echo $value['msg']?></div>
+                                             </div>
                                              <?php }
                                              
                                              } ?>
@@ -174,7 +182,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="message-text" class="col-form-label">Message:</label>
+                                        <label for="message-text" class="col-form-label">Mensagem:</label>
                                         <textarea class="form-control" name="msg" id="message-text"></textarea>
                                     </div>
                                  </div>

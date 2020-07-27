@@ -109,9 +109,10 @@
                                  </div>
                                  <div class="modal-body">
                                     <select class="form-control" name="situacao">
-                                       <option value="A">A</option>
-                                       <option value="B">B</option>
-                                       <option value="C">C</option>
+                                       <option value="Enviado">Enviado</option>
+                                       <option value="Cancelado">Cancelado</option>
+                                       <option value="Definido">Definido</option>
+                                       <option value="Indeferido">Indeferido</option>
                                     </select>
                                  </div>
                                  <div class="modal-footer">
