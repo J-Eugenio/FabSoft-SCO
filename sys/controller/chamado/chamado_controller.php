@@ -14,8 +14,8 @@
             try{
                 $chamadoDAO->setAssunto($_POST['assunto']);
                 $chamadoDAO->setTextoDoChamado($_POST['textoDoChamado']);
-                $chamadoDAO->setData(date('d-m-Y'));
-                $chamadoDAO->setHora(date('H:i:s'));
+                $chamadoDAO->setData($_POST['dataChamado']);
+                $chamadoDAO->setHora($_POST['horaChamado']);
                 $chamadoDAO->setSituacao(isset($_POST['situacao']) ? $_POST['situacao'] : 'Enviado');
                 $chamadoDAO->setId_paciente($_POST['id_paciente']);
                 $chamadoDAO->setUser_type($_POST['user_type']);

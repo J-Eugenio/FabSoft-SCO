@@ -44,6 +44,7 @@ CREATE TABLE IF NOT EXISTS `paciente` (
   `pontoDeReferencia` varchar(50) NOT NULL,
   `zona` varchar(50) NOT NULL,
   `hospitalDeTratamento` varchar(50) NOT NULL,
+  `situacao` varchar(50) NOT NULL,
   `user_type` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;

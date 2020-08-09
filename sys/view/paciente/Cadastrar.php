@@ -3,7 +3,7 @@
       include_once("../header.php");
       ?>
     <div id="main-container">
-      <h1>Cadastre um paciente</h1>
+      <h2>Cadastre um paciente</h2>
       <form id="form-register" method="POST" action="../../controller/paciente/paciente_controller.php">
         <div class="full-box">
           <input type="hidden" name="id" value="" />
@@ -95,7 +95,7 @@
         </div>
         <button type="submit" class="btn btn-success btn-lg"> Salvar</button>
         <button type="reset" class="btn btn-warning btn-lg"> Limpar</button>
-        <a href="Listar.php"><button type="button" class="btn btn-info btn-lg"><img src="/fabsoft-sco/sys/assets/img/search.svg" alt="Pesquisar">Pesquisar</button></a>
+        <a href="Listar.php"><button type="button" class="btn btn-info btn-lg">Pesquisar</button></a>
       </form>
     </div>
     </div>

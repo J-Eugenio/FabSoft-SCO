@@ -14,9 +14,9 @@ switch($action){
         try{
             $serviceDAO->setService($_POST['tipoDeService']);
             $serviceDAO->setTipoDeSonda($_POST['tipoDeSonda']);
-            $serviceDAO->setSituacao($_POST['situacao'] ? $_POST['situacao'] : 'Enviado');
-            $serviceDAO->setDataRegistro(date('d-m-Y'));
-            $serviceDAO->setHoraRegistro(date('H:i:s'));
+            $serviceDAO->setSituacao(isset($_POST['situacao']) ? $_POST['situacao'] : 'Enviado');
+            $serviceDAO->setDataRegistro($_POST['dataService']);
+            $serviceDAO->setHoraRegistro($_POST['horaService']);
             $serviceDAO->setUser_type($_POST['user_type']);
             $serviceDAO->setId_paciente($_POST['id_paciente']);
             $serviceDAO->insert();

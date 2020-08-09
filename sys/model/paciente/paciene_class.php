@@ -19,6 +19,7 @@
         private $pontoDeReferencia;
         private $zona;
         private $hospitalDeTratamento; 
+        private $situacao;
 
         public function getId(){
             return $this->id;
@@ -162,6 +163,14 @@
     
         public function setHospitalDeTratamento($hospitalDeTratamento){
             $this->hospitalDeTratamento = $hospitalDeTratamento;
+        }
+
+        public function setSituacao($situacao){
+            $this->situacao = $situacao;
+        }
+        
+        public function getSituacao(){
+            return $this->situacao;
         }
     }
 ?>

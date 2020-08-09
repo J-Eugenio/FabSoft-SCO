@@ -7,7 +7,7 @@
 <div id="main-container-services">
 <form method="POST" action="../../controller/services/service_controller.php">
       <div class="col justify-content-center  div-services">
-         <h1>Solicitação de Serviços</h1>
+         <h2>Solicitação de Serviços</h2>
          <div class="half-box">
             <label>Serviço: </label>
             <select class="form-control" name="tipoDeService" id="tipoDeService">
@@ -24,6 +24,12 @@
                   <option value="Nasogastica">Nasogástrica</option>
                </select>
             </div>
+         </div>
+         <div class="half-box">
+            <label>Data da consulta</label>
+            <input required  type="date" id="data" name="dataService" class="form-control">
+            <label>Hora da consulta</label>
+            <input required  type="time" id="time" name="horaService" class="form-control">
          </div>
          <div class="half-box d-flex justify-content-center">
             <button type="submit" class="btn btn-success btn-lg m-2"> Salvar</button>
@@ -71,7 +77,7 @@
                      <td><?php echo $res['service'] ?> </td>
                      <td><?php echo $res['tipoDeSonda'] ?></td>
                      <td><?php echo $res['situacao'] ?></td>
-                     <td><?php echo $res['dataRegistro'] ?></td>
+                     <td><?php echo date('d/m/Y', strtotime($res['dataRegistro'])) ?></td>
                      <td><?php echo $res['horaRegistro'] ?></td>
                      <td><a href="../../controller/services/service_controller.php?acao=delete&id=<?php echo $res['id'] ?>"
                         name="acao" class="btn btn-sm btn-danger excluir-usuario btn-lg" onClick="remover()">
@@ -84,7 +90,7 @@
                      <td><?php echo $res['service'] ?> </td>
                      <td><?php echo $res['tipoDeSonda'] ?></td>
                      <td><?php echo $res['situacao'] ?></td>
-                     <td><?php echo $res['dataRegistro'] ?></td>
+                     <td><?php echo date('d/m/Y', strtotime($res['dataRegistro'])) ?></td>
                      <td><?php echo $res['horaRegistro'] ?></td>
                      <td><a href="../../controller/services/service_controller.php?acao=delete&id=<?php echo $res['id'] ?>"
                         name="acao" class="btn btn-sm btn-danger excluir-usuario btn-lg" onClick="remover()">

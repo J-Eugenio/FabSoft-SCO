@@ -13,7 +13,7 @@
                <h3>Listagem de Funcionários</h3>
             </div>
             <div class="form-group" style="margin: 8px 10px;">
-               <table class="table">
+               <table class="table table-responsive table-bordered">
                <thead class="thead-dark">
                   <tr>
                      <th scope="col">#</th>

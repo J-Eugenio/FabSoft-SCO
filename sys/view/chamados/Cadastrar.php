@@ -6,12 +6,18 @@
 ?>
 
 <div id="main-container">
-    <h1>Abrir um chamado de ajuda</h1>
+    <h2>Abrir Chamado</h2>
     <form method="POST" action="../../controller/chamado/chamado_controller.php">
         <div>
             <div class="half-box spacing">
                 <label for="e-mail">Assunto</label>
                 <input type="text" class="form-control" name="assunto" placeholder="Assunto">
+            </div>
+            <div class="half-box">
+               <label>Data da consulta</label>
+               <input required  type="date" id="data" name="dataChamado" class="form-control">
+               <label>Hora da consulta</label>
+               <input required  type="time" id="time" name="horaChamado" class="form-control">
             </div>
             <div class="half-box ">
                 <label for="descricao">Precisamos que nos dê alguns detalhes sobre o seu problema.</label>
@@ -24,7 +30,7 @@
             </div>
             <button type="submit" class="btn btn-success btn-lg">Enviar</button>
             <button type="reset" class="btn btn-warning btn-lg">Limpar</button>
-            <a href="Listar.php"><button type="button" class="btn btn-info btn-lg"><img src="/fabsoft-sco/sys/assets/img/search.svg" alt="Pesquisar">Pesquisar</button></a>
+            <a href="Listar.php"><button type="button" class="btn btn-info btn-lg">Pesquisar</button></a>
         </div>
     </form>
 
@@ -58,14 +64,20 @@
                      <th scope="row"><?php echo $res['id'] ?></th>
                      <td><?php echo $res['assunto'] ?> </td>
                      <td><?php echo $res['situacao'] ?></td>
-                     <td><?php echo $res['data'] ?></td>
+                     <td><?php echo date('d/m/Y', strtotime($res['data'])) ?></td>
                      <td><?php echo $res['hora'] ?></td>
                      <?php if($res['situacao'] != "Enviado"){?>
-                     <td>
-                        <button type="button" class="btn btn-secondary" disabled >
-                            Excluir
-                        </button>
-                     </td>
+                        <?php if($res['situacao'] != "Fechado"){?>
+                        <td><a href="../../controller/chamado/chamado_controller.php?acao=update&situacao=Fechado&id=<?php echo $res['id'] ?>"
+                           name="acao" class="btn btn-danger btn-lg" onClick="remover()">
+                           <span class=""></span>Fechar</a>
+                        </td>
+                        <?php }else { ?>
+                        <td><a href="../../controller/chamado/chamado_controller.php?acao=update&situacao=Aberto&id=<?php echo $res['id'] ?>"
+                           name="acao" class="btn btn-primary btn-lg" onClick="remover()">
+                           <span class=""></span>Abrir</a>
+                        </td>
+                        <?php }?>
                      <?php }else { ?>
                      <td><a href="../../controller/chamado/chamado_controller.php?acao=delete&id=<?php echo $res['id'] ?>"
                         name="acao" class="btn btn-danger btn-lg" onClick="remover()">
@@ -141,7 +153,7 @@
                      <th scope="row"><?php echo $res['id'] ?></th>
                      <td><?php echo $res['assunto'] ?> </td>
                      <td><?php echo $res['situacao'] ?></td>
-                     <td><?php echo $res['data'] ?></td>
+                     <td><?php echo date('d/m/Y', strtotime($res['data'])) ?></td>
                      <td><?php echo $res['hora'] ?></td>
                      <?php if($res['situacao'] != "Fechado"){?>
                      <td><a href="../../controller/chamado/chamado_controller.php?acao=update&situacao=Fechado&id=<?php echo $res['id'] ?>"

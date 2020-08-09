@@ -31,6 +31,7 @@ switch($acao){
             $paciDAO->setPontoDeReferencia($_POST['pontoDeReferencia']);
             $paciDAO->setZona($_POST['zona']);
             $paciDAO->setHospitalDeTratamento($_POST['hospitalDeTratamento']);
+            $paciDAO->setSituacao(isset($_POST['situacao']) ? $_POST['situacao'] : 'Acompanhamento');
             $paciDAO->insert();
         }catch(Exception $e){
             echo $e->getMessage;
@@ -47,7 +48,17 @@ switch($acao){
     case 'update':
         try{
             $paciDAO->setId($_POST['id']);
+            $paciDAO->setSituacao($_POST['situacao'] ? $_POST['situacao'] : 'Ativo');
             $paciDAO->update();
+        }catch(Exception $e){
+            echo $e->getMessage();
+        }
+    break;
+    case 'updateSituacao':
+        try{
+            $paciDAO->setId($_POST['id']);
+            $paciDAO->setSituacao($_POST['situacao'] ? $_POST['situacao'] : 'Ativo');
+            $paciDAO->updateSituacao();
         }catch(Exception $e){
             echo $e->getMessage();
         }

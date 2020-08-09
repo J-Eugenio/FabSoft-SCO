@@ -10,7 +10,7 @@
 html{
     font-family: 'EB Garamond', serif;
 }
-body{
+header{
     background: #fff;
     -webkit-font-smoothing: antialiased;
 }
@@ -38,8 +38,8 @@ body{
 }
 
 h1, h2, h3, h5, h6, a, p{
-    font-family: 'EB Garamond', serif;
-    color:var(--title-color)
+    font-family: 'Arial', serif;
+    color:var(--title-color);
 }
 
 a:hover{

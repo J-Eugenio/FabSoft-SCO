@@ -10,7 +10,7 @@
 <div>
 <form method="POST" action="../../controller/transporte/transporte_controller.php">
       <div class="col justify-content-center  div-services">
-         <h1>Solicitação de Transporte</h1>
+         <h2>Solicitação de Transporte</h2>
          <div class="half-box">
             <label>Lugar Solicitado: </label>
             <select class="form-control" name="lugarSolicitado">
@@ -23,10 +23,10 @@
             <input type="text" name="motivo" class="form-control" placeholder="Motivo..."/>
          </div>
          <div class="half-box">
-         <label>Data da consulta</label>
-         <input type="date" id="data" name="dataConsulta" class="form-control">
-         <label>Hora da consulta</label>
-         <input type="time" id="time" name="horaConsulta" class="form-control">
+            <label>Data da consulta</label>
+            <input required  type="date" id="data" name="dataConsulta" class="form-control">
+            <label>Hora da consulta</label>
+            <input required  type="time" id="time" name="horaConsulta" class="form-control">
          </div>
          <div class="half-box d-flex justify-content-center">
             <button type="submit" class="btn btn-success btn-lg m-2"> Salvar</button>
@@ -47,7 +47,7 @@
             <h3>Tabela de Transporte</h3>
          </div>
          <div class="form-group" style="margin: 8px 10px;">
-            <table class="table table-responsive">
+            <table class="table table-responsive table-bordered">
                <thead class="thead-dark">
                   <tr>
                      <th scope="col">#</th>
@@ -72,7 +72,7 @@
                      <th scope="row"><?php echo $res['id'] ?></th>
                      <td><?php echo $res['lugarSolicitado'] ?> </td>
                      <td><?php echo $res['motivoSolicitacao'] ?></td>
-                     <td><?php echo $res['dataConsulta'] ?></td>
+                     <td><?php echo date('d/m/Y', strtotime($res['dataConsulta'])) ?></td>
                      <td><?php echo $res['horarioConsulta'] ?></td>
                      <td><?php echo $res['situacao'] ?></td>
                      <td><a href="../../controller/transporte/transporte_controller.php?acao=delete&id=<?php echo $res['id'] ?>"
@@ -86,7 +86,7 @@
                      <th scope="row"><?php echo $res['id'] ?></th>
                      <td><?php echo $res['lugarSolicitado'] ?> </td>
                      <td><?php echo $res['motivoSolicitacao'] ?></td>
-                     <td><?php echo $res['dataConsulta'] ?></td>
+                     <td><?php echo date('d/m/Y', strtotime($res['dataConsulta'])) ?></td>
                      <td><?php echo $res['horarioConsulta'] ?></td>
                      <td><?php echo $res['situacao'] ?></td>
                      <td><a href="../../controller/transporte/transporte_controller.php?acao=delete&id=<?php echo $res['id'] ?>"
