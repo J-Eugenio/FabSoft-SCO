@@ -1,6 +1,6 @@
 <?php
 
-    require_once 'paciente_DAO.php';
+    require_once '../../model/paciente/paciente_DAO.php';
     require_once '../../model/paciente/paciene_class.php';
     
     $paciDAO = new paciente_DAO();

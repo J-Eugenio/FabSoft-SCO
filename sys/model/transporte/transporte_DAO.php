@@ -1,5 +1,5 @@
 <?php
-    require_once '../../model/transporte/transporte_class.php';
+    require_once 'transporte_class.php';
 
     class transporte_DAO extends transporte_class{
         protected $tabela = 'transporte';

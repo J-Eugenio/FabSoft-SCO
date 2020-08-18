@@ -1,6 +1,6 @@
 <?php
 
-    require_once '../../model/auth/auth_class.php';
+    require_once 'auth_class.php';
 
     class auth_DAO extends auth_class{
         protected $funcionario = 'funcionario';

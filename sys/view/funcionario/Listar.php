@@ -1,5 +1,5 @@
 <?php 
-  include_once "../../controller/funcionario/funcionario_DAO.php";
+  include_once "../../model/funcionario/funcionario_DAO.php";
   include_once "../header.php";
   $reser = new funcionario_DAO;
   $resultado = $reser->listarFuncionarios();

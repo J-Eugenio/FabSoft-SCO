@@ -1,6 +1,6 @@
 <?php
 
-    require_once '../../model/funcionario/funcionario_class.php';
+    require_once 'funcionario_class.php';
 
     class funcionario_DAO extends funcionario_class{
         protected $tabela = 'funcionario';
@@ -80,7 +80,7 @@
             }
         }
         function listarFuncionarios(){
-            $result[] = null;
+            $result = null;
             $resultado = "SELECT * FROM $this->tabela ORDER BY id ASC";
             $resultado = DB::prepare($resultado);
             $resultado->execute();

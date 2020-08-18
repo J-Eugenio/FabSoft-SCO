@@ -1,6 +1,6 @@
 <?php
 
-    require_once 'service_DAO.php';
+    require_once '../../model/services/service_DAO.php';
     require_once '../../model/services/service_class.php';
     $serviceDAO = new service_DAO();
     switch($_SERVER['REQUEST_METHOD'])

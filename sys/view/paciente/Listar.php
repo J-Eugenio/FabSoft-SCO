@@ -1,5 +1,5 @@
 <?php
-include_once '../../controller/paciente/paciente_DAO.php';
+include_once '../../model/paciente/paciente_DAO.php';
 include_once "../header.php"
 ?>
 <?php

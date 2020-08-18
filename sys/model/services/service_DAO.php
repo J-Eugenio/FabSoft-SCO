@@ -1,6 +1,6 @@
 <?php
 
-    require_once '../../model/services/service_class.php';
+    require_once 'service_class.php';
 
     class service_DAO extends service_class{
         protected $tabela = 'services';
@@ -71,7 +71,7 @@
             }
         }
         function listarServices(){
-            $result[] = null;
+            $result = null;
             $resultado = "SELECT * FROM $this->tabela ORDER BY id ASC";
             $resultado = DB::prepare($resultado);
             $resultado->execute();

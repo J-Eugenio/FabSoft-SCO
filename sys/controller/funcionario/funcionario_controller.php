@@ -1,6 +1,6 @@
 <?php
 
-    require_once 'funcionario_DAO.php';
+    require_once '../../model/funcionario/funcionario_DAO.php';
     require_once '../../model/funcionario/funcionario_class.php';
     $funcDAO = new funcionario_DAO();
     switch($_SERVER['REQUEST_METHOD'])

@@ -1,6 +1,6 @@
 <?php
 
-    require_once 'chamado_DAO.php';
+    require_once '../../model/chamado/chamado_DAO.php';
     require_once '../../model/chamado/chamado_class.php';
     $chamadoDAO = new chamado_DAO();
 

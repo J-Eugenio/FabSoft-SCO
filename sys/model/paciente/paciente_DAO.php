@@ -1,7 +1,6 @@
 <?php
 
-    require_once '../../model/paciente/paciene_class.php';
-    require '../../config/connect.php';
+    require_once 'paciene_class.php';
 
     class paciente_DAO extends paciente_class{
         protected $tabela = 'paciente';
@@ -150,7 +149,7 @@
             }
         }
         function listarFuncionarios(){
-            $result[] = null;
+            $result = null;
             $resultado = "SELECT * FROM $this->tabela ORDER BY id ASC";
             $resultado = DB::prepare($resultado);
             $resultado->execute();

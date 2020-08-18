@@ -1,6 +1,6 @@
 <?php
     include_once '../header.php';
-    require_once '../../controller/transporte/transporte_DAO.php';
+    require_once '../../model/transporte/transporte_DAO.php';
 
     $transporteDAO = new transporte_DAO();
     $dadosTransporte = $transporteDAO->listarTransportes();

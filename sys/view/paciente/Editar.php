@@ -1,6 +1,6 @@
 
     <?php
-      include_once '../../controller/paciente/paciente_DAO.php';
+      include_once '../../model/paciente/paciente_DAO.php';
       $paciDAO = new paciente_DAO();//Instancia das funçoes do DAO
       $id =  filter_input(INPUT_GET,'id', FILTER_SANITIZE_NUMBER_INT);//captura o ID por get e filtra em somente number
       

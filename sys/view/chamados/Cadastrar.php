@@ -1,6 +1,6 @@
 <?php 
     include_once("../header.php"); 
-    include_once '../../controller/chamado/chamado_DAO.php';
+    include_once '../../model/chamado/chamado_DAO.php';
     $chamadoDAO = new chamado_DAO;
     $resultado = $chamadoDAO->listarChamados();
 ?>

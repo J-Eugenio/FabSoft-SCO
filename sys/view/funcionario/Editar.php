@@ -1,5 +1,5 @@
 <?php
-  include_once '../../controller/funcionario/funcionario_DAO.php';
+  include_once '../../model/funcionario/funcionario_DAO.php';
   $funcDAO = new funcionario_DAO();//Instancia das funçoes do DAO
   $id =  filter_input(INPUT_GET,'id', FILTER_SANITIZE_NUMBER_INT);
   $resultaEditar = $funcDAO->findUnic($id);

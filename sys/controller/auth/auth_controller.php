@@ -1,6 +1,6 @@
 <?php
 
-    require_once 'auth_DAO.php';
+    require_once '../../model/auth/auth_DAO.php';
     require_once '../../model/auth/auth_class.php';
     $userClass = new auth_DAO();
     switch($_SERVER['REQUEST_METHOD'])

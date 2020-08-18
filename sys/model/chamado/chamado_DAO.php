@@ -1,6 +1,6 @@
 <?php
 
-    require_once '../../model/chamado/chamado_class.php';
+    require_once 'chamado_class.php';
     class chamado_DAO extends chamado_class{
         protected $tabela = 'chamado';
 
@@ -125,7 +125,7 @@
         }
 
         function listarChamados(){
-            $result[] = null;
+            $result = null;
             $resultado = "SELECT * FROM $this->tabela";
             $resultado = DB::prepare($resultado);
             $resultado->execute();
