@@ -148,7 +148,7 @@
                 echo $erro->getMessage();
             }
         }
-        function listarFuncionarios(){
+        function listarPacientes(){
             $result = null;
             $resultado = "SELECT * FROM $this->tabela ORDER BY id ASC";
             $resultado = DB::prepare($resultado);

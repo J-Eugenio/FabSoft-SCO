@@ -13,10 +13,47 @@
     $pacienteDAO = new paciente_DAO();
     $serviceDAO = new service_DAO();
 
+    $dados = null;
+    $action = $_POST['action'];
 
-    $dados = $chamadoDAO->listarChamados();
-    //$dados = $funcionarioDAO->listarFuncionarios();
+    switch($action){
+        case 'chamado':
+            try {
+                $dados = $chamadoDAO->listarChamados();       
+            } catch (Exception $e) {
+                echo $e->getMessage();
+            }
+        break;
+        case 'funcionario':
+            try{
+                $dados = $funcionarioDAO->listarFuncionarios();
+            }catch(Exception $e){
+                echo $e->getMessage();
+            }
+        break;
+        case 'transporte':
+            try{
+                $dados = $transporteDAO->listarTransportes();
+            }catch(Exception $e){
+                echo $e->getMessage();
+            }
+        break;
 
+        case 'paciente':
+            try {
+                $dados = $pacienteDAO->listarPacientes();
+            } catch (Exception $e) {
+                echo $e->get
+            }
+        break;
+        case 'services':
+            try {
+                $dados = $serviceDAO->listarServices();
+            } catch (Exception $e) {
+                echo $e->get
+            }
+        break;
+    }
     
    
 

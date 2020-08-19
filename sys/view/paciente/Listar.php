@@ -4,7 +4,7 @@ include_once "../header.php"
 ?>
 <?php
 $reser = new paciente_DAO;
-$resultado = $reser->listarFuncionarios();
+$resultado = $reser->listarPacientes();
 ?>
 
 <div class="body">
