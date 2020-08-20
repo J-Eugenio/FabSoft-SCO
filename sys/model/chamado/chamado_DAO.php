@@ -125,7 +125,7 @@
         }
 
         function listarChamados(){
-            $result = null;
+            $result = [];
             $resultado = "SELECT * FROM $this->tabela";
             $resultado = DB::prepare($resultado);
             $resultado->execute();

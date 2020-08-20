@@ -24,7 +24,7 @@ class gerar_pdf {
              'gridlines'=> EZ_GRIDLINE_DEFAULT,
              'shadeHeadingCol'=> [0.6,0.6,0.5],
              'alignHeadings'=>'center',
-             'width'=>400,
+             'width'=>550,
              'cols'=> [
              'assunto'=> ['bgcolor'=> [0.9,0.9,0.7] ],
              'situacao'=> ['bgcolor'=> [0,0.6,1] ]

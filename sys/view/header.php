@@ -48,6 +48,9 @@
                     <li class="nav-item">
                         <a class="navbar-brand mb-0" href="/FabSoft-SCO/sys/view/paciente/Cadastrar.php">Paciente</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="navbar-brand mb-0" href="/FabSoft-SCO/sys/view/relatorios/">Relatórios</a>
+                    </li>
                     <?php }; ?>
                     <li class="nav-item">
                         <a class="navbar-brand mb-0" href="/FabSoft-SCO/sys/view/services/Cadastrar.php">Serviços</a>

@@ -1,66 +1,97 @@
-:root{
+:root {
     --title-color: #322153;
     --primary-color: #34cb79;
-
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
 }
-html{
+
+html {
     font-family: 'EB Garamond', serif;
 }
-header{
+
+header {
     background: #fff;
     -webkit-font-smoothing: antialiased;
 }
-a{
+
+a {
     text-decoration: none;
 }
-h1 h2 h3 h4 h5 h6{
+
+h1 h2 h3 h4 h5 h6 {
     font-family: 'EB Garamond', serif;
     color: var(--title-color);
 }
-:root{
+
+:root {
     --title-color: #322153;
     --primary-color: #34cb79;
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-html{
+
+html {
     font-family: 'EB Garamond', serif;
 }
-body{
-    -webkit-font-smoothing:antialiased;
+
+body {
+    -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h5, h6, a, p{
+h1,
+h2,
+h3,
+h5,
+h6,
+a,
+p {
     font-family: 'Arial', serif;
-    color:var(--title-color);
+    color: var(--title-color);
 }
 
-a:hover{
+a:hover {
     border-bottom: 2px solid white;
-
 }
 
-.bem-vindo{
+.bem-vindo {
     font-family: 'EB Garamond', serif;
-    color:white;
+    color: white;
     margin-right: 5px;
     text-align: center;
 }
 
-.logout{
+.logout {
     display: flex;
     align-items: center;
     flex-direction: row;
-    
 }
 
-#icon{
-    color: white
+#icon {
+    color: white;
+}
+
+.btn-relatorio {
+    background-color: #6495ED;
+    width: 250px;
+    height: 50px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    -webkit-box-shadow: 5px 3px 9px -3px rgba(0, 0, 0, 0.97);
+    box-shadow: 5px 3px 9px -3px rgba(0, 0, 0, 0.97);
+}
+
+.a-btn {
+    border-radius: 10px;
+    display: flex;
+    height: 100%;
+    color: white;
+    justify-content: center;
+    align-items: center;
 }

@@ -14,7 +14,7 @@
     $serviceDAO = new service_DAO();
 
     $dados = null;
-    $action = $_POST['action'];
+    $action = $_GET['action'];
 
     switch($action){
         case 'chamado':
@@ -43,21 +43,22 @@
             try {
                 $dados = $pacienteDAO->listarPacientes();
             } catch (Exception $e) {
-                echo $e->get
+                echo $e->getMessage();
             }
         break;
         case 'services':
             try {
                 $dados = $serviceDAO->listarServices();
             } catch (Exception $e) {
-                echo $e->get
+                echo $e->getMessage();
             }
         break;
+        default:
+            echo 'Dados não encontrados';
+        break;
     }
-    
    
-
-
-   
-    $pdf->pdf($dados);
+    if(!empty($action)){
+        $pdf->pdf($dados);
+    }
 ?>

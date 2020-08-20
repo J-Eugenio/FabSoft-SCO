@@ -149,7 +149,7 @@
             }
         }
         function listarPacientes(){
-            $result = null;
+            $result = [];
             $resultado = "SELECT * FROM $this->tabela ORDER BY id ASC";
             $resultado = DB::prepare($resultado);
             $resultado->execute();
