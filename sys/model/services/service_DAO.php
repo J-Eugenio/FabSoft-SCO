@@ -72,7 +72,7 @@
         }
         function listarServices(){
             $result = [];
-            $resultado = "SELECT * FROM $this->tabela ORDER BY id ASC";
+            $resultado = "SELECT * FROM $this->tabela ORDER BY id ASC ";
             $resultado = DB::prepare($resultado);
             $resultado->execute();
             while($dados = $resultado->fetch(PDO::FETCH_ASSOC)){
@@ -85,6 +85,34 @@
                     'horaRegistro' => $dados['horaRegistro'],
                     'id_paciente' => $dados['id_paciente'],
                     'user_type' => $dados['user_type']
+                );
+            }
+
+            return $result;
+        }
+        function listarServicesJoin(){
+            $result = [];
+            $resultado = "SELECT 
+                services.id, 
+                service,
+                tipoDeSonda, 
+                services.situacao, 
+                dataRegistro, 
+                horaRegistro, 
+                paciente.nome as paciente 
+            FROM $this->tabela inner join paciente on services.id_paciente = paciente.id ";
+
+            $resultado = DB::prepare($resultado);
+            $resultado->execute();
+            while($dados = $resultado->fetch(PDO::FETCH_ASSOC)){
+                $result[] = array(
+                    'id' => $dados['id'],
+                    'service' => $dados['service'],
+                    'tipoDeSonda' => $dados['tipoDeSonda'],
+                    'situacao' => $dados['situacao'],
+                    'dataRegistro' => $dados['dataRegistro'],
+                    'horaRegistro' => $dados['horaRegistro'],
+                    'paciente' => $dados['paciente']
                 );
             }
 

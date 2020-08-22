@@ -142,5 +142,29 @@
             }
             return $result;
         }
+        function listarChamadosJoin(){
+            $result = [];
+            $resultado = "SELECT 
+                chamado.id, 
+                assunto, 
+                data, 
+                hora, 
+                chamado.situacao, 
+                paciente.nome as paciente 
+            FROM $this->tabela inner join paciente on chamado.id_paciente = paciente.id";
+            $resultado = DB::prepare($resultado);
+            $resultado->execute();
+            while($dados = $resultado->fetch(PDO::FETCH_UNIQUE)){
+                $result[] = array(
+                    'id' => $dados['id'],
+                    'assunto' => $dados['assunto'],
+                    'data' => $dados['data'],
+                    'hora' => $dados['hora'],
+                    'situacao' => $dados['situacao'],
+                    'paciente' => $dados['paciente']
+                );
+            }
+            return $result;
+        }
     }
 ?>

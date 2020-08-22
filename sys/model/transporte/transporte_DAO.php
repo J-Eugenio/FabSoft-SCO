@@ -94,5 +94,34 @@
 
             return $result;
         }
+        function listarTransportesJoin(){
+            $result = [];
+            $resultado = "SELECT 
+                transporte.id, 
+                lugarSolicitado, 
+                motivoSolicitacao, 
+                dataConsulta, 
+                horarioConsulta, 
+                transporte.situacao, 
+                paciente.nome as paciente 
+            FROM `transporte` inner join paciente on transporte.id_paciente = paciente.id";
+
+            $resultado = DB::prepare($resultado);
+            $resultado->execute();
+            while($dados = $resultado->fetch(PDO::FETCH_ASSOC)){
+                $result[] = array(
+                    'id' => $dados['id'],
+                    'lugarSolicitado' => $dados['lugarSolicitado'],
+                    'motivoSolicitacao' => $dados['motivoSolicitacao'],
+                    'dataConsulta' => $dados['dataConsulta'],
+                    'horarioConsulta' => $dados['horarioConsulta'],
+                    'situacao' => $dados['situacao'],
+                    'paciente' => $dados['paciente']
+
+                );
+            }
+
+            return $result;
+        }
     }
 ?>

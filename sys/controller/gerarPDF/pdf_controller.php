@@ -19,7 +19,7 @@
     switch($action){
         case 'chamado':
             try {
-                $dados = $chamadoDAO->listarChamados();       
+                $dados = $chamadoDAO->listarChamadosJoin();       
             } catch (Exception $e) {
                 echo $e->getMessage();
             }
@@ -33,7 +33,7 @@
         break;
         case 'transporte':
             try{
-                $dados = $transporteDAO->listarTransportes();
+                $dados = $transporteDAO->listarTransportesJoin();
             }catch(Exception $e){
                 echo $e->getMessage();
             }
@@ -48,7 +48,7 @@
         break;
         case 'services':
             try {
-                $dados = $serviceDAO->listarServices();
+                $dados = $serviceDAO->listarServicesJoin();
             } catch (Exception $e) {
                 echo $e->getMessage();
             }
