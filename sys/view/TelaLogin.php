@@ -15,7 +15,7 @@
          <span class="logo"></span>
          <div id="login-form">
             <form method="POST" action="../controller/auth/auth_controller.php">
-               <h1>LOGIN</h1>
+               <h1>SCO</h1>
                <div class="field">
                   <label for="cpf">CPF</label>
                   <input type="text" id="cpf" name="cpf"placeholder="Digite seu cpf..." required autofocus>
@@ -32,5 +32,6 @@
                </div>
             </form>
          </div>
+         <div id="login-img"><img class="login-img" src="/fabsoft-sco/sys/assets/img/login.svg" alt="login-img"></div>
    </body>
 </html>

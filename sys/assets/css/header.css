@@ -1,6 +1,19 @@
-.navbar{
-    background-color: #6495ED!important;
+.header{
+    width: 100vw;
 }
+.navbar{
+    background-color: #5bb4e7!important;   
+}
+
 h1{
     color: white;
+}
+@media (min-width: 750px){
+.navbar{
+    background-color: #5bb4e7!important;   
+}
+
+h1{
+    color: white;
+}
 }

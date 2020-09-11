@@ -1,7 +1,8 @@
-
-
+.page-footer{
+  width: 100vw;
+}
 .grid-layout{
-  background-color: #6495ED;
+  background-color: #5bb4e7!important;
   padding: 50px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -22,11 +23,44 @@
   grid-row-end: 5; 
 }
 
-h5, a, p,li{
+h5, a, p, li{
   color:white;
   text-align: center;
 }
 
 ul{
 list-style-type: none;
+}
+@media (min-width: 750px){
+
+.grid-layout{
+  background-color: #5bb4e7!important;
+  padding: 50px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+.grid1 { 
+  grid-column-start: 1; 
+  grid-column-end: 2; 
+  grid-row-start: 1; 
+  grid-row-end: 3; 
+}
+
+.grid3 { 
+  grid-column-start: 1; 
+  grid-column-end: 4; 
+  grid-row-start: 4; 
+  grid-row-end: 5; 
+}
+
+h5, a, p, li{
+  color:white;
+  text-align: center;
+}
+
+ul{
+list-style-type: none;
+}
 }

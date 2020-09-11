@@ -19,6 +19,8 @@ header {
 
 a {
     text-decoration: none;
+    margin-left: 20px;
+    transition: 0.7s;
 }
 
 h1 h2 h3 h4 h5 h6 {
@@ -57,7 +59,10 @@ p {
 }
 
 a:hover {
-    border-bottom: 2px solid white;
+    border: 2px solid none;
+    border-radius: 5px;
+    background-color: #51a0ce;
+    margin-left: 20px;
 }
 
 .bem-vindo {
