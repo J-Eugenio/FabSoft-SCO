@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="/fabsoft-sco/sys/assets/css/footer.css">
     <link rel="stylesheet" href="/fabsoft-sco/sys/assets/css/header.css">
     <link rel="stylesheet" href="/fabsoft-sco/sys/assets/css/menu.css">
+    <link rel="stylesheet" href="/fabsoft-sco/sys/assets/css/relatorios.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="/fabsoft-sco/sys/view/services/select_service.js"></script>
     <script src="/fabsoft-sco/sys/assets/javascript/calendario.js"></script>

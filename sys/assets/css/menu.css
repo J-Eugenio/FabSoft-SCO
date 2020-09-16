@@ -21,7 +21,7 @@
     color: #6495ED;
     font-family: 'Arial', serif;
     text-transform: uppercase;
-    font-size: 25px;
+    font-size: 20px;
     text-align: center;
     margin: auto;
     margin-top: 100px;
@@ -33,16 +33,15 @@
     align-items: center;
     justify-content: space-between;
     width: 800px;
-    height: 700px;
     margin: auto;
 }
 
 .header-content img{
-width: 500px;
-height: 500px;
-margin: auto;
-margin-left: 100px;
-align-content: center;
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    margin-left: 100px;
+    align-content: center;
 }
 
 .header-content h1{
@@ -50,7 +49,6 @@ align-content: center;
     font-family: 'Arial', serif;
     text-transform: uppercase;
     font-size: 25px;
-    width: 50%;
     text-align: center;
     margin-top: 70px;
 }

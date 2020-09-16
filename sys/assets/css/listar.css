@@ -1,3 +1,9 @@
+
+#main-container, .panel{
+    width: 100vh;
+}
+
+@media (min-width: 1100px){
 table{
     margin: auto!important;
 }
@@ -21,4 +27,5 @@ td{
 
 button{
     height: 35px;
+}
 }
