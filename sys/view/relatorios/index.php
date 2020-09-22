@@ -4,7 +4,7 @@
 
 <div id="main-container">
     <form action="" method="POST"> 
-        <div>
+        <div id="main-container">
             <div class="panel-heading">
                 <h3>Relatórios</h3>
             </div>

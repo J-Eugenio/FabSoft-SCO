@@ -7,7 +7,7 @@
 <div id="main-container-services">
 <form method="POST" action="../../controller/services/service_controller.php">
       <div class="col justify-content-center  div-services">
-         <h2>Solicitação de Serviços</h2>
+         <h2 class="row justify-content-center">Solicitação de Serviços</h2>
          <div class="half-box">
             <label>Serviço: </label>
             <select class="form-control" name="tipoDeService" id="tipoDeService">

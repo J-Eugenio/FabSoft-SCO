@@ -8,7 +8,7 @@
 <div id="main-container">
     <h2>Abrir Chamado</h2>
     <form method="POST" action="../../controller/chamado/chamado_controller.php">
-        <div>
+        <div class="col justify-content-center">
             <div class="half-box spacing">
                 <label for="e-mail">Assunto</label>
                 <input type="text" class="form-control" name="assunto" placeholder="Assunto">
@@ -28,9 +28,11 @@
                 <input type="hidden" name="id_paciente" class="form-control" value="<?php echo $_SESSION['user_id'];?>" />
                 <input type="hidden" name="user_type" class="form-control" value="<?php echo $_SESSION['user_type'];?>" />
             </div>
-            <button type="submit" class="btn btn-success btn-lg">Enviar</button>
-            <button type="reset" class="btn btn-warning btn-lg">Limpar</button>
-            <a href="Listar.php"><button type="button" class="btn btn-info btn-lg">Pesquisar</button></a>
+            <div class="half-box d-flex justify-content-center">
+                <button type="submit" class="btn btn-success btn-lg mr-4">Enviar</button>
+                <button type="reset" class="btn btn-warning btn-lg">Limpar</button>
+                <a href="Listar.php"><button type="button" class="btn btn-info btn-lg">Pesquisar</button></a>
+            </div>
         </div>
     </form>
 
