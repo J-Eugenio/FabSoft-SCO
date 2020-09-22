@@ -10,7 +10,7 @@
 <div id="main-container">
 <form method="POST" action="../../controller/transporte/transporte_controller.php">
       <div class="col justify-content-center  div-services">
-         <h2>Solicitação de Transporte</h2>
+         <h2 class="row justify-content-center">Solicitação de Transporte</h2>
          <div class="half-box">
             <label>Lugar Solicitado: </label>
             <select class="form-control" name="lugarSolicitado">
