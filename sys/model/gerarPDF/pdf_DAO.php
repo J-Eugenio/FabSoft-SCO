@@ -16,17 +16,18 @@ class gerar_pdf {
         $this->pdf->allowedTags .= '|comment:.*?';
         $this->pdf->ezSetMargins(20, 20, 20, 20);
         $this->pdf->selectFont('Helvetica');
-
+        $this->pdf-> ezText('Relatório gerado por:', 12,);
+        $this->pdf-> ezText('Data:', 12,);
         $this->pdf-> ezText('Sistema de Comunicação Oncológica', 25,
         array(justification => 'center', spacing => 2.0));
         
-            $this->pdf->ezTable($data,$cols,'Relatorio', [
+            $this->pdf->ezTable($data,$cols,'Relatório', [
                
-             'textCol' => [52,226,239],
-             'lineCol' => [33,180,191],
+             'textCol' => [0,0,0],
+             'lineCol' => [0,0.8,1],
              'titleFontSize' => 15,
              'gridlines'=> EZ_GRIDLINE_DEFAULT,
-             'shadeHeadingCol'=> [33,180,191],
+             'shadeHeadingCol'=> [0,0.8,1],
              'alignHeadings'=>'center',
              'width'=>550,
              'cols'=> [
