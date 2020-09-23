@@ -17,12 +17,16 @@ class gerar_pdf {
         $this->pdf->ezSetMargins(20, 20, 20, 20);
         $this->pdf->selectFont('Helvetica');
 
-        $this->pdf-> ezText('Relatório', 25,
-        array(justification => 'center', spacing => 3.0));
+        $this->pdf-> ezText('Sistema de Comunicação Oncológica', 25,
+        array(justification => 'center', spacing => 2.0));
         
-            $this->pdf->ezTable($data,$cols,'', [
+            $this->pdf->ezTable($data,$cols,'Relatorio', [
+               
+             'textCol' => [52,226,239],
+             'lineCol' => [33,180,191],
+             'titleFontSize' => 15,
              'gridlines'=> EZ_GRIDLINE_DEFAULT,
-             'shadeHeadingCol'=> [0.6,0.6,0.5],
+             'shadeHeadingCol'=> [33,180,191],
              'alignHeadings'=>'center',
              'width'=>550,
              'cols'=> [
