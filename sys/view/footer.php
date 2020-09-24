@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col l6 s12">
                     <h5 class="white-text">Sistema de Comunicação Oncológica</h5>
-                    <p class="grey-text text-lighten-4">Aplicação web gestora de atendimento e comunicação da cidade de Jaguaretama-CE</p>
+                    <p class="grey-text text-lighten-4">Aplicação web gestora de atendimento e comunicação da cidade de Jaguaribara-CE</p>
                 </div>
             </div>
         </div>
