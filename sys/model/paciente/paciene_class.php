@@ -1,4 +1,5 @@
 <?php
+    require_once '../../config/connect.php';
     class paciente_class{
 
         private $id;
