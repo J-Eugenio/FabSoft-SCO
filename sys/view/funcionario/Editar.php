@@ -62,7 +62,7 @@
         <?php }?>
         <option>Selecione o tipo da função...</option>
         <option value="secretariaDeSaude">Secretaria de saude</option>
-        <option value="Coordenador">Coordenador</option>
+        <option value="coordenador">Coordenador</option>
         <option value="enfermeiro">Enfermeiro</option>
       </select>
     </div>

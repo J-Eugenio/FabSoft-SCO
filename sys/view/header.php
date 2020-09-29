@@ -38,27 +38,27 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="navbar-brand mb-0" href="/FabSoft-SCO/sys/view/menu.php">Home <span class="sr-only">(current)</span></a>
+                        <a class="navbar-brand mb-0" href="/fabsoft-sco/sys/view/menu.php">Home <span class="sr-only">(current)</span></a>
                     </li>
                 <?php if($_SESSION['user_type'] == 1){?>
                     <li class="nav-item">
-                        <a class="navbar-brand mb-0" href="/FabSoft-SCO/sys/view/funcionario/Cadastrar.php">Funcionário</a>
+                        <a class="navbar-brand mb-0" href="/fabsoft-sco/sys/view/funcionario/Cadastrar.php">Funcionário</a>
                     </li>
                     <li class="nav-item">
-                        <a class="navbar-brand mb-0" href="/FabSoft-SCO/sys/view/paciente/Cadastrar.php">Paciente</a>
+                        <a class="navbar-brand mb-0" href="/fabsoft-sco/sys/view/paciente/Cadastrar.php">Paciente</a>
                     </li>
                     <li class="nav-item">
-                        <a class="navbar-brand mb-0" href="/FabSoft-SCO/sys/view/relatorios/">Relatórios</a>
+                        <a class="navbar-brand mb-0" href="/fabsoft-sco/sys/view/relatorios/">Relatórios</a>
                     </li>
                     <?php }; ?>
                     <li class="nav-item">
-                        <a class="navbar-brand mb-0" href="/FabSoft-SCO/sys/view/services/Cadastrar.php">Serviços</a>
+                        <a class="navbar-brand mb-0" href="/fabsoft-sco/sys/view/services/Cadastrar.php">Serviços</a>
                     </li>
                     <li class="nav-item">
-                        <a class="navbar-brand mb-0" href="/FabSoft-SCO/sys/view/transporte/Cadastrar.php">Transporte</a>
+                        <a class="navbar-brand mb-0" href="/fabsoft-sco/sys/view/transporte/Cadastrar.php">Transporte</a>
                     </li>
                     <li class="nav-item">
-                        <a class="navbar-brand mb-0" href="/FabSoft-SCO/sys/view/chamados/Cadastrar.php">Suporte</a>
+                        <a class="navbar-brand mb-0" href="/fabsoft-sco/sys/view/chamados/Cadastrar.php">Suporte</a>
                     </li>
                 </ul>
             </div>

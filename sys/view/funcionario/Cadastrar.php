@@ -43,9 +43,9 @@
      <div class="half-box">
        <label for="tipoDeFunc">Tipo de Função</label>
        <select required  name="tipoDeFunc" id="tipoDeFunc">
-         <option value="sem-escolaridade">Secretaria de Saúde</option>
-         <option value="ensino-fundamental">Coodenadoria de Atenção Básica</option>
-         <option value="ensino-medio">Enfermagem</option>
+       <option value="secretariaDeSaude">Secretaria de saude</option>
+        <option value="coordenador">Coordenador</option>
+        <option value="enfermeiro">Enfermeiro</option>
        </select>
      </div>
      <div class="full-box">
