@@ -16,8 +16,8 @@ class gerar_pdf {
         $this->pdf->allowedTags .= '|comment:.*?';
         $this->pdf->ezSetMargins(20, 20, 20, 20);
         $this->pdf->selectFont('Helvetica');
-        $this->pdf-> ezText('Relatório gerado por:', 12,);
-        $this->pdf-> ezText('Data:', 12,);
+        $this->pdf-> ezText('Relatório gerado por:', 12);
+        $this->pdf-> ezText('Data:', 12);
         $this->pdf-> ezText('Sistema de Comunicação Oncológica', 25,
         array(justification => 'center', spacing => 2.0));
         
