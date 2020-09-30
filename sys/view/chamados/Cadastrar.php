@@ -242,6 +242,10 @@
 </div>
 </div>
 </div>
-<div class="fixed-bottom">
-    <?php include_once '../footer.php'; ?>
-</div>
+<?php if($_SESSION['user_type'] == 1){?>
+    <div class="fixed-bottom">
+    <?php include_once "../footer.php"; ?>
+    </div>
+<?php }else{ ?>
+    <?php include_once "../footer.php"; ?>
+<?php } ?>
