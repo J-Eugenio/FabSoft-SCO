@@ -68,8 +68,8 @@
                 $exec->bindValue(':hospitalDeTratamento',$this->getHospitalDeTratamento());
                 $exec->bindValue(':situacao',$this->getSituacao());
                 $exec->bindValue(':user_type',2);
+                $exec->execute();
                 echo "<script>window.location ='../../view/paciente/Cadastrar.php';</script>";
-                return $exec->execute();
             }catch(PDOException $erro){
                echo "Erro: ".$erro->getMessage();
             }
@@ -81,8 +81,8 @@
                 $exec->bindValue(':id', $this->getId(), PDO::PARAM_INT);
                 $exec->bindValue(':situacao', $this->getSituacao());
 
+                $exec->execute();
                 echo "<script>window.location ='../../view/paciente/Listar.php';</script>";
-                return $exec->execute();
             }catch(PDOException $erro){
                 echo "Erro".$erro->getMessage();
             }
@@ -128,8 +128,8 @@
                 $exec->bindValue(':pontoDeReferencia', $this->getPontoDeReferencia());
                 $exec->bindValue(':zona', $this->getZona());
                 $exec->bindValue(':hospitalDeTratamento', $this->getHospitalDeTratamento());
+                $exec->execute();
                 echo "<script>window.location ='../../view/paciente/Cadastrar.php';</script>";
-                return $exec->execute();
             }catch(PDOException $erro){
                 echo "Erro ".$erro->getMessage();
             }
@@ -140,10 +140,9 @@
                 $sql = "DELETE FROM $this->tabela WHERE id = :id";
                 $exec = DB::prepare($sql);
                 $exec->bindValue(':id', $this->getId(), PDO::PARAM_INT);
+                $exec->execute();
                 echo "<script>window.location ='../../view/paciente/Listar.php';</script>";
-
-                return $exec->execute();
-                
+     
             }catch(PDOException $erro){
                 echo $erro->getMessage();
             }

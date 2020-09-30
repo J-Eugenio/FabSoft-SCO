@@ -39,8 +39,8 @@
                 $exec->bindValue(':funcao', $this->getFuncao());
                 $exec->bindValue(':tipoDeFunc', $this->getTipoDeFunc());
                 $exec->bindValue(':user_type',1);
+                $exec->execute();
 				echo "<script>window.location ='../../view/funcionario/Cadastrar.php';</script>";
-                return $exec->execute();
                 
             }catch(PDOException $erro){
                 echo $erro->getMessage();
@@ -59,8 +59,8 @@
                 $exec->bindValue(':genero', $this->getGenero());
                 $exec->bindValue(':funcao', $this->getFuncao());
                 $exec->bindValue(':tipoDeFunc', $this->getTipoDeFunc());
+                $exec->execute();
                 echo "<script>window.location ='../../view/funcionario/Cadastrar.php';</script>";
-                return $exec->execute();
             }catch(PDOException $erro){
                 echo "Erro".$erro->getMessage();
             }
@@ -71,9 +71,8 @@
                 $sql = "DELETE FROM $this->tabela WHERE id = :id";
                 $exec = DB::prepare($sql);
                 $exec->bindValue(':id', $this->getId(), PDO::PARAM_INT);
+                $exec->execute();
                 echo "<script>window.location ='../../view/funcionario/Listar.php';</script>";
-
-                return $exec->execute();
                 
             }catch(PDOException $erro){
                 echo $erro->getMessage();

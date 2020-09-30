@@ -38,7 +38,13 @@ switch($acao){
     case 'update':
         try{
             $funcDAO->setId($_POST['id']);
-
+            $funcDAO->setCpf($_POST['cpf']);
+            $funcDAO->setSenha($_POST['senha']);
+            $funcDAO->setNome($_POST['nome']);
+            $funcDAO->setSobrenome($_POST['sobrenome']);
+            $funcDAO->setGenero($_POST['sexo']);
+            $funcDAO->setFuncao($_POST['funcao']);
+            $funcDAO->setTipoDeFunc($_POST['tipoDeFunc']);
             $funcDAO->update();
         }catch(Exception $e){
             echo $e->getMessage();
