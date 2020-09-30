@@ -87,7 +87,7 @@ CREATE TABLE IF NOT EXISTS `services` (
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 ALTER TABLE `services`
-  ADD CONSTRAINT `FKservices` FOREIGN KEY (`id_paciente`) REFERENCES `paciente` (`id`);
+  ADD CONSTRAINT `FKservices` FOREIGN KEY (`id_paciente`) REFERENCES `paciente` (`id`) ON DELETE CASCADE;
 
 -- --------------------------------------------------------
 
@@ -108,7 +108,7 @@ CREATE TABLE IF NOT EXISTS `transporte` (
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 ALTER TABLE `transporte`
-  ADD CONSTRAINT `FKtransporte` FOREIGN KEY (`id_paciente`) REFERENCES `paciente` (`id`);
+  ADD CONSTRAINT `FKtransporte` FOREIGN KEY (`id_paciente`) REFERENCES `paciente` (`id`) ON DELETE CASCADE;
 
 -- --------------------------------------------------------
 
@@ -128,7 +128,7 @@ CREATE TABLE IF NOT EXISTS `chamado` (
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 ALTER TABLE `chamado`
-  ADD CONSTRAINT `FKchamado` FOREIGN KEY (`id_paciente`) REFERENCES `paciente` (`id`);
+  ADD CONSTRAINT `FKchamado` FOREIGN KEY (`id_paciente`) REFERENCES `paciente` (`id`) ON DELETE CASCADE;
 -- --------------------------------------------------------
 
 --
@@ -145,5 +145,5 @@ CREATE TABLE IF NOT EXISTS `msg_chamado` (
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 ALTER TABLE `msg_chamado`
-  ADD CONSTRAINT `FKmsg_chamado` FOREIGN KEY (`id_chamada`) REFERENCES `chamado` (`id`);
+  ADD CONSTRAINT `FKmsg_chamado` FOREIGN KEY (`id_chamada`) REFERENCES `chamado` (`id`) ON DELETE CASCADE;
 
