@@ -70,8 +70,8 @@
                 $exec= DB::prepare($sql);
                 $exec->bindValue(':textoDoChamado', $this->getTextoDoChamado());
                 $exec->bindValue(':user_type', $this->getUser_type());
+                $exec->execute();
                 echo "<script>window.location ='../../view/chamados/Cadastrar.php';</script>";
-                return $exec->execute();
             }catch(PDOException $erro){
 
             }
@@ -85,8 +85,8 @@
                 $exec->bindParam(':id_chamada',$id_chamada);
                 $exec->bindParam(':user_type', $user_type);
                 $this->update();
+                $exec->execute();
                 echo "<script>window.location ='../../view/chamados/Cadastrar.php';</script>";
-                return $exec->execute();
             } catch (PDOException $erro) {
                 
             }
@@ -99,8 +99,8 @@
                 $exec->bindValue(':id', $this->getId(), PDO::PARAM_INT);
                 $exec->bindValue(':situacao',$this->getSituacao());
                 echo $this->getId();
+                $exec->execute();
                 echo "<script>window.location ='../../view/chamados/Cadastrar.php';</script>";
-                return $exec->execute();
             }catch(PDOException $erro){
                 echo "Erro".$erro->getMessage();
             }
@@ -116,8 +116,8 @@
                 $sql = "DELETE FROM $this->tabela WHERE id = :id";
                 $exec = DB::prepare($sql);
                 $exec->bindValue(':id', $this->getId(), PDO::PARAM_INT);
+                $exec->execute();
                 echo "<script>window.location ='../../view/chamados/Cadastrar.php';</script>";
-                return $exec->execute();
                 
             }catch(PDOException $erro){
                 echo $erro->getMessage();

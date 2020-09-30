@@ -7,6 +7,7 @@
 
 <div id="main-container">
     <h2>Abrir Chamado</h2>
+    <?php if($_SESSION['user_type'] != 1){?>
     <form method="POST" action="../../controller/chamado/chamado_controller.php">
         <div class="col justify-content-center">
             <div class="half-box spacing">
@@ -35,9 +36,9 @@
             </div>
         </div>
     </form>
-
+    <?php } ?>
     <div class="row justify-content-center ">
-   <div class="col-auto">
+    <div class="col-auto">
       <div class="panel panel-primary table-ajustes">
          <div class="panel-heading">
             <h3>Chamados</h3>
@@ -241,7 +242,6 @@
 </div>
 </div>
 </div>
-
-<?php
-include_once '../footer.php';
-?>
+<div class="fixed-bottom">
+    <?php include_once '../footer.php'; ?>
+</div>

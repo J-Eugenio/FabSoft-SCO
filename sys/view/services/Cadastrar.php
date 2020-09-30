@@ -5,6 +5,7 @@
    $resultado = $reser->listarServices();
 ?>
 <div id="main-container-services">
+<?php if($_SESSION['user_type'] != 1){?>
 <form method="POST" action="../../controller/services/service_controller.php">
       <div class="col justify-content-center  div-services">
          <h2 class="row justify-content-center">Solicitação de Serviços</h2>
@@ -43,7 +44,7 @@
 <input type="hidden" name="user_type" class="form-control" value="<?php echo $_SESSION['user_type'];?>" />
 </div>
 </form>
-
+<?php } ?>
 <div class="row justify-content-center ">
    <div class="col-auto">
       <div class="panel panel-primary table-ajustes">
@@ -150,4 +151,6 @@
    </div>
 </div>
 </div>
+<div class="fixed-bottom">
 <?php include_once "../footer.php"; ?>
+</div>

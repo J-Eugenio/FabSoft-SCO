@@ -1,4 +1,3 @@
-</div>
 <footer class="page-footer">
     <div class="grid-layout">
         <div class="grid1">
